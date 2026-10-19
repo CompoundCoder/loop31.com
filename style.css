@@ -1,0 +1,315 @@
+/* Loop31 website. One stylesheet, no framework, no scripts, no outside requests. */
+
+:root {
+  --bg: #ffffff;
+  --text: #1c1c1e;
+  --muted: #6e6e73;
+  --line: #e5e5ea;
+  --card: #f5f5f7;
+  --blue: #008bff;
+  --blue-text: #0071d1;
+  --radius: 14px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --text: #f5f5f7;
+    --muted: #98989d;
+    --line: #2c2c2e;
+    --card: #1c1c1e;
+    --blue-text: #4da8ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--blue-text);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Header */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: block;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 18px;
+  font-size: 15px;
+}
+
+.site-nav a {
+  color: var(--muted);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+/* Main */
+
+main {
+  padding-top: 40px;
+  padding-bottom: 56px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 44px 0 10px;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 24px 0 6px;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 16px;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.lede {
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 15px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+/* The three things, on the home page */
+
+.three {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.three li {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 0;
+}
+
+.three strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* An example post, drawn the way the app shows it */
+
+.post {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 20px 0 8px;
+  background: var(--bg);
+}
+
+.post-picture {
+  background: var(--blue);
+  color: #fff;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.post-picture strong {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+
+.post-caption {
+  padding: 14px 18px 16px;
+  font-size: 16px;
+}
+
+.post-caption p {
+  margin-bottom: 10px;
+}
+
+.post-caption .footer-line {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.caption {
+  font-size: 15px;
+}
+
+/* Tables on the privacy page */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 12px 0 20px;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+
+td:first-child {
+  min-width: 6em;
+}
+
+th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Definition-style FAQ */
+
+.faq dt {
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.faq dd {
+  margin: 4px 0 0;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0 40px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0 0 8px;
+}
+
+.site-footer a {
+  color: var(--muted);
+}
+
+.placeholder {
+  color: #c25a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  .placeholder {
+    color: #ff9f3d;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .site-nav {
+    gap: 14px;
+    font-size: 14px;
+  }
+}
