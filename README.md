@@ -17,7 +17,9 @@ The public website for Loop31, by Compound Coder LLC. Plain HTML and one stylesh
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 | `robots.txt`, `sitemap.txt` | Allow all crawlers; list the four pages |
 
-The footer on every page carries one placeholder, `[exact address to be added]`. Replace it on all five pages (search for the text) once the business address is settled.
+The home page carries four photo placeholders (gray blocks with a dashed label; each has an HTML comment naming the shot and its size): the hero's iPhone screenshot, a photo of an agent or salesperson at work, the share step on an iPhone, and the example post's own photo. Replace each `<div class="placeholder">` with an `<img>` of the same aspect ratio when the pictures exist.
+
+The look is Apple-native: system font, one blue accent (`#008bff`), 18px corners on surfaces, pill buttons, a translucent sticky header, light and dark from the system setting. No animation beyond a press on the button.
 
 ## Publishing with GitHub Pages
 
