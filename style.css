@@ -256,6 +256,22 @@ p {
   margin-bottom: 20px;
 }
 
+/* Even line lengths on the home page's headings, so no word is left alone on a line */
+.hero h1,
+.section h2,
+.coming h2,
+.tile h3 {
+  text-wrap: balance;
+}
+
+.hero .lede,
+.section .intro,
+.tile p,
+.split p,
+.coming p {
+  text-wrap: pretty;
+}
+
 .hero .lede {
   margin-bottom: 28px;
 }
@@ -477,6 +493,45 @@ p {
   margin: 0;
 }
 
+/* Teams: what a manager does, as a short list on a card */
+
+.team-card {
+  list-style: none;
+  margin: 0;
+  padding: 6px 28px;
+  border-radius: var(--radius);
+  background: var(--bg);
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+}
+
+.team-card li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.team-card li:last-child {
+  border-bottom: 0;
+}
+
+.team-card strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.team-card span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.split .button {
+  margin-top: 8px;
+}
+
 /* Coming soon */
 
 .coming {
@@ -661,7 +716,8 @@ th {
   }
 
   .split .placeholder,
-  .post {
+  .post,
+  .team-card {
     justify-self: start;
   }
 
@@ -690,6 +746,10 @@ th {
 
   .tile {
     padding: 22px;
+  }
+
+  .team-card {
+    padding: 4px 22px;
   }
 }
 
