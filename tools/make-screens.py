@@ -31,6 +31,13 @@ ROLES = {
 PORTAL = {
     "portal-team": ("team-1440-light.png", (0, 0, 1440, 900), 1200),
     "portal-team-phone": ("team-390-light.png", (0, 0, 780, 1300), 640),
+    # A person's page: their Loops (read only) and the posts that went out.
+    "portal-person": ("person-1440-light.png", (0, 0, 1440, 900), 1200),
+    "portal-person-phone": ("person-390-light.png", (0, 0, 780, 1300), 640),
+    # The Team page's counts and people, without the office's name (the dealership page uses it: the
+    # sample office is a brokerage).
+    "portal-team-table": ("team-1440-light.png", (350, 160, 1356, 900), 1000),
+    "portal-team-table-phone": ("team-390-light.png", (0, 620, 780, 1688), 640),
 }
 
 SCREEN_WIDTH = 840

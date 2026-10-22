@@ -7,6 +7,8 @@ The public website for Loop31, by Compound Coder LLC. Plain HTML, one stylesheet
 | File | What it is |
 |---|---|
 | `index.html` | What Loop31 is |
+| `teams/index.html` | For managers: how seats work, what a manager sees and never sees, the price, the pilot, and a door to each industry page (served at `/teams/`) |
+| `teams/brokerages/index.html`, `teams/dealerships/index.html` | The same pitch written for managing brokers and for dealership sales managers, each with its sources listed at the bottom |
 | `privacy.html` | The privacy policy (the page the App Store and Meta require) |
 | `terms.html` | Terms of use |
 | `support.html` | How to get help, and a short FAQ |
@@ -19,7 +21,8 @@ The public website for Loop31, by Compound Coder LLC. Plain HTML, one stylesheet
 | `favicon.png`, `apple-touch-icon.png`, `logo.png` | The app icon, resized from `docs/brand/generated/icon-1024.png` in the app repo |
 | `CNAME` | `loop31.com`, which tells GitHub Pages the custom domain |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
-| `robots.txt`, `sitemap.txt` | Allow all crawlers; list the four pages |
+| `robots.txt`, `sitemap.txt` | Allow all crawlers; list the seven pages |
+| `team/` | The team portal's build (a separate app, `apps/admin` in the app repo). The site links to it as "Manager sign-in"; don't confuse it with `teams/` |
 
 ## The look
 
@@ -51,7 +54,9 @@ Every image is in `img/`, named by what it shows, so a new picture is a new file
 | `screen-calendar.webp` | Hero: the Calendar tab | iPhone 17 Pro Max simulator, sample account, 2026-10-22 (`site-shots/calendar.png`) |
 | `screen-lookover.webp` | How It Works: the look-over | Same (`site-shots/review.png`) |
 | `screen-handoff.webp` | How It Works: Post It Yourself | Same (`site-shots/more/handoff-w1.png`) |
-| `portal-team.webp`, `portal-team-phone.webp` | Teams: the team portal's Team page, computer and phone | The portal's sample mode, 2026-10-22 (`portal-shots/after/team-1440-light.png`, `team-390-light.png`) |
+| `portal-team.webp`, `portal-team-phone.webp` | The home page's managers band and the team pages: the portal's Team page, computer and phone | The portal's sample mode, 2026-10-22 (`portal-shots/after/team-1440-light.png`, `team-390-light.png`) |
+| `portal-person.webp`, `portal-person-phone.webp` | The team pages: one person's page in the portal | Same (`person-1440-light.png`, `person-390-light.png`) |
+| `portal-team-table.webp`, `portal-team-table-phone.webp` | The dealership page: the Team page's counts and people, cropped so the sample brokerage's name doesn't lead | Same (`team-1440-light.png`, `team-390-light.png`, cropped) |
 | `post-re-*.webp`, `post-auto-*.webp` | The ten example posts (Home Tips, Client Reviews, Around Town, Behind the Scenes, Motivation; Car Care Tips, Customer Reviews and the rest for car sales). `post-re-tips.webp` is also the hero's post and the post with its parts pointed out | Drawn by the app's own graphics code from each starter Loop's first idea, over its bundled example photo |
 
 **Making them again.** With Homebrew's Node 24 and Google Chrome:
@@ -103,3 +108,13 @@ From this folder run `python3 -m http.server 8000` and visit http://localhost:80
 ## Rules for the copy
 
 Plain words, no slogans, no AI company names on the home page (the privacy policy names them), nothing the app does not do today. The app's own writing rules are in the app repo under `docs/HANDOFF.md`, "Working rules with Trevor". The privacy policy is written from `docs/data-inventory.md` in the app repo; when that file changes, change `privacy.html` and its date.
+
+## The pages for managers
+
+Every figure on `/teams/brokerages/` and `/teams/dealerships/` has a numbered source in the list at the bottom of the page; the research behind them, with the figures checked against their sources on 2026-10-22, is the PM's manager brief. Rules for changing these pages:
+
+- No customer logos, testimonials, "trusted by", agent counts, ROI multiples, "attorney-approved", "co-op eligible", or any line that says Loop31 makes someone compliant. Name the rule and say what the app does about it, and keep "These checks catch common problems. They aren't legal advice."
+- The see / never-see promise is the app's own wording (`teamDisclosure` in `apps/mobile/src/lib/team.ts`, PLAN D38). If the app's wording changes, change it here too.
+- The price is PLAN D50 ($10 a seat a month, at least 3). Don't promise what the product doesn't do yet: Android, a weekly manager email, a compliance export, franchise lines, multi-office groups. The 30-day pilot summary is promised (it's being built).
+- Every portal screenshot carries a visible "Sample office" label.
+- The buttons open prefilled emails to support@loop31.com; there is no form and nothing is collected by the site.
