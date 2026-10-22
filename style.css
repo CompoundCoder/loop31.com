@@ -1981,6 +1981,11 @@ th {
   color: var(--muted);
 }
 
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
 .placeholder-text {
   color: #c25a00;
 }

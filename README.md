@@ -115,6 +115,6 @@ Every figure on `/teams/brokerages/` and `/teams/dealerships/` has a numbered so
 
 - No customer logos, testimonials, "trusted by", agent counts, ROI multiples, "attorney-approved", "co-op eligible", or any line that says Loop31 makes someone compliant. Name the rule and say what the app does about it, and keep "These checks catch common problems. They aren't legal advice."
 - The see / never-see promise is the app's own wording (`teamDisclosure` in `apps/mobile/src/lib/team.ts`, PLAN D38). If the app's wording changes, change it here too.
-- The price is PLAN D50 ($10 a seat a month, at least 3). Don't promise what the product doesn't do yet: Android, a weekly manager email, a compliance export, franchise lines, multi-office groups. The 30-day pilot summary is promised (it's being built).
+- The price is PLAN D50 ($10 a seat a month, at least 3). Don't promise what the product doesn't do yet: Android, multi-office or multi-store groups. Built and fine to describe (PLAN D55–D59): the Monday email to owners and admins, the record of what the checks flagged on each shared post, the office logo and office line, and new arrivals from a dealership's website (built, not yet released). The 30-day pilot summary is promised (it's being built).
 - Every portal screenshot carries a visible "Sample office" label.
 - The buttons open prefilled emails to support@loop31.com; there is no form and nothing is collected by the site.
