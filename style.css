@@ -1,42 +1,105 @@
-/* Loop31 website. One stylesheet, no framework, no scripts, no outside requests.
-   Look: Apple-native. System font, one blue accent, soft 18px corners on surfaces, pill buttons, light and dark. */
+/* Loop31 website. One stylesheet for every page. No framework, no outside requests.
+   Look: the app's own, a little warmer. The system font for reading, Nunito (the free twin of the logo's
+   SF Pro Rounded, docs/brand/BRAND.md) big and heavy for headlines and the wordmark, the app's blue,
+   its peach-and-sky washes, real screens with soft shadows, light and dark from the system setting.
+   Motion: one load moment in the hero, the feed story tied to scrolling, a drifting row of posts with a
+   pause button. Every section reads the same with Reduce Motion on, without JavaScript, and in browsers
+   without scroll-driven animation. */
+
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/nunito-latin-var.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f5f5f7;
-  --text: #1d1d1f;
-  --muted: #6e6e73;
-  --line: #e5e5ea;
-  --card: #f5f5f7;
-  --card-blue: #eaf4ff;
-  --blue: #008bff;
-  --blue-text: #0071d1;
+  color-scheme: light dark;
+
+  --bg: #fcfbf8;
+  --bg-soft: #f4f1ec;
+  --surface: #ffffff;
+  --tile: #f4f1ec;
+  --fill: rgba(118, 108, 96, 0.12);
+  --text: #1c1c1e;
+  --muted: #64646a;
+  --line: rgba(60, 50, 40, 0.12);
+  --nav-bg: rgba(252, 251, 248, 0.74);
+
+  --brand: #008bff;
+  /* The brand blue a step deeper, for big words on a light wash (3:1 or better) */
+  --brand-ink: #0077ea;
+  --accent: #0071e3;
+  --accent-hover: #0068d6;
+  --blue-text: #0067c8;
+  --focus: #0071e3;
   --orange-wash: #fff1e3;
   --orange-text: #b45309;
-  --placeholder-a: #e9e9ee;
-  --placeholder-b: #d6d6dd;
-  --radius: 18px;
-  --nav-bg: rgba(255, 255, 255, 0.72);
-  color-scheme: light dark;
+
+  /* The app's screen washes (apps/mobile/src/constants/theme.ts ScreenWashes), as r g b */
+  --sky: 90 176 255;
+  --peach: 255 168 132;
+  --coral: 255 143 143;
+  --apricot: 255 179 107;
+  --wash: 0.5;
+
+  --feed-bg: #ecebe8;
+
+  --band-bg: #131211;
+  --band-text: #f5f5f7;
+  --band-muted: #b0afab;
+  --band-line: rgba(255, 255, 255, 0.12);
+
+  --r-sm: 12px;
+  --r: 18px;
+  --r-lg: 28px;
+  --shadow-screen: 0 0 0 0.5px rgba(40, 30, 20, 0.08), 0 2px 4px rgba(40, 30, 20, 0.05), 0 14px 30px rgba(40, 30, 20, 0.1), 0 40px 80px -24px rgba(40, 30, 20, 0.28);
+  --shadow-card: 0 0 0 0.5px rgba(40, 30, 20, 0.06), 0 2px 6px rgba(40, 30, 20, 0.06), 0 14px 34px rgba(40, 30, 20, 0.12);
+  --shadow-soft: 0 0 0 0.5px rgba(40, 30, 20, 0.05), 0 1px 3px rgba(40, 30, 20, 0.06);
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Nunito", ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --wrap: 1120px;
+  --gutter: 20px;
+  --header-h: 56px;
+  --section: 112px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0b0b0c;
-    --bg-soft: #151517;
+    --bg: #0c0b0a;
+    --bg-soft: #141312;
+    --surface: #1c1c1e;
+    --tile: #171615;
+    --fill: rgba(140, 140, 150, 0.2);
     --text: #f5f5f7;
-    --muted: #a1a1a6;
-    --line: #2c2c2e;
-    --card: #1c1c1e;
-    --card-blue: #0f2238;
+    --muted: #a3a3a8;
+    --line: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(12, 11, 10, 0.72);
     --blue-text: #4da8ff;
+    --brand-ink: #1f95ff;
+    --focus: #4da8ff;
     --orange-wash: #3a2410;
     --orange-text: #ffb366;
-    --placeholder-a: #2a2a2d;
-    --placeholder-b: #1f1f22;
-    --nav-bg: rgba(11, 11, 12, 0.72);
+    --wash: 0.28;
+    --feed-bg: #050505;
+    --band-bg: #1a1917;
+    --shadow-screen: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 14px 30px rgba(0, 0, 0, 0.4), 0 40px 80px -24px rgba(0, 0, 0, 0.7);
+    --shadow-card: 0 0 0 0.5px rgba(255, 255, 255, 0.08), 0 14px 34px rgba(0, 0, 0, 0.45);
+    --shadow-soft: 0 0 0 0.5px rgba(255, 255, 255, 0.08);
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+/* ---------- Base ---------- */
 
 * {
   box-sizing: border-box;
@@ -45,16 +108,17 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
 }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font);
   font-size: 17px;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
@@ -62,28 +126,111 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus-visible {
+a:hover {
   text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .wrap {
-  max-width: 1040px;
+  max-width: var(--wrap);
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 .narrow {
-  max-width: 680px;
+  max-width: 720px;
 }
 
-/* Header: a translucent bar the page scrolls under */
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 20;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.skip:focus {
+  top: 10px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 15px;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+/* ---------- Type: Nunito, big and heavy, for headlines only ---------- */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(3.25rem, 1.4rem + 7.6vw, 7.5rem);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2.3rem, 1.5rem + 3.4vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+}
+
+.kicker {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0;
+  color: var(--blue-text);
+}
+
+.lede {
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---------- Header and the wordmark ---------- */
 
 .site-header {
   position: sticky;
@@ -100,17 +247,18 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 56px;
+  min-height: var(--header-h);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   color: var(--text);
-  font-weight: 700;
-  font-size: 19px;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.03em;
 }
 
 .brand img {
@@ -120,8 +268,8 @@ img {
 }
 
 .brand b {
-  color: var(--blue);
-  font-weight: 700;
+  color: var(--brand);
+  font-weight: 900;
 }
 
 .brand:hover {
@@ -140,6 +288,7 @@ img {
 
 .site-nav a[aria-current="page"] {
   color: var(--text);
+  font-weight: 600;
 }
 
 @media (prefers-reduced-transparency: reduce) {
@@ -150,193 +299,553 @@ img {
   }
 }
 
-/* Type */
-
-h1,
-h2,
-h3 {
-  margin: 0;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 52px;
-  line-height: 1.06;
-  letter-spacing: -0.025em;
-}
-
-h2 {
-  font-size: 36px;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-}
-
-h3 {
-  font-size: 20px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-
-p {
-  margin: 0 0 16px;
-}
-
-.lede {
-  font-size: 21px;
-  line-height: 1.45;
-  color: var(--muted);
-  max-width: 34ch;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-.small {
-  font-size: 15px;
-}
-
-/* Buttons: pills */
+/* ---------- Buttons ---------- */
 
 .button {
   display: inline-block;
-  background: var(--blue);
+  background: var(--accent);
   color: #fff;
   font-weight: 600;
   font-size: 17px;
   line-height: 1;
-  padding: 14px 24px;
+  padding: 16px 26px;
   border-radius: 999px;
-  transition: transform 120ms ease-out, background-color 120ms ease-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  transition: transform 140ms var(--ease-out), background-color 160ms ease;
 }
 
 .button:hover {
   text-decoration: none;
-  background: #1a96ff;
+  background: var(--accent-hover);
 }
 
 .button:active {
   transform: scale(0.97);
 }
 
-/* Placeholders for the photos still to come */
-
-.placeholder {
-  background: linear-gradient(135deg, var(--placeholder-a), var(--placeholder-b));
-  color: var(--muted);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  font-size: 14px;
-  letter-spacing: 0.01em;
+.button-light {
+  background: #ffffff;
+  color: #111;
 }
 
-.placeholder span {
-  padding: 8px 14px;
-  border: 1px dashed currentColor;
-  border-radius: 999px;
-  opacity: 0.8;
+.button-light:hover {
+  background: #e9e9ee;
 }
 
-/* Hero */
+/* ---------- Real screens: frameless, rounded like the display, with a soft shadow ---------- */
+
+.screen {
+  width: 100%;
+  border-radius: 12% / 5.52%;
+  box-shadow: var(--shadow-screen);
+  background: #f2f2f7;
+}
+
+/* ---------- Washes: the app's two soft glows and a fade, with a little grain ---------- */
+
+.hero,
+.launch,
+body:not(.home) {
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Hero ---------- */
 
 .hero {
-  padding: 72px 0 64px;
+  position: relative;
+  padding: 72px 0 96px;
+  isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--header-h)) 0 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero::before {
+  background:
+    radial-gradient(60% 520px at 6% 12%, rgb(var(--sky) / var(--wash)), transparent 70%),
+    radial-gradient(55% 560px at 96% 22%, rgb(var(--peach) / var(--wash)), transparent 70%),
+    linear-gradient(180deg, rgb(var(--sky) / calc(var(--wash) * 0.4)) 0, transparent 760px);
+}
+
+.hero::after {
+  background-image: var(--grain);
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero::after {
+    mix-blend-mode: screen;
+    opacity: 0.05;
+    filter: invert(1);
+  }
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 32px;
   align-items: center;
 }
 
-.hero h1 {
-  max-width: 14ch;
-  margin-bottom: 20px;
+.hero-title {
+  margin-bottom: 26px;
+  max-width: 9.5ch;
 }
 
-/* Even line lengths on the home page's headings, so no word is left alone on a line */
-.hero h1,
-.section h2,
-.coming h2,
-.tile h3 {
-  text-wrap: balance;
+.hero-title .w {
+  display: inline-block;
 }
 
-.hero .lede,
-.section .intro,
-.tile p,
-.split p,
-.coming p {
-  text-wrap: pretty;
+.hero-title .accent {
+  color: var(--brand-ink);
 }
 
 .hero .lede {
-  margin-bottom: 28px;
+  max-width: 34ch;
+  margin-bottom: 30px;
 }
 
-.phone {
-  width: 280px;
-  aspect-ratio: 9 / 19.5;
-  margin: 0 auto;
-  border-radius: 44px;
-  padding: 10px;
-  background: var(--text);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  margin-bottom: 22px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .phone {
-    background: #2c2c2e;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+.coming-note {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--text);
+}
+
+.coming-note::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #34c759;
+  vertical-align: 2px;
+}
+
+.hero-teams {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* The art: a real screen, the post it makes overlapping it, and the hand-off's "Caption copied". */
+.hero-art {
+  position: relative;
+  container-type: inline-size;
+  max-width: 470px;
+  justify-self: end;
+  width: 100%;
+}
+
+.hero-screen {
+  width: 70cqi;
+  margin-left: auto;
+  margin-right: 2cqi;
+}
+
+.post-card {
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-post {
+  position: absolute;
+  left: 0;
+  bottom: 9%;
+  width: 46cqi;
+  rotate: -3deg;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 9px 15px 9px 9px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: var(--shadow-card);
+  white-space: nowrap;
+}
+
+.hero-chip {
+  position: absolute;
+  left: 4cqi;
+  top: 21%;
+  rotate: 2deg;
+}
+
+/* The one load moment: the headline rises in word by word, then the screen settles and the post lands. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 16px;
   }
 }
 
-.phone .placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 36px;
+@keyframes word {
+  from {
+    opacity: 0;
+    translate: 0 0.32em;
+  }
 }
 
-/* Sections */
-
-.section {
-  padding: 72px 0;
+@keyframes settle {
+  from {
+    opacity: 0;
+    translate: 0 36px;
+    scale: 0.98;
+  }
 }
 
-.section-soft {
-  background: var(--bg-soft);
+@keyframes land {
+  from {
+    opacity: 0;
+    translate: -18px 28px;
+    rotate: 0deg;
+  }
 }
 
-.section h2 {
-  margin-bottom: 12px;
+@keyframes pop {
+  from {
+    opacity: 0;
+    scale: 0.86;
+    rotate: 0deg;
+  }
 }
 
-.section .intro {
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .rise {
+    animation: rise 700ms var(--ease-out) both;
+    animation-delay: calc(var(--i) * 55ms);
+  }
+
+  .hero-title .w {
+    animation: word 750ms var(--ease-out) both;
+    animation-delay: calc(var(--i) * 55ms);
+  }
+
+  .hero-screen {
+    animation: settle 1000ms var(--ease-out) 180ms both;
+  }
+
+  .hero-post {
+    animation: land 1000ms var(--ease-out) 420ms both;
+  }
+
+  .hero-chip {
+    animation: pop 560ms var(--ease-out) 820ms both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-art > * {
+    animation: fade 500ms ease both;
+  }
+}
+
+/* ---------- Sections ---------- */
+
+.loops,
+.how,
+.details {
+  padding: var(--section) 0;
+}
+
+.intro {
   font-size: 19px;
   color: var(--muted);
-  max-width: 52ch;
-  margin-bottom: 40px;
+  max-width: 56ch;
+  text-wrap: pretty;
 }
 
-/* One sourced figure under the intro, with its source named */
+/* ---------- Ready-made Loops: a drifting row of real posts ---------- */
 
-.section .intro:has(+ .stat) {
-  margin-bottom: 20px;
+.loops {
+  padding-bottom: 72px;
+}
+
+.loops-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px 48px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+
+.loops-copy p {
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.loops-copy p:first-child {
+  color: var(--text);
+  font-size: 19px;
+}
+
+.loops-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.marquee {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 6px 0 22px;
+}
+
+.marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.marquee-list {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0 18px 0 max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
+  list-style: none;
+}
+
+.marquee-list.is-copy {
+  padding-left: 0;
+}
+
+.marquee-list li {
+  flex: 0 0 auto;
+  width: clamp(172px, 19vw, 236px);
+  scroll-snap-align: start;
+  scroll-margin-left: var(--gutter);
+}
+
+.marquee figure {
+  margin: 0;
+}
+
+.marquee img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.marquee figcaption {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.marquee figcaption span {
+  display: block;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.marquee-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.marquee-foot p {
+  margin: 0;
+}
+
+.pause {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 9px 16px 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: 600 15px/1 var(--font);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 140ms var(--ease-out);
+}
+
+.pause:active {
+  transform: scale(0.97);
+}
+
+.pause[hidden] {
+  display: none;
+}
+
+.pause svg {
+  fill: currentColor;
+}
+
+.pause .i-play,
+.pause[data-state="paused"] .i-pause {
+  display: none;
+}
+
+.pause[data-state="paused"] .i-play {
+  display: block;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* With JavaScript (it adds the second copy and the pause button) and motion allowed, the row drifts. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .marquee {
+    overflow: hidden;
+    scroll-snap-type: none;
+  }
+
+  .js .marquee-track {
+    animation: marquee 80s linear infinite;
+  }
+
+  .marquee.is-paused .marquee-track,
+  .marquee.is-offscreen .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pause {
+    display: none;
+  }
+}
+
+/* ---------- A year in their feed ---------- */
+
+.story {
+  position: relative;
+  padding: 40px 0 var(--section);
+}
+
+.ind-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.story:has(#ind-auto:checked) .re-only,
+.story:not(:has(#ind-auto:checked)) .auto-only {
+  display: none;
+}
+
+.story-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+  gap: 32px 72px;
+  align-items: start;
+}
+
+.story-copy h2 {
+  margin-bottom: 18px;
+  max-width: 11ch;
+}
+
+.story-copy > p {
+  font-size: 19px;
+  color: var(--muted);
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+
+.switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  margin: 8px 0 28px;
+  border-radius: 999px;
+  background: var(--fill);
+}
+
+.switch label {
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.story:has(#ind-re:checked) label[for="ind-re"],
+.story:has(#ind-auto:checked) label[for="ind-auto"] {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+}
+
+.story:has(#ind-re:focus-visible) label[for="ind-re"],
+.story:has(#ind-auto:focus-visible) label[for="ind-auto"] {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 
 .stat {
-  max-width: 52ch;
-  margin: 0 0 40px;
-  font-size: 19px;
-  line-height: 1.4;
+  max-width: 40ch;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 17px;
+  line-height: 1.45;
   text-wrap: pretty;
 }
 
 .stat strong {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.35em;
   color: var(--blue-text);
-  font-weight: 700;
 }
 
 .stat .source {
@@ -346,82 +855,497 @@ p {
   color: var(--muted);
 }
 
-/* How it works: three tiles, one wide */
+/* The feed, as a still list (the default): your four posts with their weeks, then the text. */
+.story-phone {
+  width: 100%;
+  max-width: 400px;
+}
 
-.tiles {
+.story-bar {
+  display: none;
+}
+
+.feed-window {
+  border-radius: var(--r-lg);
+  background: var(--feed-bg);
+}
+
+.feed {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.fp {
+  margin: 0;
+  padding: 11px 12px 12px;
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.fp header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.fp header b {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fp > p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.av {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--c, #8e8e93);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.av-you {
+  background: linear-gradient(160deg, #3aa5ff, #0071e3);
+}
+
+.fp-friend {
+  display: none;
+}
+
+.fp-you {
+  box-shadow: 0 0 0 2px rgb(0 139 255 / 0.55), var(--shadow-soft);
+}
+
+.fp-you img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* In the still list the week leads each post, on its own line. */
+.fp-you header {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+.fp-you header .wk {
+  order: -1;
+  margin: 0 100% 0 0;
+}
+
+.wk {
+  margin-left: auto;
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--fill);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.convo {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.convo-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.convo-head .wk {
+  margin-left: 0;
+}
+
+.bubble {
+  max-width: 86%;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.bubble b {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.bubble-in {
+  align-self: flex-start;
+  background: var(--fill);
+  border-bottom-left-radius: 6px;
+}
+
+.bubble-out {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+/* The feed that scrolls with the page: only where scroll-driven animation works and motion is welcome. */
+@property --week {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@keyframes feed-scroll {
+  to {
+    transform: translateY(calc(-100% + 100cqh));
+  }
+}
+
+@keyframes week-tick {
+  from {
+    --week: 1;
+  }
+  to {
+    --week: 52;
+  }
+}
+
+@keyframes year-fill {
+  from {
+    transform: scaleX(0.03);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+    scale: 0.94;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@supports (animation-timeline: view()) and (container-type: size) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story-run {
+      height: 300svh;
+      view-timeline: --story block;
+      view-timeline-inset: var(--header-h) 0px;
+    }
+
+    .story-copy {
+      position: sticky;
+      top: calc(var(--header-h) + 14vh);
+    }
+
+    .story-phone {
+      position: sticky;
+      top: calc(var(--header-h) + 20px);
+      display: flex;
+      flex-direction: column;
+      height: min(780px, calc(100svh - var(--header-h) - 40px));
+    }
+
+    .story-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .story-bar .switch {
+      display: none;
+    }
+
+    .year {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .week-count {
+      counter-reset: week var(--week);
+      min-width: 4.6em;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      font-variant-numeric: tabular-nums;
+      animation: week-tick linear both;
+      animation-timeline: --story;
+      animation-range: contain 0% contain 80%;
+    }
+
+    .week-count::before {
+      content: "Week " counter(week);
+    }
+
+    .year-line {
+      flex: 1;
+      height: 4px;
+      border-radius: 4px;
+      background: var(--fill);
+      overflow: hidden;
+    }
+
+    .year-line span {
+      display: block;
+      height: 100%;
+      background: var(--brand);
+      transform-origin: left;
+      animation: year-fill linear both;
+      animation-timeline: --story;
+      animation-range: contain 0% contain 80%;
+    }
+
+    .feed-window {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      container-type: size;
+      box-shadow: var(--shadow-screen);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent);
+      mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 18px), transparent);
+    }
+
+    .feed {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px 12px 18px;
+      animation: feed-scroll linear both;
+      animation-timeline: --story;
+      animation-range: contain 0% contain 78%;
+      will-change: transform;
+    }
+
+    .fp-friend {
+      display: block;
+    }
+
+    /* The week is in the counter above the feed; on each post it is only for screen readers. */
+    .fp-you header .wk {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .convo-head .wk {
+      display: none;
+    }
+
+    .bubble-in {
+      animation: bubble-in linear both;
+      animation-timeline: --story;
+      animation-range: contain 80% contain 86%;
+    }
+
+    .bubble-out {
+      animation: bubble-in linear both;
+      animation-timeline: --story;
+      animation-range: contain 88% contain 94%;
+    }
+  }
+}
+
+/* ---------- How it works ---------- */
+
+.how {
+  background: var(--bg-soft);
+}
+
+.how h2 {
+  margin-bottom: 18px;
+}
+
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+  max-width: var(--wrap);
+  margin: 56px auto 0;
+  padding: 0 var(--gutter);
+}
+
+.step .screen {
+  max-width: 300px;
+}
+
+.step-text {
+  max-width: 300px;
+  margin-top: 26px;
+}
+
+.step-n {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.step h3 {
+  margin-bottom: 8px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 56px;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 821px) {
+    .step .screen {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+
+    .step:nth-child(2) .screen {
+      animation-range: entry 8% entry 88%;
+    }
+
+    .step:nth-child(3) .screen {
+      animation-range: entry 16% entry 96%;
+    }
+  }
+}
+
+/* ---------- The details: a bento of real pieces ---------- */
+
+.details h2 {
+  max-width: 17ch;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 16px;
+  margin-top: 44px;
 }
 
 .tile {
-  border-radius: var(--radius);
-  background: var(--card);
-  padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 30px;
+  border-radius: var(--r-lg);
+  background: var(--tile);
+  overflow: hidden;
 }
 
 .tile p {
   margin: 0;
   color: var(--muted);
+  text-wrap: pretty;
 }
 
-.tile-wide {
-  grid-column: 1 / -1;
+.tile-wording {
+  grid-column: span 7;
+}
+
+.tile-reminder {
+  grid-column: span 5;
+}
+
+.tile-name {
+  grid-column: span 5;
+  grid-row: 2;
+}
+
+.tile-versions {
+  grid-column: 6 / span 7;
+  grid-row: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 28px;
-  align-items: center;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 0;
+  padding-right: 0;
 }
 
-.tile-wide .placeholder {
-  border-radius: 12px;
-  aspect-ratio: 4 / 3;
-  width: 100%;
-}
-
-.tile-blue {
-  background: var(--card-blue);
-}
-
-/* The three taps inside the look-over tile */
-
-.taps {
-  margin-top: auto;
-  padding-top: 20px;
+.tile-versions > div {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 30px;
 }
 
-.tap {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1;
+/* The real Post screen's caption cards, running off the tile's corner. */
+.tile .crop {
+  align-self: end;
+  width: 100%;
+  border-radius: 18px 0 0 0;
+  box-shadow: var(--shadow-card);
 }
-
-.tap-primary {
-  background: var(--blue);
-  color: #fff;
-}
-
-/* The wording example inside a tile */
 
 .wording {
-  margin-top: 8px;
-  padding: 14px 16px;
-  border-radius: 12px;
-  background: var(--bg);
-  font-size: 15px;
+  margin-top: auto;
+  padding: 16px 18px;
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  font-size: 16px;
   line-height: 1.5;
   color: var(--text);
+}
+
+.tile .wording {
+  margin-top: 14px;
 }
 
 .wording mark {
@@ -438,153 +1362,267 @@ p {
   color: var(--orange-text);
 }
 
-/* Posting: copy beside a picture */
-
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 48px;
-  align-items: center;
+.notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
 }
 
-.split .placeholder {
-  border-radius: var(--radius);
-  aspect-ratio: 4 / 5;
-  width: 100%;
-  max-width: 420px;
-  justify-self: center;
+.notice img {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
 }
 
-.split p {
-  color: var(--muted);
-  max-width: 48ch;
+.notice div {
+  min-width: 0;
+  flex: 1;
 }
 
-.split h2 + p {
-  margin-top: 16px;
-}
-
-/* An example post, drawn the way the app shows it */
-
-.post {
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--card);
-  width: 100%;
-  max-width: 420px;
-  justify-self: center;
+.tile .notice p {
   margin: 0;
-}
-
-.post-picture {
-  position: relative;
-  aspect-ratio: 4 / 5;
-}
-
-.post-picture .placeholder {
-  position: absolute;
-  inset: 0;
-  align-items: end;
-  padding-bottom: 22px;
-}
-
-.post-picture .hook {
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  top: 22px;
   color: var(--text);
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  max-width: 13ch;
-}
-
-.post-caption {
-  padding: 16px 20px 18px;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
-.post-caption p {
-  margin: 0 0 10px;
-  color: var(--text);
-  max-width: none;
-}
-
-.post-caption .footer-line {
+.tile .notice .notice-top {
+  display: flex;
+  justify-content: space-between;
   color: var(--muted);
   font-size: 13px;
-  margin: 0;
+  margin-bottom: 2px;
 }
 
-/* Teams: what a manager does, as a short list on a card */
-
-.team-card {
-  list-style: none;
-  margin: 0;
-  padding: 6px 28px;
-  border-radius: var(--radius);
-  background: var(--bg);
-  width: 100%;
-  max-width: 420px;
-  justify-self: center;
-}
-
-.team-card li {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.team-card li:last-child {
-  border-bottom: 0;
-}
-
-.team-card strong {
-  display: block;
-  font-size: 17px;
+.notice-top b {
+  color: var(--text);
   font-weight: 600;
 }
 
-.team-card span {
+.tile .notice .notice-title {
+  font-weight: 600;
+}
+
+.tile .nameline {
+  margin-top: 14px;
+  padding: 14px 18px;
+  border-radius: var(--r);
+  background: #101010;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.nameline span {
+  white-space: nowrap;
+}
+
+/* ---------- Teams: the one dark band ---------- */
+
+.teams {
+  position: relative;
+  padding: var(--section) 0;
+  background: var(--band-bg);
+  color: var(--band-text);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.teams::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(50% 420px at 92% 10%, rgb(var(--sky) / 0.22), transparent 70%),
+    radial-gradient(40% 380px at 0% 100%, rgb(var(--peach) / 0.12), transparent 70%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .teams {
+    border-top: 1px solid var(--band-line);
+    border-bottom: 1px solid var(--band-line);
+  }
+}
+
+.teams .kicker {
+  color: #6fbaff;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.teams h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2.3rem, 1.6rem + 2.3vw, 3.4rem);
+}
+
+.teams-copy > p {
+  color: var(--band-muted);
+  font-size: 19px;
+  max-width: 40ch;
+  text-wrap: pretty;
+}
+
+.team-list {
+  list-style: none;
+  margin: 28px 0;
+  padding: 0;
+}
+
+.team-list li {
+  padding: 14px 0;
+  border-top: 1px solid var(--band-line);
+}
+
+.team-list li:last-child {
+  border-bottom: 1px solid var(--band-line);
+}
+
+.team-list strong {
   display: block;
-  margin-top: 2px;
-  color: var(--muted);
+  font-family: var(--font-display);
+  font-weight: 850;
+  font-size: 18px;
+}
+
+.team-list span {
+  display: block;
+  color: var(--band-muted);
   font-size: 15px;
 }
 
-.split .button {
-  margin-top: 8px;
+.teams .teams-note {
+  font-size: 15px;
+  margin-bottom: 26px;
 }
 
-/* Coming soon */
+.teams :focus-visible {
+  outline-color: #6fbaff;
+}
 
-.coming {
+.browser {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f5f5f7;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 38px;
+  padding: 0 14px;
+  background: #e8e8ed;
+  border-bottom: 1px solid #d8d8de;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c4c4ca;
+}
+
+.url {
+  flex: 0 1 300px;
+  margin: 0 auto;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: #fff;
+  color: #55555b;
+  font-size: 12px;
   text-align: center;
-  padding: 88px 0;
 }
 
-.coming h2 {
-  margin-bottom: 14px;
+.browser img {
+  width: 100%;
 }
 
-.coming p {
-  color: var(--muted);
-  max-width: 44ch;
+/* ---------- Close ---------- */
+
+.launch {
+  position: relative;
+  padding: 120px 0 128px;
+  text-align: center;
+  isolation: isolate;
+}
+
+.launch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 420px at 18% 78%, rgb(var(--sky) / calc(var(--wash) * 0.75)), transparent 72%),
+    radial-gradient(60% 420px at 84% 24%, rgb(var(--peach) / calc(var(--wash) * 0.75)), transparent 72%);
+}
+
+.launch-icon {
+  width: 72px;
+  height: 72px;
   margin: 0 auto 28px;
-  font-size: 19px;
+  border-radius: 17px;
+  box-shadow: var(--shadow-card);
 }
 
-/* Inner pages (support, privacy, terms) */
+.launch h2 {
+  max-width: 14ch;
+  margin: 0 auto 20px;
+}
+
+.launch p {
+  max-width: 44ch;
+  margin: 0 auto 30px;
+  font-size: 19px;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---------- Inner pages (support, privacy, terms, 404) ---------- */
+
+body:not(.home) {
+  position: relative;
+  isolation: isolate;
+}
+
+body:not(.home)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 420px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 300px at 8% 0%, rgb(var(--sky) / calc(var(--wash) * 0.7)), transparent 70%),
+    radial-gradient(50% 300px at 96% 10%, rgb(var(--peach) / calc(var(--wash) * 0.7)), transparent 70%);
+}
 
 .page {
-  padding: 56px 0 72px;
+  padding: 64px var(--gutter) 88px;
 }
 
 .page h1 {
-  font-size: 40px;
-  margin-bottom: 16px;
+  font-size: clamp(2.6rem, 1.8rem + 3vw, 3.6rem);
+  line-height: 1;
+  margin-bottom: 18px;
 }
 
 .page .lede {
@@ -594,13 +1632,18 @@ p {
 }
 
 .page h2 {
-  font-size: 24px;
-  margin: 44px 0 10px;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 52px 0 12px;
 }
 
 .page h3 {
+  font-family: var(--font);
   font-size: 18px;
-  margin: 24px 0 6px;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 26px 0 6px;
 }
 
 .page ul,
@@ -618,8 +1661,6 @@ hr {
   border-top: 1px solid var(--line);
   margin: 40px 0;
 }
-
-/* Tables on the privacy page */
 
 table {
   width: 100%;
@@ -649,11 +1690,9 @@ th {
   letter-spacing: 0.04em;
 }
 
-/* Definition-style FAQ */
-
 .faq dt {
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .faq dd {
@@ -661,11 +1700,21 @@ th {
   color: var(--muted);
 }
 
-/* Footer */
+.placeholder-text {
+  color: #c25a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  .placeholder-text {
+    color: #ff9f3d;
+  }
+}
+
+/* ---------- Footer ---------- */
 
 .site-footer {
   border-top: 1px solid var(--line);
-  padding: 32px 0 48px;
+  padding: 36px 0 52px;
   font-size: 14px;
   color: var(--muted);
 }
@@ -690,34 +1739,20 @@ th {
   gap: 18px;
 }
 
-.placeholder-text {
-  color: #c25a00;
-}
-
-@media (prefers-color-scheme: dark) {
-  .placeholder-text {
-    color: #ff9f3d;
-  }
-}
-
-/* Phones and narrow windows */
+/* ---------- Phones and narrow windows ---------- */
 
 @media (max-width: 820px) {
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 30px;
+  :root {
+    --section: 84px;
   }
 
   .hero {
-    padding: 48px 0 56px;
+    padding: 40px 0 64px;
   }
 
   .hero-grid,
-  .split,
-  .tile-wide {
+  .loops-head,
+  .teams-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -725,30 +1760,100 @@ th {
     gap: 40px;
   }
 
-  .hero h1 {
-    max-width: none;
+  .hero-title {
+    max-width: 8ch;
   }
 
-  .phone {
-    width: 240px;
+  .hero-art {
+    justify-self: stretch;
+    max-width: 440px;
   }
 
-  .tiles {
+  .hero-screen {
+    width: 64cqi;
+    margin-right: 4cqi;
+  }
+
+  .hero-post {
+    width: 47cqi;
+    bottom: 7%;
+  }
+
+  .hero-chip {
+    top: 16%;
+    left: 2cqi;
+  }
+
+  .loops-head {
+    margin-bottom: 32px;
+  }
+
+  .story {
+    padding-top: 24px;
+  }
+
+  .story-stage {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .tile-wide .placeholder {
-    order: -1;
+  .story-phone {
+    margin: 0 auto;
   }
 
-  .split .placeholder,
-  .post,
-  .team-card {
-    justify-self: start;
+  /* On a phone the steps are a row that swipes sideways. */
+  .steps {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    padding: 4px var(--gutter) 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: none;
   }
 
-  .section {
-    padding: 56px 0;
+  .steps::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step {
+    flex: 0 0 74%;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+
+  .bento {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tile-wording,
+  .tile-reminder,
+  .tile-name,
+  .tile-versions {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .tile-versions {
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: 0;
+  }
+
+  .tile-versions > div {
+    padding: 0 24px 0 0;
+  }
+
+  .tile .crop {
+    margin-left: 12px;
+    width: calc(100% - 12px);
+  }
+
+  .tile {
+    padding: 24px;
+  }
+
+  .teams-grid {
+    gap: 44px;
   }
 
   .site-footer .wrap {
@@ -756,13 +1861,70 @@ th {
   }
 }
 
+@supports (animation-timeline: view()) and (container-type: size) {
+  @media (prefers-reduced-motion: no-preference) and (max-width: 820px) {
+    /* On a phone the words scroll by first; then the feed holds the screen while the year goes by. */
+    .story-copy {
+      position: static;
+    }
+
+    .story-phone {
+      top: var(--header-h);
+      height: calc(100svh - var(--header-h));
+      padding: 12px 0 14px;
+    }
+
+    .story-bar .switch {
+      display: inline-flex;
+      margin: 0;
+      padding: 3px;
+    }
+
+    .story-bar .switch label {
+      padding: 8px 11px;
+      font-size: 14px;
+    }
+
+    .story-bar .year {
+      flex: 0 1 auto;
+      gap: 8px;
+    }
+
+    .story-bar .year-line {
+      width: 54px;
+      flex: 0 0 auto;
+    }
+
+    .week-count {
+      font-size: 19px;
+      min-width: 4.3em;
+    }
+  }
+}
+
 @media (max-width: 420px) {
-  h1 {
-    font-size: 34px;
+  :root {
+    --gutter: 18px;
   }
 
   .lede {
-    font-size: 19px;
+    font-size: 18px;
+  }
+
+  .hero .lede {
+    margin-bottom: 24px;
+  }
+
+  .cta-row {
+    gap: 12px 16px;
+  }
+
+  .coming-note {
+    font-size: 15px;
+  }
+
+  .hero-teams {
+    font-size: 14px;
   }
 
   .site-nav {
@@ -770,12 +1932,14 @@ th {
     font-size: 14px;
   }
 
-  .tile {
-    padding: 22px;
+  .switch label {
+    padding: 10px 14px;
   }
 
-  .team-card {
-    padding: 4px 22px;
+  .marquee-foot {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
@@ -784,7 +1948,9 @@ th {
     scroll-behavior: auto;
   }
 
-  .button {
+  .button,
+  .pause,
+  .switch label {
     transition: none;
   }
 }

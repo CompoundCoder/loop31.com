@@ -4,12 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loop31</title>
-  <meta name="description" content="Loop31 is an iPhone app that keeps real estate agents and car salespeople top of mind with friends, family, and followers: friendly posts written for their line of work, a one-minute look each week, and about 20 seconds to share each one.">
+  <meta name="description" content="Loop31 for iPhone keeps real estate agents and car salespeople top of mind with friends, family, and followers: friendly posts written for their line of work, a one-minute look each week, and about 20 seconds to share each one.">
+  <link rel="preload" href="fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="site.js" defer></script>
 </head>
-<body>
+<body class="home">
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap">
@@ -22,113 +26,277 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
+  <!-- Hero: the pitch on the left, the real app on the right (under it on a phone). -->
   <section class="hero">
     <div class="wrap hero-grid">
-      <div>
-        <h1>Be the one they think of.</h1>
-        <p class="lede">An iPhone app that keeps real estate agents and car salespeople top of mind with friends, family, and followers.</p>
-        <a class="button" href="mailto:support@loop31.com?subject=Tell%20me%20when%20Loop31%20is%20out">Get launch news</a>
+      <div class="hero-copy">
+        <p class="kicker rise" style="--i:0">Loop31 for iPhone</p>
+        <h1 class="hero-title"><span class="w" style="--i:1">Be</span> <span class="w" style="--i:2">the</span> <span class="w" style="--i:3">one</span> <span class="w" style="--i:4">they</span> <span class="w accent" style="--i:5">think</span> <span class="w accent" style="--i:6">of.</span></h1>
+        <p class="lede rise" style="--i:7">A few friendly posts a week, ready to share from your own Facebook and Instagram. Loop31 keeps real estate agents and car salespeople top of mind with friends, family, and followers.</p>
+        <div class="cta-row rise" style="--i:8">
+          <a class="button" href="mailto:support@loop31.com?subject=Tell%20me%20when%20Loop31%20is%20out">Get launch news</a>
+          <span class="coming-note">Coming to iPhone</span>
+        </div>
+        <p class="hero-teams rise" style="--i:9"><a href="#teams">Buying for a whole brokerage or dealership? <span aria-hidden="true">→</span></a></p>
       </div>
-      <!-- Placeholder: an iPhone screenshot of the Summary tab, 1179x2556. -->
-      <div class="phone" aria-hidden="true">
-        <div class="placeholder"><span>App screenshot</span></div>
+
+      <div class="hero-art">
+        <img class="screen hero-screen" src="img/screen-calendar.webp" width="840" height="1825" fetchpriority="high"
+          alt="Loop31’s Calendar tab, the week of October 12: a client review posted Monday, “3 things to fix before you list” and “Saturday showing marathon” on Thursday, and an open house on Saturday, each with the time you post it. A card says next week is ready for a quick look.">
+        <img class="post-card hero-post" src="img/post-re-tips.webp" width="640" height="800"
+          alt="An example Home Tips post, as the app draws it: water spraying from a brass pipe, the words “A pipe just burst. Where’s your shutoff?”, and “Jess Rivera · Northline Realty · (317) 555-0142” along the bottom.">
+        <p class="chip hero-chip" aria-hidden="true"><svg viewBox="0 0 20 20" width="18" height="18"><circle cx="10" cy="10" r="10" fill="#34c759"/><path d="M5.8 10.4l2.7 2.6 5.7-6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Caption copied</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Ready-made Loops: real posts the app drew, drifting by (still without JavaScript or with Reduce Motion). -->
+  <section class="loops" id="loops" aria-labelledby="loops-title">
+    <div class="wrap loops-head">
+      <div>
+        <p class="kicker">Ready-made Loops</p>
+        <h2 id="loops-title">Helpful, not salesy.</h2>
+      </div>
+      <div class="loops-copy">
+        <p>A home tip. A favorite spot in town. A thank-you from a client. Nothing to sell, and your name under every one. That’s how you stay top of mind.</p>
+        <p class="small">Loop31 starts you with 30 post ideas for real estate or car sales, in six Loops: tips, reviews from people you’ve helped, your town, a look behind the scenes, and more. Fill in the blanks, and each post comes back around on its own, at least eight weeks apart. You can make your own Loops too.</p>
+      </div>
+    </div>
+
+    <div class="marquee" data-marquee>
+      <div class="marquee-track">
+        <ul class="marquee-list" role="list">
+          <li><figure><img src="img/post-re-tips.webp" width="640" height="800" loading="lazy" alt="Home Tips post: “A pipe just burst. Where’s your shutoff?” over water spraying from a brass pipe."><figcaption>Home Tips <span>Real estate</span></figcaption></figure></li>
+          <li><figure><img src="img/post-auto-tips.webp" width="640" height="800" loading="lazy" alt="Car Care Tips post: “Are your tires done? Grab a penny.” over a close-up of tire tread."><figcaption>Car Care Tips <span>Car sales</span></figcaption></figure></li>
+          <li><figure><img src="img/post-re-hood.webp" width="640" height="800" loading="lazy" alt="Around Town post: “My Fishers coffee stop. Change my mind.” over four lattes on a table."><figcaption>Around Town <span>Real estate</span></figcaption></figure></li>
+          <li><figure><img src="img/post-auto-hood.webp" width="640" height="800" loading="lazy" alt="Around Town post: “The drive I’d take this weekend” over a road through orange fall trees."><figcaption>Around Town <span>Car sales</span></figcaption></figure></li>
+          <li><figure><img src="img/post-re-reviews.webp" width="640" height="800" loading="lazy" alt="Client Reviews post: “Keys in hand. Their words, not mine.” over a hand holding house keys."><figcaption>Client Reviews <span>Real estate</span></figcaption></figure></li>
+          <li><figure><img src="img/post-auto-bts.webp" width="640" height="800" loading="lazy" alt="Behind the Scenes post: “Before it hits the lot: the part you never see” over a car being washed with a sponge."><figcaption>Behind the Scenes <span>Car sales</span></figcaption></figure></li>
+          <li><figure><img src="img/post-re-bts.webp" width="640" height="800" loading="lazy" alt="Behind the Scenes post: “The week before ‘Just Listed’” over paint rollers in four colors."><figcaption>Behind the Scenes <span>Real estate</span></figcaption></figure></li>
+          <li><figure><img src="img/post-auto-reviews.webp" width="640" height="800" loading="lazy" alt="Customer Reviews post: “Delivery day. Their words, not mine.” over one hand passing a car key to another."><figcaption>Customer Reviews <span>Car sales</span></figcaption></figure></li>
+          <li><figure><img src="img/post-re-motivation.webp" width="640" height="800" loading="lazy" alt="Motivation post: “Not ten goals this week. Just one.” over a notebook that says To do."><figcaption>Motivation <span>Real estate</span></figcaption></figure></li>
+          <li><figure><img src="img/post-auto-motivation.webp" width="640" height="800" loading="lazy" alt="Motivation post: “What I wish I knew on day one” over sunset through a car windshield."><figcaption>Motivation <span>Car sales</span></figcaption></figure></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap marquee-foot">
+      <button class="pause" type="button" data-marquee-pause hidden>
+        <svg class="i-pause" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+        <svg class="i-play" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 2.6v10.8c0 .8.9 1.3 1.6.8l8.2-5.4c.6-.4.6-1.2 0-1.6L5.6 1.8C4.9 1.3 4 1.8 4 2.6z"/></svg>
+        <span class="label">Pause</span>
+      </button>
+      <p class="small muted">Drawn by the app from its starter ideas, for the made-up agent Jess Rivera and salesperson Jordan Ellis.</p>
+    </div>
+  </section>
+
+  <!-- A year in their feed: the pitch as a short story. The feed scrolls with the page where the browser
+       supports scroll-driven animation and Reduce Motion is off; otherwise it is a still list. The switch is
+       two radio buttons, so it works without JavaScript. -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <input class="ind-input" type="radio" name="industry" id="ind-re" value="re" aria-label="Show the story for real estate" checked>
+    <input class="ind-input" type="radio" name="industry" id="ind-auto" value="auto" aria-label="Show the story for car sales">
+
+    <div class="wrap story-stage">
+      <div class="story-copy">
+        <p class="kicker">A year in their feed</p>
+        <h2 id="story-title"><span class="re-only">Nobody needs a house every week.</span><span class="auto-only">Nobody needs a car every week.</span></h2>
+        <p>When they do, you want to be the first person they think of. Here’s a friend’s feed over a year, with you in it.</p>
+        <div class="switch" aria-hidden="true">
+          <label for="ind-re">Real estate</label>
+          <label for="ind-auto">Car sales</label>
+        </div>
+        <p class="stat re-only"><strong>43%</strong> of home buyers found their agent through a friend, neighbor, or relative.<span class="source">National Association of Realtors, 2025 Profile of Home Buyers and Sellers, as summarized by <a href="https://nowbam.com/how-home-buyers-and-sellers-find-their-agents-in-2025/">BAM</a></span></p>
+      </div>
+
+      <div class="story-run">
+        <div class="story-phone">
+          <div class="story-bar" aria-hidden="true">
+            <div class="switch switch-sm">
+              <label for="ind-re">Real estate</label>
+              <label for="ind-auto">Car sales</label>
+            </div>
+            <div class="year">
+              <span class="week-count"></span>
+              <span class="year-line"><span></span></span>
+            </div>
+          </div>
+
+          <div class="feed-window">
+            <div class="feed">
+              <article class="fp fp-friend">
+                <header><span class="av" aria-hidden="true" style="--c:#c9831f">EM</span><b>Erin M.</b></header>
+                <p>First frost tonight. Bringing the tomatoes in.</p>
+              </article>
+
+              <article class="fp fp-you">
+                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 1</span></header>
+                <img class="re-only" src="img/post-re-tips.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “A pipe just burst. Where’s your shutoff?”">
+                <img class="auto-only" src="img/post-auto-tips.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “Are your tires done? Grab a penny.”">
+              </article>
+
+              <article class="fp fp-friend">
+                <header><span class="av" aria-hidden="true" style="--c:#3f84c9">MT</span><b>Marcus T.</b></header>
+                <p>Happy 40th to my favorite person. Here’s to the next forty.</p>
+              </article>
+
+              <article class="fp fp-you">
+                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 9</span></header>
+                <img class="re-only" src="img/post-re-hood.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “My Fishers coffee stop. Change my mind.”">
+                <img class="auto-only" src="img/post-auto-hood.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “The drive I’d take this weekend”">
+              </article>
+
+              <article class="fp fp-friend">
+                <header><span class="av" aria-hidden="true" style="--c:#2f9a6e">LK</span><b>Lena K.</b></header>
+                <p>The dog has claimed the new couch. We just live here now.</p>
+              </article>
+
+              <article class="fp fp-you">
+                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 26</span></header>
+                <img class="re-only" src="img/post-re-bts.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “The week before ‘Just Listed’”">
+                <img class="auto-only" src="img/post-auto-bts.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “Before it hits the lot: the part you never see”">
+              </article>
+
+              <article class="fp fp-friend">
+                <header><span class="av" aria-hidden="true" style="--c:#c4577a">CO</span><b>Chris O.</b></header>
+                <p>Who has a good pizza place near the lake? Asking for the whole team.</p>
+              </article>
+
+              <article class="fp fp-you">
+                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 40</span></header>
+                <img class="re-only" src="img/post-re-reviews.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “Keys in hand. Their words, not mine.”">
+                <img class="auto-only" src="img/post-auto-reviews.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “Delivery day. Their words, not mine.”">
+              </article>
+
+              <div class="convo">
+                <p class="convo-head"><span class="wk wk-plain">Week 52</span><span class="convo-label">A text from a friend</span></p>
+                <p class="bubble bubble-in"><b>Priya</b><span class="re-only">We’re thinking about selling in the spring. Do you know a good agent?</span><span class="auto-only">Our car won’t make it through another winter. Know anyone at a dealership?</span></p>
+                <p class="bubble bubble-out"><span class="re-only">Jess Rivera! The one with the home tips. I’ll send you the number.</span><span class="auto-only">Jordan Ellis at Fall Creek Auto. The one with the car tips. I’ll send you the number.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works: three real screens. A row that swipes sideways on a phone. -->
+  <section class="how" id="how" aria-labelledby="how-title">
     <div class="wrap">
-      <h2>How it works</h2>
-      <p class="intro">Nobody needs a house or a car every week. When they do, you want to be the first person they think of. Loop31 keeps you there with a few friendly posts a week.</p>
-      <p class="stat"><strong>43%</strong> of home buyers found their agent through a friend, neighbor, or relative.<span class="source">National Association of Realtors, 2025 Profile of Home Buyers and Sellers, as summarized by <a href="https://nowbam.com/how-home-buyers-and-sellers-find-their-agents-in-2025/">BAM</a></span></p>
-
-      <div class="tiles">
-        <div class="tile tile-wide">
-          <div>
-            <h3>Ready-made Loops for your line of work</h3>
-            <p>Loop31 starts you with 30 post ideas for real estate or car sales, in six Loops: tips, reviews from people you've helped, your town, a look behind the scenes, and more. Fill in the blanks, and each post comes back around on its own, at least eight weeks apart. You can make your own Loops too.</p>
-          </div>
-          <!-- Placeholder: a photo of an agent or salesperson at work, 1600x1200. -->
-          <div class="placeholder"><span>Photo</span></div>
+      <p class="kicker">How it works</p>
+      <h2 id="how-title">A minute a week.</h2>
+      <p class="intro">No writing, no design, no scheduling app to learn. Your personal Facebook, Instagram, or TikTok is where friends and family see you, and no app can post there for you. So Loop31 gets each post ready, and you share it.</p>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step">
+        <img class="screen" src="img/screen-summary.webp" width="840" height="1825" loading="lazy"
+          alt="The Summary tab: “7 weeks in a row” with a check for each week, and “Next Week: 4 posts are ready for a quick look” with a Look Over button.">
+        <div class="step-text">
+          <span class="step-n" aria-hidden="true">1</span>
+          <h3>Next week is ready</h3>
+          <p>Once a week, Loop31 picks a few posts from your Loops and fills them in with your details.</p>
         </div>
-
-        <div class="tile tile-blue">
-          <h3>A minute a week</h3>
-          <p>Once a week, next week's posts are ready for a look, one at a time, the way they'll appear. Tap Looks Good, Skip, or Change, and your week is set.</p>
-          <div class="taps" aria-label="The three choices for each post">
-            <span class="tap tap-primary">Looks Good</span>
-            <span class="tap">Skip</span>
-            <span class="tap">Change</span>
-          </div>
+      </li>
+      <li class="step">
+        <img class="screen" src="img/screen-lookover.webp" width="840" height="1825" loading="lazy"
+          alt="The look-over, post 1 of 4: a Client Reviews post for Monday at 8:00 AM, shown the way it will look, with Skip, Edit and Looks Good buttons.">
+        <div class="step-text">
+          <span class="step-n" aria-hidden="true">2</span>
+          <h3>Look it over in a minute</h3>
+          <p>One post at a time, the way it will look. Tap Looks Good, Skip, or Edit. Nothing posts unseen.</p>
         </div>
+      </li>
+      <li class="step">
+        <img class="screen" src="img/screen-handoff.webp" width="840" height="1825" loading="lazy"
+          alt="Post It Yourself for “3 things to fix before you list”: Caption copied and Your brokerage info is added are both checked, with a button to share to the Jess Rivera Homes Facebook Page.">
+        <div class="step-text">
+          <span class="step-n" aria-hidden="true">3</span>
+          <h3>Share in about 20 seconds</h3>
+          <p>Your iPhone reminds you when it’s time. The picture is made and the caption is copied. Tap Share, paste, and post.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
 
-        <div class="tile">
+  <!-- The details: four tiles of the real thing. -->
+  <section class="details" aria-labelledby="details-title">
+    <div class="wrap">
+      <h2 id="details-title">The small things that make it yours.</h2>
+      <div class="bento">
+        <article class="tile tile-wording">
           <h3>A second look before your name goes on it</h3>
           <p>Every caption is checked against the advertising rules for your line of work. The app points the words out. You decide.</p>
-          <div class="wording" aria-label="An example of a highlighted phrase">
+          <div class="wording">
             Sunny two-bedroom near the park, <mark>perfect for a young family</mark>.
             <span class="why">One phrase to look at: it says who the home is for.</span>
           </div>
-        </div>
+        </article>
+
+        <article class="tile tile-reminder">
+          <h3>A reminder when it’s time</h3>
+          <p>An ordinary iPhone notification. Turn it off any time.</p>
+          <div class="notice">
+            <img src="logo.png" alt="" width="38" height="38" loading="lazy">
+            <div>
+              <p class="notice-top"><b>Loop31</b><span>now</span></p>
+              <p class="notice-title">Time to post: 3 things to fix before you list</p>
+              <p class="notice-body">Tap Post now to copy the caption.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile tile-versions">
+          <div>
+            <h3>Another version, if you want one</h3>
+            <p>If you say yes, an outside AI service can write fresh versions of a caption, so a post that comes back around doesn’t read the same. You see every version first, and the app works fully without it.</p>
+          </div>
+          <img class="crop" src="img/crop-versions.webp" width="809" height="441" loading="lazy"
+            alt="The Post screen’s caption cards: “In use now” and “Another version” of the same tip, each marked Ready.">
+        </article>
+
+        <article class="tile tile-name">
+          <h3>Your name on every post</h3>
+          <p>The app adds your name, brokerage or dealership, and phone under every post and along the bottom of every picture.</p>
+          <p class="nameline"><span>Jess Rivera</span> · <span>Northline Realty</span> · <span>(317) 555-0142</span></p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section section-soft">
-    <div class="wrap split">
-      <div>
-        <h2>Share in about 20 seconds</h2>
-        <p>Your personal Facebook, Instagram, or TikTok is where friends and family see you, and no app can post there for you. So Loop31 gets each post ready: the picture is made, the caption is copied, and your iPhone reminds you when it's time. Tap Share, paste, and post.</p>
-        <p>If you say yes, an outside AI service can write fresh versions of a caption, so a post that comes back around doesn't read the same. You see every version first, and the app works fully without it.</p>
-      </div>
-      <!-- Placeholder: a photo of the share step on an iPhone, 1200x1500. -->
-      <div class="placeholder"><span>Photo</span></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap split">
-      <figure class="post">
-        <div class="post-picture">
-          <!-- Placeholder: the person's own photo of a shutoff valve with a bright tag, 1080x1350. -->
-          <div class="placeholder"><span>Your photo</span></div>
-          <strong class="hook">A pipe just burst. Where's your shutoff?</strong>
-        </div>
-        <div class="post-caption">
-          <p>A pipe just burst. Do you know where to turn off the water? Lots of people find out while standing in an inch of it. Mine is in the basement, behind the water heater. Go find yours this weekend and hang a bright tag on it, so anyone at home can shut it off fast.</p>
-          <p class="footer-line">Your name, your brokerage, your phone</p>
-        </div>
-      </figure>
-      <div>
-        <h2>Helpful, not salesy</h2>
-        <p>This post is from the Home Tips Loop for real estate, with its one blank filled in. It doesn't sell anything. It's useful and friendly, and your name is under it. That's how you stay top of mind.</p>
-        <p>The hook goes on the picture, and the caption lands it in the first line. The app adds your name, brokerage, and phone under every post.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-soft" id="teams">
-    <div class="wrap split">
-      <div>
-        <h2>For brokerages and dealerships</h2>
+  <!-- Teams: the one dark band. -->
+  <section class="teams" id="teams" aria-labelledby="teams-title">
+    <div class="wrap teams-grid">
+      <div class="teams-copy">
+        <p class="kicker">Loop31 for teams</p>
+        <h2 id="teams-title">For brokerages and dealerships</h2>
         <p>Give everyone on your team Loop31, so each of them stays top of mind with the people they know.</p>
-        <p>A manager invites each person, gives them a seat, and sees the posts they share from the day they join. Everyone posts from their own accounts, and managers never see drafts, photos, or anything that wasn't posted.</p>
-        <a class="button" href="mailto:support@loop31.com?subject=Loop31%20for%20my%20team">Ask about Teams</a>
+        <ul class="team-list" role="list">
+          <li><strong>Invite with a code</strong><span>Each person joins in the app with a 6-digit code.</span></li>
+          <li><strong>Choose the seats</strong><span>The office pays for the people it picks.</span></li>
+          <li><strong>See what goes out</strong><span>Each person’s Loops and shared posts, from the day they join.</span></li>
+        </ul>
+        <p class="teams-note">Everyone posts from their own accounts, and managers never see drafts, photos, or anything that wasn’t posted.</p>
+        <a class="button button-light" href="mailto:support@loop31.com?subject=Loop31%20for%20my%20team">Ask about Teams</a>
       </div>
-      <ul class="team-card" aria-label="What a manager does">
-        <li><strong>Invite with a code</strong><span>Each person joins in the app with a 6-digit code.</span></li>
-        <li><strong>Choose the seats</strong><span>The office pays for the people it picks.</span></li>
-        <li><strong>See what goes out</strong><span>Each person's Loops and shared posts, from the day they join.</span></li>
-      </ul>
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="url">loop31.com/team</span></div>
+        <picture>
+          <source media="(max-width: 700px)" srcset="img/portal-team-phone.webp" width="640" height="1067">
+          <img src="img/portal-team.webp" width="1200" height="750" loading="lazy"
+            alt="The Loop31 Team page in a web browser, for a sample office, Northline Realty: counts of people on the team, seats, recent posts and open invites, and a list of each person with their seat and last post.">
+        </picture>
+      </figure>
     </div>
   </section>
 
-  <section class="coming">
+  <!-- Close -->
+  <section class="launch" id="launch" aria-labelledby="launch-title">
     <div class="wrap">
-      <h2>Stay top of mind with everyone you know</h2>
-      <p>Loop31 is coming to iPhone, starting with real estate agents in Indiana and car salespeople. It isn't in the App Store yet.</p>
+      <img class="launch-icon" src="apple-touch-icon.png" alt="" width="72" height="72" loading="lazy">
+      <h2 id="launch-title">Stay top of mind with everyone you know.</h2>
+      <p>Loop31 is coming to iPhone, starting with real estate agents in Indiana and car salespeople. It isn’t in the App Store yet.</p>
       <a class="button" href="mailto:support@loop31.com?subject=Tell%20me%20when%20Loop31%20is%20out">Get launch news</a>
     </div>
   </section>
