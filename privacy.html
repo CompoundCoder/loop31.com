@@ -79,6 +79,7 @@
   <ul>
     <li><strong>Results of the rule checks:</strong> which rule fired, the highlighted words, and the rule's basis.</li>
     <li><strong>Wording the outside AI pointed out</strong> (Real Estate, only if writing help is on): the phrase, a one-sentence reason, and which model said so.</li>
+    <li><strong>A record for each post you share:</strong> which checks ran and what they flagged, as each check's name and level, never the words.</li>
   </ul>
 
   <h3>Keeping the service running</h3>
@@ -98,6 +99,16 @@
     <li><strong>We never keep the pages.</strong> Our server reads up to 10 pages of that one site, sends their words to OpenAI to write the suggestions (see "Who we share it with"), and keeps only a fingerprint of each page so it can tell next month whether it changed.</li>
     <li><strong>About once a month</strong> the server reads the site again, and the app asks you about anything new or changed. Turn this off, or remove your website, in Profile.</li>
     <li>It reads only the site you gave, never other sites, and skips any page the site asks bots to stay out of.</li>
+  </ul>
+
+  <h3>Cars from a dealership's website</h3>
+  <p>When a dealership's manager connects the dealership's website to its Loop31 team, they confirm that the dealership owns the site and the photos on it and that its salespeople may use them. Each night Loop31's server reads that site's robots.txt, its sitemap and its vehicle pages, as the robot <code>Loop31Bot</code>, honouring robots.txt, one page at a time. From each vehicle page it keeps only the car's published details (VIN, year, make, model, trim, mileage, condition, the price shown, the page's address and up to three photos) and never the page's text. It sends new VINs to NHTSA's free VIN decoder to confirm the year, make and model. It keeps copies of the car photos, with their metadata removed, for the dealership and for the salesperson a car goes to. <strong>No customer's information is ever read or kept:</strong> only the cars the dealership itself publishes. A manager can remove the website at any time in the team's Settings, and nothing more is read.</p>
+
+  <h3>If you're on a team</h3>
+  <p>If a brokerage or dealership gives you a seat, its managers see what the app showed you before you joined: your name, that your seat is paid, which Loops are on, and the posts that go out from the day you joined, with their dates and captions. They never see your drafts, photos, listings, vehicles, or anything you haven't posted.</p>
+  <ul>
+    <li><strong>The check record:</strong> for each post you share, managers see which checks ran and what they flagged, as the check's name and level, never the words.</li>
+    <li><strong>The Monday email:</strong> a team's owner and admins get an email each Monday with last week's numbers, unless they turn it off. It has the team's name and the names of the people on it with their counts, never captions or photos. See Resend under "Who we share it with".</li>
   </ul>
 
   <h3>When we help you</h3>
@@ -132,8 +143,8 @@
       <td>Free photos for the "Other" line of work, only when you search for one. The words you search and the page number go to Pixabay through our server, never anything about you; we keep each search's results for 24 hours without saying whose search it was, as Pixabay asks. The pictures in the results, and the photo you use, load from Pixabay onto your phone, so Pixabay sees your phone's IP address. A photo you use becomes your own copy in our storage. Privacy policy: <a href="https://pixabay.com/service/privacy/">pixabay.com/service/privacy</a></td>
     </tr>
     <tr>
-      <td>The email service that delivers your sign-in code</td>
-      <td>Your email address and the 6-digit code, each time you sign in. Nothing else.</td>
+      <td>Resend</td>
+      <td>Delivers our email. <strong>Sign-in codes:</strong> your email address and the 6-digit code, each time you sign in. <strong>The Monday team email:</strong> if you own or help run a team and haven't turned it off, your email address, your team's name, and the names of the people on it with their counts for the week; never captions or photos. Each one has a one-click unsubscribe. Privacy policy: <a href="https://resend.com/legal/privacy-policy">resend.com/legal/privacy-policy</a></td>
     </tr>
     <tr>
       <td>Apple</td>
