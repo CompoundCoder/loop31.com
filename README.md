@@ -1,6 +1,6 @@
 # loop31.com
 
-The public website for Loop31, by Compound Coder LLC. Plain HTML and one stylesheet. No framework, no build step, no JavaScript, no outside requests (no fonts, no analytics, no tracking).
+The public website for Loop31, by Compound Coder LLC. Plain HTML, one stylesheet and one small, optional script. No framework, no build step, no outside requests: the font and every image are served from this site, and there are no analytics and no tracking.
 
 ## Files
 
@@ -10,16 +10,65 @@ The public website for Loop31, by Compound Coder LLC. Plain HTML and one stylesh
 | `privacy.html` | The privacy policy (the page the App Store and Meta require) |
 | `terms.html` | Terms of use |
 | `support.html` | How to get help, and a short FAQ |
-| `404.html` | Shown by GitHub Pages for any missing page |
-| `style.css` | The one stylesheet (light and dark, phone width first) |
+| `404.html` | Shown by GitHub Pages for any missing page, at any depth (its links start with `/` for that reason) |
+| `style.css` | The one stylesheet (light and dark, phone width first, all the motion) |
+| `site.js` | The one script, optional (see below) |
+| `fonts/nunito-latin-var.woff2`, `fonts/OFL.txt` | Nunito, for headlines and the wordmark, with its license |
+| `img/` | The app screens and example posts, named by what they show (see Images) |
+| `tools/` | Two scripts that make the images in `img/`. Not linked from any page |
 | `favicon.png`, `apple-touch-icon.png`, `logo.png` | The app icon, resized from `docs/brand/generated/icon-1024.png` in the app repo |
 | `CNAME` | `loop31.com`, which tells GitHub Pages the custom domain |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 | `robots.txt`, `sitemap.txt` | Allow all crawlers; list the four pages |
 
-The home page carries four photo placeholders (gray blocks with a dashed label; each has an HTML comment naming the shot and its size): the hero's iPhone screenshot, a photo of an agent or salesperson at work, the share step on an iPhone, and the example post's own photo. Replace each `<div class="placeholder">` with an `<img>` of the same aspect ratio when the pictures exist.
+## The look
 
-The look is Apple-native: system font, one blue accent (`#008bff`), 18px corners on surfaces, pill buttons, a translucent sticky header, light and dark from the system setting. No animation beyond a press on the button.
+The app's own look, a little warmer: the system font for reading, **Nunito** big and heavy for headlines and the wordmark (the free twin of the logo's SF Pro Rounded, per `docs/brand/BRAND.md` in the app repo; Trevor approved it 2026-10-22), the app's blue (`#008bff`, a step deeper for big words on a wash), the app's peach-and-sky washes with a little grain, real screens shown without a phone around them (rounded corners and a soft shadow), one dark band (Teams), light and dark from the system setting.
+
+Apple's and Meta's rules the page keeps: no drawn, tilted or 3D iPhones, only the app's real screens with a full status bar; "Loop31 for iPhone" and "Coming to iPhone", no App Store badge until the app is in the store; the feed in the story is generic, with no Facebook or Instagram styling or logos.
+
+## Motion, and what happens without it
+
+| What moves | How | With Reduce Motion | Without JavaScript |
+|---|---|---|---|
+| The hero, once on load: the words rise in, the screen settles, the post lands (under a second) | CSS | A short fade | The same (it is CSS) |
+| The row of example posts drifts sideways, with a Pause button | CSS, started by `site.js` | Still; swipe or scroll it sideways; no button | Still; swipe or scroll it sideways |
+| "A year in their feed": the friend's feed scrolls with the page, a week counter runs 1 to 52, then the text arrives | CSS scroll-driven animation (`animation-timeline`), no script | A still list: the four posts with their weeks, then the text | The same (it is CSS) |
+| The Real Estate / Car Sales switch | Two radio buttons and CSS `:has()` | The same | The same |
+| The three How It Works screens rise in as they scroll into view (computer width only) | CSS scroll-driven animation | Still | The same (it is CSS) |
+| Page to page | A cross-fade (`@view-transition`) | None | The same |
+
+Browsers without scroll-driven animation (Firefox today, Safari before 26) get the still versions. `site.js` (about 1.4 KB) does three things only: it copies the row of posts once so the drift loops, shows its Pause button (anything that moves by itself for more than 5 seconds needs one, WCAG 2.2.2), and stops the drift while the row is off screen.
+
+## Images
+
+Every image is in `img/`, named by what it shows, so a new picture is a new file under the same name.
+
+| File | What it is | Where it came from |
+|---|---|---|
+| `screen-calendar.webp` | Hero: the Calendar tab | iPhone 17 Pro Max simulator, sample account, 2026-10-22 (`site-shots/calendar.png`) |
+| `screen-summary.webp` | Step 1: the Summary tab | Same (`site-shots/-tabs-.png`) |
+| `screen-lookover.webp` | Step 2: the look-over | Same (`site-shots/review.png`) |
+| `screen-handoff.webp` | Step 3: Post It Yourself | Same (`site-shots/more/handoff-w1.png`) |
+| `crop-versions.webp` | The Write Another Version tile: the Post screen's caption cards | Same (`site-shots/more/post-p1.png`, cropped) |
+| `portal-team.webp`, `portal-team-phone.webp` | Teams: the team portal's Team page, computer and phone | The portal's sample mode, 2026-10-22 (`portal-shots/after/team-1440-light.png`, `team-390-light.png`) |
+| `post-re-*.webp`, `post-auto-*.webp` | The ten example posts (Home Tips, Client Reviews, Around Town, Behind the Scenes, Motivation; Car Care Tips, Customer Reviews and the rest for car sales) | Drawn by the app's own graphics code from each starter Loop's first idea, over its bundled example photo |
+
+**Making them again.** With Homebrew's Node 24 and Google Chrome:
+
+- `node tools/render-posts.mjs [~/code/loop31]` draws the ten posts exactly as setup step 5 does (the `tip` template, the hook on the photo, the sample person's line along the bottom) and writes `img/post-*.webp`. It only reads the app repo. Market Updates is left out on purpose: its hook is a real county number.
+- `python3 -I tools/make-screens.py <shots-folder> [<portal-shots-folder>]` turns 1320 × 2868 simulator screenshots into the `screen-*.webp` files. It paints over the Dynamic Island (the page shows the screen, not a phone) and draws full signal bars where the simulator shows "no service". The names it reads are in its `ROLES` table.
+
+**Still to replace after the reshoot.** The screens are from the 2026-10-22 sample account: the look-over's first card and the hand-off show a plain color backdrop instead of a photo, the Calendar shows Loop icons instead of photos, every screen is Real Estate, and the battery outline still has the simulator's charging tint. The reminder tile is drawn in HTML from the app's own wording until there is a Lock Screen shot (`screen-reminder.webp` would replace it).
+
+## Credits
+
+- **Photos in the example posts:** from Unsplash, under the Unsplash License (no credit required; we credit anyway). The same files the app bundles, listed in the app repo's `apps/mobile/assets/examples/CREDITS.md`:
+  - Home Tips, water shutoff: Elimende Inagella. Client Reviews, keys: Jakub Żerdzicki. Around Town, coffee: Nathan Dumlao. Behind the Scenes, paint rollers: David Pisnoy. Motivation, notebook: Volodymyr Hryshchenko.
+  - Car Care Tips, tire tread: Marvin Sagisi. Customer Reviews, car key: yahdi yasya. Around Town, fall road: Dave Hoefler. Behind the Scenes, car wash: Nik. Motivation, windshield sunset: Ray Zhou.
+- **Nunito** (headlines, wordmark): The Nunito Project Authors, SIL Open Font License 1.1, `fonts/OFL.txt`.
+- **Inter** (the words drawn on the example posts, as in the app): Rasmus Andersson, SIL Open Font License 1.1. The license covers the font files, not pictures made with them; no font file of Inter is served here.
+- The people in the examples (Jess Rivera, Jordan Ellis, Northline Realty, Fall Creek Auto, the friends in the feed) are made up, with 555 phone numbers.
 
 ## Publishing with GitHub Pages
 
@@ -49,7 +98,7 @@ GitHub's own guide, in case the IPs change: https://docs.github.com/en/pages/con
 
 ## Checking a change locally
 
-Open any `.html` file in a browser, or from this folder run `python3 -m http.server 8000` and visit http://localhost:8000. The pages must work at phone width with no sideways scrolling, in light and dark mode.
+From this folder run `python3 -m http.server 8000` and visit http://localhost:8000 (opening the file directly also works, but the 404 page's links start with `/`). The pages must work at phone width (390 px) and computer width (1280 px) with no sideways scrolling, in light and dark mode, and the home page must read fully with Reduce Motion on and with JavaScript off (Chrome's DevTools can turn on both: Rendering → "prefers-reduced-motion", and Settings → Debugger → "Disable JavaScript").
 
 ## Rules for the copy
 
