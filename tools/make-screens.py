@@ -24,11 +24,8 @@ OUT = SITE / "img"
 # role: (file in the shots folder, crop box at full size or None)
 ROLES = {
     "screen-calendar": ("calendar.png", None),
-    "screen-summary": ("-tabs-.png", None),
     "screen-lookover": ("review.png", None),
     "screen-handoff": ("more/handoff-w1.png", None),
-    # The caption cards on the Post screen ("In use now" and "Another version").
-    "crop-versions": ("more/post-p1.png", (24, 2152, 1296, 2846)),
 }
 # role: (file in the portal shots folder, crop box or None, width)
 PORTAL = {

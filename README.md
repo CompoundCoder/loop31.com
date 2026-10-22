@@ -23,7 +23,9 @@ The public website for Loop31, by Compound Coder LLC. Plain HTML, one stylesheet
 
 ## The look
 
-The app's own look, a little warmer: the system font for reading, **Nunito** big and heavy for headlines and the wordmark (the free twin of the logo's SF Pro Rounded, per `docs/brand/BRAND.md` in the app repo; Trevor approved it 2026-10-22), the app's blue (`#008bff`, a step deeper for big words on a wash), the app's peach-and-sky washes with a little grain, real screens shown without a phone around them (rounded corners and a soft shadow), one dark band (Teams), light and dark from the system setting.
+The app's own look, a little warmer: the system font for reading, **Nunito** big and heavy for headlines and the wordmark (the free twin of the logo's SF Pro Rounded, per `docs/brand/BRAND.md` in the app repo; Trevor approved it 2026-10-22), the app's blue (`#008bff`) for buttons and links, the app's peach-and-sky wash behind the hero only, real screens shown without a phone around them (rounded corners and a soft shadow), one flat dark band (Teams), light and dark from the system setting.
+
+What it avoids on purpose, because it reads as a stock AI template (Trevor and the PM, 2026-10-22): small colored labels above every heading, a grid of feature cards, floating chips and pulsing dots, glows and gradient corners on the dark band, a fake browser frame around a screenshot, a brand-colored tail on the headline, and copy built from "X, not Y", triple negatives and three-fragment lists. Sections vary in shape instead: the posts lead their section, How It Works is one sentence and two screens, and the details are one real post with its parts pointed out.
 
 Apple's and Meta's rules the page keeps: no drawn, tilted or 3D iPhones, only the app's real screens with a full status bar; "Loop31 for iPhone" and "Coming to iPhone", no App Store badge until the app is in the store; the feed in the story is generic, with no Facebook or Instagram styling or logos.
 
@@ -35,7 +37,7 @@ Apple's and Meta's rules the page keeps: no drawn, tilted or 3D iPhones, only th
 | The row of example posts drifts sideways, with a Pause button | CSS, started by `site.js` | Still; swipe or scroll it sideways; no button | Still; swipe or scroll it sideways |
 | "A year in their feed": the friend's feed scrolls with the page, a week counter runs 1 to 52, then the text arrives | CSS scroll-driven animation (`animation-timeline`), no script | A still list: the four posts with their weeks, then the text | The same (it is CSS) |
 | The Real Estate / Car Sales switch | Two radio buttons and CSS `:has()` | The same | The same |
-| The three How It Works screens rise in as they scroll into view (computer width only) | CSS scroll-driven animation | Still | The same (it is CSS) |
+| The two How It Works screens rise in as they scroll into view (computer width only) | CSS scroll-driven animation | Still | The same (it is CSS) |
 | Page to page | A cross-fade (`@view-transition`) | None | The same |
 
 Browsers without scroll-driven animation (Firefox today, Safari before 26) get the still versions. `site.js` (about 1.4 KB) does three things only: it copies the row of posts once so the drift loops, shows its Pause button (anything that moves by itself for more than 5 seconds needs one, WCAG 2.2.2), and stops the drift while the row is off screen.
@@ -47,19 +49,17 @@ Every image is in `img/`, named by what it shows, so a new picture is a new file
 | File | What it is | Where it came from |
 |---|---|---|
 | `screen-calendar.webp` | Hero: the Calendar tab | iPhone 17 Pro Max simulator, sample account, 2026-10-22 (`site-shots/calendar.png`) |
-| `screen-summary.webp` | Step 1: the Summary tab | Same (`site-shots/-tabs-.png`) |
-| `screen-lookover.webp` | Step 2: the look-over | Same (`site-shots/review.png`) |
-| `screen-handoff.webp` | Step 3: Post It Yourself | Same (`site-shots/more/handoff-w1.png`) |
-| `crop-versions.webp` | The Write Another Version tile: the Post screen's caption cards | Same (`site-shots/more/post-p1.png`, cropped) |
+| `screen-lookover.webp` | How It Works: the look-over | Same (`site-shots/review.png`) |
+| `screen-handoff.webp` | How It Works: Post It Yourself | Same (`site-shots/more/handoff-w1.png`) |
 | `portal-team.webp`, `portal-team-phone.webp` | Teams: the team portal's Team page, computer and phone | The portal's sample mode, 2026-10-22 (`portal-shots/after/team-1440-light.png`, `team-390-light.png`) |
-| `post-re-*.webp`, `post-auto-*.webp` | The ten example posts (Home Tips, Client Reviews, Around Town, Behind the Scenes, Motivation; Car Care Tips, Customer Reviews and the rest for car sales) | Drawn by the app's own graphics code from each starter Loop's first idea, over its bundled example photo |
+| `post-re-*.webp`, `post-auto-*.webp` | The ten example posts (Home Tips, Client Reviews, Around Town, Behind the Scenes, Motivation; Car Care Tips, Customer Reviews and the rest for car sales). `post-re-tips.webp` is also the hero's post and the post with its parts pointed out | Drawn by the app's own graphics code from each starter Loop's first idea, over its bundled example photo |
 
 **Making them again.** With Homebrew's Node 24 and Google Chrome:
 
 - `node tools/render-posts.mjs [~/code/loop31]` draws the ten posts exactly as setup step 5 does (the `tip` template, the hook on the photo, the sample person's line along the bottom) and writes `img/post-*.webp`. It only reads the app repo. Market Updates is left out on purpose: its hook is a real county number.
 - `python3 -I tools/make-screens.py <shots-folder> [<portal-shots-folder>]` turns 1320 × 2868 simulator screenshots into the `screen-*.webp` files. It paints over the Dynamic Island (the page shows the screen, not a phone) and draws full signal bars where the simulator shows "no service". The names it reads are in its `ROLES` table.
 
-**Still to replace after the reshoot.** The screens are from the 2026-10-22 sample account: the look-over's first card and the hand-off show a plain color backdrop instead of a photo, the Calendar shows Loop icons instead of photos, every screen is Real Estate, and the battery outline still has the simulator's charging tint. The reminder tile is drawn in HTML from the app's own wording until there is a Lock Screen shot (`screen-reminder.webp` would replace it).
+**Still to replace after the reshoot.** The screens are from the 2026-10-22 sample account: the look-over's first card and the hand-off show a plain color backdrop instead of a photo, the Calendar shows Loop icons instead of photos, every screen is Real Estate, and the battery outline still has the simulator's charging tint. The reminder beside the annotated post is drawn in HTML from the app's own wording until there is a Lock Screen shot.
 
 ## Credits
 
