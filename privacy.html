@@ -26,7 +26,7 @@
 
   <h1>Privacy policy</h1>
 
-  <p class="muted">Last updated October 21, 2026</p>
+  <p class="muted">Last updated October 22, 2026</p>
 
   <p class="lede">This page says what the Loop31 app collects, why, where it is kept, who sees it, and how to delete it. It is written for the people who use the app, not for lawyers. If anything is unclear, write to <a href="mailto:support@loop31.com">support@loop31.com</a>.</p>
 
@@ -86,8 +86,20 @@
     <li><strong>Two timings</strong> for measuring whether the app is quick enough: how long setup took, and how long sharing a post took. There is no analytics or crash-reporting vendor in the app.</li>
   </ul>
 
-  <h3>If you pick "Something else" at setup</h3>
-  <p>If your line of work isn't one the app supports yet, you can leave your email and what you do. We use them for one thing: to tell you when it is ready, and to decide which line of work to build next.</p>
+  <h3>If you pick "Other" at setup</h3>
+  <p>If you sell something other than homes or cars, setup asks what you sell. We keep your answer with your account, to show which line of work should get ready-made posts next.</p>
+
+  <h3>Your website, if you give it to us</h3>
+  <p>With "Other", you can give us your business's website (or type a few sentences about your business instead) so the app can suggest post ideas. First you confirm that it is your business's site and that you have the right to use what it says. Then:</p>
+  <ul>
+    <li><strong>We keep:</strong> the address, when you agreed and to which wording, whether the monthly re-read is on, and the ideas, facts and Loops the app suggested and you kept or fixed. What you typed about your business is kept so it can be used again.</li>
+    <li><strong>We never keep the pages.</strong> Our server reads up to 10 pages of that one site, sends their words to OpenAI to write the suggestions (see "Who we share it with"), and keeps only a fingerprint of each page so it can tell next month whether it changed.</li>
+    <li><strong>About once a month</strong> the server reads the site again, and the app asks you about anything new or changed. Turn this off, or remove your website, in Profile.</li>
+    <li>It reads only the site you gave, never other sites, and skips any page the site asks bots to stay out of.</li>
+  </ul>
+
+  <h3>When we help you</h3>
+  <p>A few Loop31 staff can look up an account by its exact email address to help with support, billing or a deletion request. They see counts, dates, your plan, your team, and your writing-help answer; never your name, captions or photos. Every lookup is recorded.</p>
 
   <h2 id="where">Where it is kept</h2>
 
@@ -107,11 +119,15 @@
     </tr>
     <tr>
       <td>OpenAI</td>
-      <td>Writes fresh versions of a caption, <strong>only if you said yes to writing help in the app</strong>, and only when you ask for another version. It receives the caption, the words in it that must stay exact, your line of work, and the tone you picked. It never receives your name, email, phone, the line under your posts, a photo, a client review, the area you serve, or any account ID. We send each request with storage turned off, so OpenAI keeps no copy of the result; its safety logs may hold the text for up to 30 days. OpenAI does not train its models on it. Privacy policy: <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a></td>
+      <td>Writes fresh versions of a caption, <strong>only if you said yes to writing help in the app</strong>, and only when you ask for another version (on a post, or on a caption you typed yourself). It receives the caption, the words in it that must stay exact, your line of work, and the tone you picked. It never receives your name, email, phone, the line under your posts, a photo, a client review, the area you serve, or any account ID. If you give us your website ("Other"), it also receives the words of the pages we read, or what you typed about your business, and the facts you confirmed, to suggest ideas; never your name, email, phone or account ID. We send each request with storage turned off, so OpenAI keeps no copy of the result; its safety logs may hold the text for up to 30 days. OpenAI does not train its models on it. Privacy policy: <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a></td>
     </tr>
     <tr>
       <td>Anthropic</td>
       <td>Gives a second look at the wording of real estate captions for phrases that might raise fair housing questions, <strong>only if you said yes to writing help in the app</strong>, and only for the Real Estate line of work. It receives the caption text and nothing else: never your name, phone, the line under your posts, the name line of a client review, a photo, or any account ID. What comes back is a pointer for you to look at; it never decides anything. Anthropic does not train its models on it. Privacy policy: <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td>Pixabay</td>
+      <td>Free photos for the "Other" line of work, only when you search for one. The words you search and the page number go to Pixabay through our server, never anything about you; we keep each search's results for 24 hours without saying whose search it was, as Pixabay asks. The pictures in the results, and the photo you use, load from Pixabay onto your phone, so Pixabay sees your phone's IP address. A photo you use becomes your own copy in our storage. Privacy policy: <a href="https://pixabay.com/service/privacy/">pixabay.com/service/privacy</a></td>
     </tr>
     <tr>
       <td>The email service that delivers your sign-in code</td>
@@ -170,13 +186,14 @@
     <tr><td>The ready-to-share files for a post, on your phone and on our server</td><td>30 days after the post went out or was skipped</td></tr>
     <tr><td>Client reviews</td><td>Stop showing in posts after two years (you can change this); stored until you delete them or your account</td></tr>
     <tr><td>Server logs and error reports</td><td>30 days</td></tr>
-    <tr><td>"Something else" answers</td><td>Until we tell you your line of work is ready, or you ask, or 24 months at most</td></tr>
+    <tr><td>Your website's address and the ideas you kept from it</td><td>You remove your website (the ideas you kept stay as your own until you delete them), or you delete your account</td></tr>
+    <tr><td>Photo searches</td><td>24 hours, with no record of who searched; the count of your searches for the day, until the day ends</td></tr>
     <tr><td>Backups, if turned on</td><td>30 days</td></tr>
   </table>
 
   <h2 id="delete">Deleting your account</h2>
 
-  <p>In the app, open <strong>Profile</strong> and tap <strong>Delete Account</strong>. The app lists what will be removed. When you confirm, everything goes: your profile and business details, your Loops and posts, every photo and video in our storage, your schedule, approvals and history, the check results, your writing-help record, any "Something else" answer matched to your email, and your sign-in itself. Any connected account's tokens are removed and, where Meta allows it, revoked. The last thing deleted is your sign-in, so a step that fails can be tried again while you are still signed in.</p>
+  <p>In the app, open <strong>Profile</strong> and tap <strong>Delete Account</strong>. The app lists what will be removed. When you confirm, everything goes: your profile and business details, your Loops and posts, every photo and video in our storage, your schedule, approvals and history, the check results, your writing-help record, your website's address and the ideas from it, and your sign-in itself. Any connected account's tokens are removed and, where Meta allows it, revoked. The last thing deleted is your sign-in, so a step that fails can be tried again while you are still signed in.</p>
 
   <p>What stays: the pictures the app saved to your Photos (the app can add to Photos but cannot delete from it; remove them yourself if you like), and any post already published to your own accounts. Backups roll off within 30 days. The companies in "Who we share it with" follow their own retention; for OpenAI that is up to 30 days of safety logs.</p>
 
@@ -190,7 +207,6 @@
     <li><strong>Posted for you</strong>, described above, which adds Meta and the connected-account tokens.</li>
     <li><strong>Paid plans</strong> through the App Store. Apple handles billing and we never see card details; a subscription service would hold your user ID and purchase receipts.</li>
     <li><strong>Lock Screen updates</strong> for the look-over, which use an Apple push token.</li>
-    <li><strong>Stock photos</strong> as backgrounds for text posts, loaded by your phone from Unsplash, which would then see your phone's IP address and which photo was requested.</li>
     <li><strong>Listing and vehicle lookups</strong>: an address sent to a property-data service to check a listing is yours, and a VIN sent to the US government's free vehicle decoder.</li>
   </ul>
 
