@@ -1108,7 +1108,7 @@ body:not(.home) {
       font-variant-numeric: tabular-nums;
       animation: week-tick linear both;
       animation-timeline: --story;
-      animation-range: contain 0% contain 80%;
+      animation-range: contain 0% contain 76%;
     }
 
     .week-count::before {
@@ -1130,7 +1130,7 @@ body:not(.home) {
       transform-origin: left;
       animation: year-fill linear both;
       animation-timeline: --story;
-      animation-range: contain 0% contain 80%;
+      animation-range: contain 0% contain 76%;
     }
 
     .feed-window {
@@ -1151,7 +1151,7 @@ body:not(.home) {
       padding: 14px 12px 18px;
       animation: feed-scroll linear both;
       animation-timeline: --story;
-      animation-range: contain 0% contain 78%;
+      animation-range: contain 0% contain 74%;
       will-change: transform;
     }
 
@@ -1176,13 +1176,13 @@ body:not(.home) {
     .bubble-in {
       animation: bubble-in linear both;
       animation-timeline: --story;
-      animation-range: contain 80% contain 86%;
+      animation-range: contain 76% contain 82%;
     }
 
     .bubble-out {
       animation: bubble-in linear both;
       animation-timeline: --story;
-      animation-range: contain 88% contain 94%;
+      animation-range: contain 84% contain 90%;
     }
   }
 }
@@ -1737,6 +1737,27 @@ th {
 .site-footer nav {
   display: flex;
   gap: 18px;
+}
+
+@media (min-width: 821px) {
+  .bubble {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .tile-versions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tile-versions > div {
+    padding: 0 30px 0 0;
+  }
+
+  .tile .crop {
+    margin-left: 12px;
+    width: calc(100% - 12px);
+  }
 }
 
 /* ---------- Phones and narrow windows ---------- */
