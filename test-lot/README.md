@@ -11,15 +11,19 @@ were checked against vPIC on 2026-10-23.
 
 | # | Car | VIN | In `vehicles.xml` |
 |---|---|---|---|
-| 1 | 2019 Honda Civic LX | 2HGFC2F59KH571230 | yes |
+| 1 | 2019 Honda Civic Type R Touring | SHHFK8G79KU204417 | yes |
 | 2 | 2020 Toyota RAV4 XLE | 2T3W1RFVXLC054812 | yes |
 | 3 | 2018 Ford F-150 XLT | 1FTEW1EP4JFC31840 | yes |
-| 4 | 2021 Chevrolet Equinox LT | 2GNAXKEV2M6128874 | yes |
-| 5 | 2017 Jeep Grand Cherokee Laredo | 1C4RJFAG2HC735219 | **not yet** (step 2) |
+| 4 | 2018 Toyota Tacoma TRD Off-Road | 3TMCZ5AN2JM143122 | yes |
+| 5 | 2019 Jeep Wrangler Unlimited Rubicon | 1C4HJXFG1KW528806 | **not yet** (step 2) |
 
 Each page carries schema.org `Car` JSON-LD: the VIN, make, model, year, trim, miles, color, a stock number, the price
-in one offer and a sample monthly payment in another (`unitCode` `MON`). The payment is there on purpose: Loop31 must
-never put a price or a payment in a post.
+in one offer and a sample monthly payment in another (`unitCode` `MON`), and two photos (`img/<VIN>-1.jpg`, `-2.jpg`).
+The payment is there on purpose: Loop31 must never put a price or a payment in a post.
+
+The photos are free Unsplash photos (the Unsplash License; each page links them), downloaded once, shrunk to at most
+1600 px and 300 KB, metadata dropped. They show the right model, not these exact cars: the RAV4's two are different
+colors (blue, then silver; no second blue one was free), the F-150's are two different black trucks.
 
 ## Testing it
 
@@ -29,7 +33,7 @@ never put a price or a payment in a post.
 2. **A new car arrives.** Add car 5's line to `vehicles.xml` (and, if you like, a link on `index.html`), push, wait
    for GitHub Pages, then Read It Now. Car 5 is offered to one seated salesperson, who claims it or passes it on.
    ```xml
-   <url><loc>https://loop31.com/test-lot/used-2017-jeep-grand-cherokee-1C4RJFAG2HC735219.html</loc></url>
+   <url><loc>https://loop31.com/test-lot/used-2019-jeep-wrangler-1C4HJXFG1KW528806.html</loc></url>
    ```
 3. **A car leaves.** Take one car's line out of `vehicles.xml` and push. One read without it marks it missing;
    a second good read at least 20 hours later marks it gone (its posts not yet out are paused and the app asks
