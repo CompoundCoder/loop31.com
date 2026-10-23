@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://loop31.com/sitemap.txt
+# The Loop31 Test Lot (not a dealership; see test-lot/README.md): the vehicle sitemap Loop31's own dealer reader is tested on.
+Sitemap: https://loop31.com/test-lot/vehicles.xml
