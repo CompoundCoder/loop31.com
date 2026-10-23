@@ -1,7 +1,10 @@
 https://loop31.com/
 https://loop31.com/teams/
-https://loop31.com/teams/brokerages/
 https://loop31.com/teams/dealerships/
+https://loop31.com/teams/brokerages/
+https://loop31.com/pilot/
+https://loop31.com/security/
+https://loop31.com/for-salespeople/
 https://loop31.com/privacy.html
 https://loop31.com/terms.html
 https://loop31.com/support.html

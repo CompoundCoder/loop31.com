@@ -4,24 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loop31 for dealerships</title>
-  <meta name="description" content="Loop31 gives each salesperson a few friendly posts a week for their own Facebook and Instagram, with your dealership's name on every one and no payments. You see who's sharing. $10 a salesperson a month, month to month; book a 15-minute demo or start a free 30-day pilot.">
+  <meta name="description" content="Loop31 gives each salesperson a few ready posts a week for their own Facebook and Instagram, with your dealership's name on every one and no prices or payments, and shows you who posted. $10 a salesperson a month, month to month, with a free 30-day pilot.">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="/site.js" defer></script>
 </head>
-<body class="teams-page">
+<body>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap header-row">
     <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
     <nav class="site-nav" aria-label="Site">
-      <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      <a href="/teams/dealerships/" aria-current="page">Dealerships</a>
+      <a href="/teams/brokerages/">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
     </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
   </div>
 </header>
 
@@ -30,74 +38,51 @@
   <section class="t-hero">
     <div class="wrap t-hero-grid">
       <div>
-        <h1>Keep every salesperson top of mind with everyone they’ve sold to.</h1>
-        <p class="lede">For GMs, GSMs and sales managers. Each salesperson on your floor gets a few friendly posts a week for their own Facebook and Instagram, with your dealership’s name on every one. The ready-made posts carry no prices or payments, and you can see who’s sharing.</p>
+        <h1>Your customers will buy another car. Make sure they think of your salesperson first.</h1>
+        <p class="lede">Your best people stay in touch. The rest don’t, because the posts are the hard part. Loop31 writes them for everyone on your floor, with your store’s name on every one and no prices or payments, and shows you who posted.</p>
         <div class="cta-row">
-          <a class="button" href="mailto:support@loop31.com?subject=A%2015-minute%20Loop31%20demo%20for%20my%20store&amp;body=Hi%20Loop31%2C%0A%0AI%27d%20like%20a%2015-minute%20demo.%0A%0AMy%20name%3A%0ADealership%20and%20store%3A%0AMy%20role%3A%0AA%20good%20time%20to%20talk%3A%0A%0AThanks">Book a 15-minute demo</a>
-          <a class="button button-quiet" href="mailto:support@loop31.com?subject=Free%2030-day%20pilot%20for%20my%20sales%20floor&amp;body=Hi%20Loop31%2C%0A%0AWe%27d%20like%20to%20try%20Loop31%20free%20for%2030%20days.%0A%0AMy%20name%3A%0ADealership%20and%20store%3A%0AHow%20many%20salespeople%20would%20use%20it%3A%0AA%20good%20phone%20number%3A%0A%0AThanks">Or start a free 30-day pilot</a>
+          <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+          <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
         </div>
-        <p class="cta-note">iPhone only for now. <a href="#sample">See the manager view (sample)</a> · <a href="/team/">Manager sign-in</a></p>
+        <p class="cta-note">For general managers, GSMs and dealer principals. $10 a salesperson a month. iPhone only for now.</p>
       </div>
       <figure class="t-post">
         <img src="/img/post-auto-tips.webp" width="640" height="800" fetchpriority="high"
-          alt="A Car Care Tips post from the app: a close-up of tire tread, the words “Are your tires done? Grab a penny.”, and “Jordan Ellis · Fall Creek Auto · (317) 555-0186” along the bottom.">
-        <figcaption>A real post from the app, for a made-up salesperson at a made-up store. Fall Creek Auto runs along the bottom; there’s no price in it.</figcaption>
+          alt="A sample Car Care Tips post from the app: a close-up of tire tread, the words “Are your tires done? Grab a penny.”, and “Jordan Ellis · Fall Creek Auto · (317) 555-0186” along the bottom.">
+        <figcaption>A sample post the app drew for a made-up salesperson at a made-up store. Fall Creek Auto runs along the bottom; there’s no price in it.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="t-section">
+  <section class="t-section" id="leak" aria-labelledby="leak-title">
     <div class="wrap t-split">
-      <h2>Service customers are drifting, and the FTC is reading dealer ads.</h2>
+      <h2 id="leak-title">Most sold customers buy their next car somewhere else.</h2>
       <div class="t-body">
         <ul class="figures" role="list">
-          <li><b>54%</b><span>of owners with cars two years old or newer came back to the dealership for service in 2025, down from 72% in 2023, in Cox Automotive’s service study.<sup><a href="#src-1" aria-label="Source 1">1</a></sup></span></li>
-          <li><b>97</b><span>dealerships got FTC warning letters about advertising and pricing in March 2026. Their names were made public on May 28, 2026.<sup><a href="#src-2" aria-label="Source 2">2</a></sup></span></li>
+          <li><b>37.9%</b><span>of returning buyers bought from the same dealer at Subaru, which won S&amp;P Global Mobility’s 2025 award for loyalty to the dealer. Even at the best brand, most went somewhere else.<sup><a href="#src-1" aria-label="Source 1">1</a></sup></span></li>
+          <li><b>1 in 5</b><span>buyers never heard from the dealership after the sale, in a 2013 Maritz study of more than 4,200 buyers. The longer they went without hearing, the less likely they were to buy there again.<sup><a href="#src-2" aria-label="Source 2">2</a></sup></span></li>
         </ul>
-        <p class="fine">Dealer lawyers now say a salesperson posting from a personal phone is still acting for the store,<sup><a href="#src-3" aria-label="Source 3">3</a></sup> and trade press warns that offers or payments posted there can go out without the disclosures they need.<sup><a href="#src-4" aria-label="Source 4">4</a></sup></p>
+        <p class="fine">Joe Girard sold 13,001 cars at one Chevrolet store and sent every customer a card every month.<sup><a href="#src-3" aria-label="Source 3">3</a></sup> Loop31 is that habit for your whole floor, every week, on the phone your customers already check. <a href="/#story">His story</a>.</p>
       </div>
     </div>
   </section>
 
-  <section class="t-section t-soft">
+  <section class="t-section t-soft" id="how" aria-labelledby="how-title">
     <div class="wrap t-split">
-      <h2>No payments, and your store’s name on every post.</h2>
+      <h2 id="how-title">Ready posts, and the cars on your lot.</h2>
       <div class="t-body">
         <ul class="rules" role="list">
           <li>
-            <strong>Payments and loan terms</strong>
-            <span>When an ad mentions a monthly payment, a down payment or a loan term, it has to give the full credit terms too (Truth in Lending, 12 CFR 1026.24).<sup><a href="#src-5" aria-label="Source 5">5</a></sup> Loop31 stops a post like that until the terms are there or the payment comes out.</span>
+            <strong>Friendly posts every week</strong>
+            <span>Each salesperson gets 4 ready posts a week by default, up to one a day: car care tips, customer reviews, their part of town. They look them over in about a minute and share from their own Facebook and Instagram in about 20 seconds.</span>
           </li>
           <li>
-            <strong>Your dealership’s name</strong>
-            <span>When an employee posts about the store’s cars, the post has to show they work there (FTC Endorsement Guides, 16 CFR 255.5).<sup><a href="#src-6" aria-label="Source 6">6</a></sup> Loop31 puts your dealership’s name on the picture and under the caption of every post, and it can’t be turned off. You can add your store’s logo and one line too.</span>
-          </li>
-          <li>
-            <strong>No prices or payments from us</strong>
-            <span>Most posts are friendly “think of me” posts, like the penny test for tire tread or a favorite fall drive. The posts Loop31 writes never quote a price or a payment, and none carries a carmaker’s logo.</span>
-          </li>
-        </ul>
-        <p class="fine">These checks catch common problems. They aren’t legal advice.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="t-section">
-    <div class="wrap t-split">
-      <h2>New arrivals from your website.</h2>
-      <div class="t-body">
-        <ul class="rules" role="list">
-          <li>
-            <strong>Read each night</strong>
-            <span>A manager connects your dealership’s website once and confirms the dealership owns it and its photos. Each night, Loop31 reads the cars on it.</span>
+            <strong>New arrivals from your website</strong>
+            <span>A manager connects your dealership’s website once and confirms the store owns it and its photos. Each night, Loop31 reads the cars on it.</span>
           </li>
           <li>
             <strong>One salesperson at a time</strong>
-            <span>Each new car is offered to one salesperson. They claim it, or pass it to the next.</span>
-          </li>
-          <li>
-            <strong>Your photos, no price</strong>
-            <span>The post uses the car’s details and your own photos. Loop31 writes it with no price or payment in it.</span>
+            <span>Each new car is offered to one salesperson. They claim it, or pass it to the next. The post uses the car’s details and your own photos, with no price or payment in it.</span>
           </li>
           <li>
             <strong>Nothing goes out without them</strong>
@@ -108,81 +93,130 @@
     </div>
   </section>
 
-  <section class="t-section t-soft" id="sample">
-    <div class="wrap t-split">
-      <h2>What you see as their manager.</h2>
-      <div class="t-body">
-        <div class="see">
-          <div>
-            <h3>You see</h3>
-            <ul>
-              <li>each salesperson’s name, and that their seat is paid</li>
-              <li>when they joined, and the date of their last post</li>
-              <li>which Loops they have on (you can’t change them)</li>
-              <li>the posts that went out from the day they joined, with dates and captions (captions for 30 days)</li>
-              <li>a record of what the checks flagged on each shared post</li>
-              <li>a Monday email with last week’s numbers, never captions or photos</li>
-            </ul>
-          </div>
-          <div>
-            <h3>You never see</h3>
-            <ul>
-              <li>drafts, or posts they skipped</li>
-              <li>their photos or the vehicles they’ve added</li>
-              <li>their phone number or setup answers</li>
-              <li>anyone who pays for Loop31 on their own</li>
-            </ul>
-          </div>
+  <section class="t-section" id="see" aria-labelledby="see-title">
+    <div class="wrap">
+      <div class="t-split">
+        <h2 id="see-title">Who posted, this week and this month.</h2>
+        <div class="t-body">
+          <p>The team portal counts each salesperson’s posts from the day they join, like the board you already keep for units. When someone has a post due today that isn’t posted, send a reminder: one a day and three a week per person, between 9 AM and 7 PM their time. It shows at the top of their Home screen in the app.</p>
+          <p>You never see their drafts, their photos, their phone number, or anything they haven’t posted. <a href="/#see">The full list</a>.</p>
         </div>
-        <blockquote class="promise">
-          <p>“Fall Creek Auto will see your name, that your seat is paid, which Loops are on, and the posts that go out from today on, with their dates and captions. They never see your drafts, photos, listings, vehicles, or anything you haven’t posted.”</p>
-          <cite>What the app shows each salesperson before they join, word for word, with your store’s name in place of the sample’s.</cite>
-        </blockquote>
-        <figure class="t-shot t-shot-one">
-          <span class="sample-tag">Sample office</span>
+      </div>
+      <figure class="board wide-shot">
+        <div class="board-art">
+          <span class="sample-tag">Sample store</span>
           <picture>
-            <source media="(max-width: 700px)" srcset="/img/portal-team-table-phone.webp" width="640" height="876">
-            <img src="/img/portal-team-table.webp" width="1000" height="736" loading="lazy"
-              alt="Sample office. The team portal’s counts: 12 people on the team, 10 with a seat, 7 of 10 posted in the last week, 3 waiting to join. Below, each person with their seat and the date of their last post.">
+            <source media="(max-width: 700px)" srcset="/img/portal-board-dealer-phone.webp" width="680" height="635">
+            <img src="/img/portal-board-dealer.webp" width="1200" height="1094" loading="lazy"
+              alt="Sample store. The Loop31 team portal for a made-up dealership, Fall Creek Auto, this week: 23 of 24 seats used, 16 of 23 people shared, 22 posts shared, 19 people on a streak, 86 posts this month, and 6 cars from the website offered, 4 claimed. Below it, the salespeople who haven’t shared yet, each with this week and this month as posted of planned, their streak, their last post, and either a Remind button or the time a reminder was sent.">
           </picture>
-          <figcaption>The team portal’s Team page, in its sample mode with made-up people. The sample office is a brokerage; a dealership’s page works the same way.</figcaption>
-        </figure>
-      </div>
+        </div>
+        <figcaption>The Team page for a made-up store and made-up salespeople. Counts are what people mark as posted; Loop31 can’t see personal Facebook or Instagram.</figcaption>
+      </figure>
+      <blockquote class="promise">
+        <p>“Fall Creek Auto will see your name, that your seat is paid, which Loops are on, and the posts that go out from today on, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, listings, vehicles, or anything you haven’t posted.”</p>
+        <cite>What the app shows each salesperson before they join, word for word, with your store’s name in place of the sample’s.</cite>
+      </blockquote>
     </div>
   </section>
 
-  <section class="t-section">
+  <section class="t-section t-soft" id="rules" aria-labelledby="rules-title">
     <div class="wrap t-split">
-      <h2>When someone leaves the floor.</h2>
+      <h2 id="rules-title">No payments, and your store’s name on every post.</h2>
       <div class="t-body">
-        <p>NADA’s 2021 study put sales consultant turnover at 67% a year.<sup><a href="#src-7" aria-label="Source 7">7</a></sup> When someone leaves, take their seat back in the portal and give it to the next hire. There’s nothing to install at the store.</p>
+        <ul class="figures" role="list">
+          <li><b>97</b><span>dealership groups got FTC warning letters about advertising and pricing in March 2026. Their names were made public on May 28, 2026.<sup><a href="#src-4" aria-label="Source 4">4</a></sup></span></li>
+        </ul>
+        <p class="fine">Dealer lawyers now say a salesperson posting from a personal phone is still acting for the store,<sup><a href="#src-5" aria-label="Source 5">5</a></sup> and trade press warns that offers or payments posted there can go out without the disclosures they need.<sup><a href="#src-6" aria-label="Source 6">6</a></sup></p>
+        <ul class="rules" role="list">
+          <li>
+            <strong>Payments and loan terms</strong>
+            <span>When an ad mentions a monthly payment, a down payment or a loan term, it has to give the full credit terms too (Truth in Lending, 12 CFR 1026.24).<sup><a href="#src-7" aria-label="Source 7">7</a></sup> Loop31 stops a post like that until the terms are there or the payment comes out.</span>
+          </li>
+          <li>
+            <strong>Your dealership’s name</strong>
+            <span>When an employee posts about the store’s cars, the post has to show they work there (FTC Endorsement Guides, 16 CFR 255.5).<sup><a href="#src-8" aria-label="Source 8">8</a></sup> Loop31 puts your dealership’s name on the picture and under the caption of every post, and it can’t be turned off. You can add your store’s logo and one line too.</span>
+          </li>
+          <li>
+            <strong>No prices or payments from us</strong>
+            <span>Most posts are friendly “think of me” posts, like the penny test for tire tread or a favorite fall drive. The posts Loop31 writes never quote a price or a payment, and none carries a carmaker’s logo.</span>
+          </li>
+          <li>
+            <strong>The check record</strong>
+            <span>For each post that goes out, the portal keeps which checks ran and what they flagged: “nothing flagged”, “a warning” or “a rule”, never the words. Export it for any dates as a spreadsheet.</span>
+          </li>
+        </ul>
+        <figure class="board wide-shot">
+          <div class="board-art">
+            <span class="sample-tag">Sample store</span>
+            <picture>
+              <source media="(max-width: 700px)" srcset="/img/portal-check-record-phone.webp" width="680" height="465">
+              <img src="/img/portal-check-record.webp" width="1200" height="747" loading="lazy"
+                alt="Sample store. Posts that went out for one made-up salesperson, each with its date, Loop, places and caption, and under each “Checked when shared: business name, payment terms. Nothing flagged.”">
+            </picture>
+          </div>
+        </figure>
+        <p class="fine">These checks catch common problems. They aren’t legal advice.</p>
       </div>
     </div>
   </section>
 
-  <section class="t-section t-soft">
+  <section class="t-section" id="price" aria-labelledby="price-title">
     <div class="wrap t-split">
-      <h2>Price</h2>
+      <h2 id="price-title">$10 a salesperson. One extra sale a year could cover it.</h2>
       <div class="t-body">
         <p class="price"><b>$10</b><span>a salesperson, per month</span></p>
-        <p>At least 3 seats, billed to the store each month. Month to month, and you can cancel anytime.</p>
-        <p class="muted">A 25-person sales floor is $250 a month. Six seats cost $720 a year, and NADA Data 2025 put the average dealership’s advertising at $739 for every new vehicle sold.<sup><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+        <p>At least 3 seats, billed to the store each month. Month to month, and you can cancel anytime. A 25-person floor is $250 a month. NADA Data 2025 put the average dealership’s advertising at $739 for every new vehicle sold.<sup><a href="#src-11" aria-label="Source 11">11</a></sup></p>
+        <div class="calc-box">
+          <p class="muted">Depending on your seats and your gross. It could also take more.</p>
+          <div class="calc" role="group" aria-label="What could cover the cost of Loop31" data-calc data-seat-cents="1000" data-min-seats="3" data-unit="sale" hidden>
+            <label>Salespeople
+              <input name="seats" type="number" inputmode="numeric" min="1" max="1000" step="1" value="20">
+            </label>
+            <label>Gross on one sale<span class="calc-hint">To the store, after commission</span>
+              <span class="money"><input name="gross" type="number" inputmode="numeric" min="1" step="1" value="2784"></span>
+            </label>
+            <p class="calc-out" aria-live="polite"><b data-calc-big></b><span data-calc-detail></span></p>
+          </div>
+          <p class="fine">The $2,784 is a used car’s front gross ($1,409) after a 25% commission, plus F&amp;I ($1,727), from Presidio-NCM’s 2026 benchmarks.<sup><a href="#src-9" aria-label="Source 9">9</a>,<a href="#src-10" aria-label="Source 10">10</a></sup> The commission is our assumption. On front gross alone, a 25-person floor needs about 3 sales. Break-even numbers, not a forecast.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="t-section">
+  <section class="t-section t-soft" id="pilot" aria-labelledby="pilot-title">
     <div class="wrap t-split">
-      <h2>Questions sales managers ask</h2>
+      <h2 id="pilot-title">The free <span class="nowrap">30-day</span> pilot</h2>
+      <div class="t-body">
+        <dl class="timeline">
+          <div><dt>Before day 1</dt><dd>The <strong>general manager or dealer principal</strong> approves it by name. We set up your store’s team with you, and you pick 3 to 10 salespeople.</dd></div>
+          <div><dt>Days 1 to 30</dt><dd>Free. Those days never appear on an invoice.</dd></div>
+          <div><dt>Day 30</dt><dd>A one-page summary in the portal: who posted, how often, and what the checks flagged.</dd></div>
+          <div><dt>Day 31</dt><dd><strong>Your team carries on at $10 a seat a month</strong>, billed monthly from that day. If you’d rather not go on, tell us before then and we end the seats.</dd></div>
+        </dl>
+        <div class="cta-row">
+          <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+          <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
+        </div>
+        <p class="cta-note">Bring your GSM or your dealer principal to the call if you like. You’ll be working with the person who builds Loop31.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="t-section" id="questions" aria-labelledby="questions-title">
+    <div class="wrap t-split">
+      <h2 id="questions-title">Questions sales managers ask</h2>
       <dl class="qa t-body">
         <dt>Will my salespeople actually use it?</dt>
-        <dd>It’s designed to take about a minute a week, and their phone reminds them when it’s time to post. You can see who posted. Seat only the people who want it, and try it free for 30 days with your own floor.</dd>
+        <dd>It’s designed to take about a minute a week, and their phone reminds them when it’s time to post. You see who posted, and you can send a reminder to anyone whose post is due today. Seat only the people who want it, and try it free for 30 days with your own floor.</dd>
         <dt>Our OEM sets the rules for our marketing.</dt>
         <dd>These posts go on the salesperson’s own profile, not the store’s page. The ready-made posts carry no carmaker logos, and no prices or payments.</dd>
         <dt>I can’t have salespeople posting off-brand.</dt>
-        <dd>The posts are friendly, and the ones Loop31 writes carry no prices or payments. Each one is checked before it can be shared, and you can read every post that went out.</dd>
-        <dt>What happens when someone leaves?</dt>
-        <dd>They keep their own Facebook and Instagram, as they would anyway. While they’re with you, their posts name your store. When they go, their seat goes to the next hire.</dd>
+        <dd>The posts are friendly, and the ones Loop31 writes carry no prices or payments. Each one is checked before it can be shared, and you can read every post that went out, with what the checks said.</dd>
+        <dt>What happens when someone leaves the floor?</dt>
+        <dd>NADA’s 2021 study put sales consultant turnover at 67% a year.<sup><a href="#src-12" aria-label="Source 12">12</a></sup> Take their seat back in the portal and give it to the next hire. They keep their own Facebook and Instagram, as they would anyway; while they’re with you, their posts name your store.</dd>
+        <dt>Do you get our customer list?</dt>
+        <dd>No. Loop31 doesn’t connect to your CRM or DMS and never reads a customer’s information. From your website it reads only the cars you publish. More on the <a href="/security/">security and data page</a>.</dd>
         <dt>We have more than one rooftop.</dt>
         <dd>For now each store is its own team. If you run a group, write to us.</dd>
         <dt>Is there an Android version?</dt>
@@ -191,36 +225,22 @@
     </div>
   </section>
 
-  <section class="t-section t-soft">
-    <div class="wrap t-split">
-      <h2>How a pilot works</h2>
-      <div class="t-body">
-        <ol class="steps-plain">
-          <li>We set up your store’s team with you.</li>
-          <li>You pick 3 to 10 salespeople, and they use Loop31 free for 30 days.</li>
-          <li>At 30 days you get a one-page summary of who posted and how often. Then you decide whose seats to keep.</li>
-        </ol>
-        <div class="cta-row">
-          <a class="button" href="mailto:support@loop31.com?subject=A%2015-minute%20Loop31%20demo%20for%20my%20store&amp;body=Hi%20Loop31%2C%0A%0AI%27d%20like%20a%2015-minute%20demo.%0A%0AMy%20name%3A%0ADealership%20and%20store%3A%0AMy%20role%3A%0AA%20good%20time%20to%20talk%3A%0A%0AThanks">Book a 15-minute demo</a>
-          <a class="button button-quiet" href="mailto:support@loop31.com?subject=Free%2030-day%20pilot%20for%20my%20sales%20floor&amp;body=Hi%20Loop31%2C%0A%0AWe%27d%20like%20to%20try%20Loop31%20free%20for%2030%20days.%0A%0AMy%20name%3A%0ADealership%20and%20store%3A%0AHow%20many%20salespeople%20would%20use%20it%3A%0AA%20good%20phone%20number%3A%0A%0AThanks">Or start a free 30-day pilot</a>
-        </div>
-        <p class="cta-note">iPhone only for now. Bring your GSM or your dealer principal to the demo if you like. You’ll be working with the people who build Loop31.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="t-section t-sources" aria-labelledby="sources-title">
     <div class="wrap">
       <h2 id="sources-title">Sources</h2>
       <ol>
-        <li id="src-1">CBT News, on Cox Automotive’s Service Industry Study, November 12, 2025. <a href="https://cbtnews.com/dealerships-face-service-retention-crisis-as-cars-get-older-loyalty-drops/">cbtnews.com</a></li>
-        <li id="src-2">Crowell &amp; Moring, client alert on the FTC’s warning letters to auto dealers, June 12, 2026. <a href="https://www.crowell.com/en/insights/client-alerts/auto-dealers-the-ftc-is-back-in-the-drivers-seatwarning-letters-signal-renewed-federal-scrutiny">crowell.com</a></li>
-        <li id="src-3">Troutman Pepper Locke, on social media advertising risks after the FTC’s warnings, May 29, 2026. <a href="https://www.troutman.com/insights/social-media-advertising-poses-compliance-risks-following-ftc-warnings/">troutman.com</a></li>
-        <li id="src-4">CBT News, on dealers’ FTC exposure, October 5, 2026. <a href="https://www.cbtnews.com/ftc-exposure-compliance/">cbtnews.com</a></li>
-        <li id="src-5">Consumer Financial Protection Bureau, Regulation Z, 12 CFR 1026.24, advertising. <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/24/">consumerfinance.gov</a></li>
-        <li id="src-6">FTC Endorsement Guides, 16 CFR 255.5. <a href="https://www.law.cornell.edu/cfr/text/16/255.5">law.cornell.edu</a></li>
-        <li id="src-7">VehicleServicePros, on NADA’s 2021 dealership workforce study. <a href="https://www.vehicleservicepros.com/aftermarket-business-world/news/article/21191935/nada-study-shows-dealership-salaries-increase-but-turnover-remains-a-problem">vehicleservicepros.com</a></li>
-        <li id="src-8">Inside Radio, on NADA Data 2025, June 16, 2026. <a href="https://www.insideradio.com/free/turning-data-into-dollars-key-insights-from-2025-nada-data/article_660f3282-8150-47e8-bb69-c2f1d13127ce.html">insideradio.com</a></li>
+        <li id="src-1">S&amp;P Global Mobility, 2025 Loyalty Awards, January 14, 2026. <a href="https://press.spglobal.com/2026-01-14-S-P-Global-Mobility-2025-Loyalty-Awards-Reveal-Divergent-Paths-to-Customer-Retention-General-Motors-and-Tesla-Secure-Top-Honors">press.spglobal.com</a></li>
+        <li id="src-2">Auto Remarketing, on Maritz Research’s study of car buyers after the sale, November 25, 2013. <a href="https://www.autoremarketing.com/ar/retail/study-shows-majority-customer-journeys-end-when-buyers-drive-dealership-lot">autoremarketing.com</a></li>
+        <li id="src-3">F&amp;I and Showroom magazine, on Joe Girard’s death, March 13, 2019. <a href="https://www.fi-magazine.com/356228/car-sales-legend-joe-girard-dead-at-90">fi-magazine.com</a></li>
+        <li id="src-4">Crowell &amp; Moring, client alert on the FTC’s warning letters to auto dealers, June 12, 2026. <a href="https://www.crowell.com/en/insights/client-alerts/auto-dealers-the-ftc-is-back-in-the-drivers-seatwarning-letters-signal-renewed-federal-scrutiny">crowell.com</a></li>
+        <li id="src-5">Troutman Pepper Locke, on social media advertising risks after the FTC’s warnings, May 29, 2026. <a href="https://www.troutman.com/insights/social-media-advertising-poses-compliance-risks-following-ftc-warnings/">troutman.com</a></li>
+        <li id="src-6">CBT News, on dealers’ FTC exposure, October 5, 2026. <a href="https://www.cbtnews.com/ftc-exposure-compliance/">cbtnews.com</a></li>
+        <li id="src-7">Consumer Financial Protection Bureau, Regulation Z, 12 CFR 1026.24, advertising. <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/24/">consumerfinance.gov</a></li>
+        <li id="src-8">FTC Endorsement Guides, 16 CFR 255.5. <a href="https://www.law.cornell.edu/cfr/text/16/255.5">law.cornell.edu</a></li>
+        <li id="src-9">Digital Dealer, on Presidio-NCM’s second-quarter 2026 benchmarks (used-vehicle front gross, $1,409 a unit), August 4, 2026. <a href="https://digitaldealer.com/news/average-dealership-profit-is-down-but-the-floor-may-be-in-sight/172689/">digitaldealer.com</a></li>
+        <li id="src-10">WardsAuto, on Presidio-NCM’s first-quarter 2026 benchmarks (F&amp;I, $1,727 a unit), April 27, 2026. <a href="https://wardsauto.com/news/fixed-ops-fi-carry-the-load-for-dealerships-in-q1/818466/">wardsauto.com</a></li>
+        <li id="src-11">Inside Radio, on NADA Data 2025, June 16, 2026. <a href="https://www.insideradio.com/free/turning-data-into-dollars-key-insights-from-2025-nada-data/article_660f3282-8150-47e8-bb69-c2f1d13127ce.html">insideradio.com</a></li>
+        <li id="src-12">VehicleServicePros, on NADA’s 2021 dealership workforce study. <a href="https://www.vehicleservicepros.com/aftermarket-business-world/news/article/21191935/nada-study-shows-dealership-salaries-increase-but-turnover-remains-a-problem">vehicleservicepros.com</a></li>
       </ol>
     </div>
   </section>
@@ -228,16 +248,32 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
     <div>
       <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
       <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
     </div>
-    <nav aria-label="Footer">
-      <a href="/teams/">For teams</a>
-      <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/" aria-current="page">Dealerships</a></li>
+          <li><a href="/teams/brokerages/">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/">Start a free pilot</a></li>
+          <li><a href="/security/">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </footer>

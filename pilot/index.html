@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A free 30-day pilot · Loop31</title>
+  <meta name="description" content="Try Loop31 free for 30 days with 3 to 10 of your own salespeople or agents. Who approves it, what happens on day 31, and a short form that writes the email for you.">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/teams/dealerships/">Dealerships</a>
+      <a href="/teams/brokerages/">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
+    </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="t-hero">
+    <div class="wrap">
+      <h1>A free <span class="nowrap">30-day</span> pilot, with your own people.</h1>
+      <p class="lede">Pick 3 to 10 salespeople or agents and use Loop31 free for 30 days. Then keep the seats at $10 a month each, or end them.</p>
+      <div class="cta-row">
+        <a class="button" href="#ask">Ask for a pilot</a>
+        <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="t-section" id="terms" aria-labelledby="terms-title">
+    <div class="wrap t-split">
+      <h2 id="terms-title">The terms, in plain words</h2>
+      <div class="t-body">
+        <dl class="timeline">
+          <div><dt>Before day 1</dt><dd>The <strong>general manager, dealer principal or broker-owner</strong> approves the pilot, by name. We set up your team with you, and you invite the people you picked.</dd></div>
+          <div><dt>Days 1 to 30</dt><dd>Free. No card, and those days never appear on an invoice.</dd></div>
+          <div><dt>Day 30</dt><dd>A one-page summary in the portal: who posted, how often, which Loops the posts came from, and what the checks flagged. It prints on one page.</dd></div>
+          <div><dt>Day 31</dt><dd><strong>Your team carries on at $10 a seat a month</strong>, billed monthly from that day. Nothing changes for your people: the seats, the people and their history stay. If you’d rather not go on, tell us before then and we end the seats.</dd></div>
+        </dl>
+        <ul class="ticks" role="list">
+          <li>3 to 10 people. Each one joins on their own, after the app shows them exactly what you’ll see.</li>
+          <li>Either of us can end the pilot any day, by email. The seats end that day.</li>
+          <li>Each person keeps their own Loop31 account afterwards, to use or delete.</li>
+          <li>One free pilot per store or office.</li>
+          <li>After it: $10 a seat a month, at least 3 seats, billed to the store each month. Month to month, and you can cancel anytime.</li>
+          <li>iPhone only for now. Loop31 is in beta.</li>
+        </ul>
+        <p class="fine">The first stores and offices on a pilot get a say in what Loop31 builds next. There’s no founding discount.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="t-section t-soft" id="ask" aria-labelledby="ask-title">
+    <div class="wrap t-split">
+      <div>
+        <h2 id="ask-title">Ask for a pilot</h2>
+        <p class="form-note">This writes an email in your own mail app, to support@loop31.com. Nothing is sent until you press Send, and this site keeps nothing. Trevor answers within a business day.</p>
+      </div>
+      <div class="t-body">
+        <form class="pilot-form" data-pilot-form data-to="support@loop31.com" action="mailto:support@loop31.com" method="get">
+          <label>Store or office
+            <input class="field" name="store" required autocomplete="organization">
+          </label>
+          <div class="row2">
+            <label>Who approves it
+              <input class="field" name="approver" required autocomplete="off">
+            </label>
+            <label>Their title
+              <select class="field" name="title" required>
+                <option value="">Pick one</option>
+                <option>General manager</option>
+                <option>Dealer principal</option>
+                <option>Broker-owner</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+          <label>Salespeople or agents<span class="calc-hint">How many you have. The pilot takes 3 to 10 of them.</span>
+            <input class="field" name="people" type="number" min="1" max="10000" step="1" inputmode="numeric" required>
+          </label>
+          <label>Your email, for the reply
+            <input class="field" name="email" type="email" required autocomplete="email">
+          </label>
+          <div><button class="button" type="submit">Write the email</button></div>
+          <p class="form-done" data-pilot-done hidden role="status">Your mail app should now show the email, addressed to support@loop31.com. Press Send there. If nothing opened, write to <a href="mailto:support@loop31.com?subject=A%20free%2030-day%20Loop31%20pilot&amp;body=Hi%20Trevor%2C%0A%0AWe%20would%20like%20to%20try%20Loop31%20free%20for%2030%20days.%0A%0AStore%20or%20office%3A%0AWho%20approves%20it%20%28name%20and%20title%29%3A%0AHow%20many%20salespeople%20or%20agents%3A%0AMy%20email%3A%0A%0AThanks">support@loop31.com</a> with the same details.</p>
+          <noscript><p class="form-note">With JavaScript off, this form can’t write the email for you. Use this link instead, and fill in the same four things: <a href="mailto:support@loop31.com?subject=A%20free%2030-day%20Loop31%20pilot&amp;body=Hi%20Trevor%2C%0A%0AWe%20would%20like%20to%20try%20Loop31%20free%20for%2030%20days.%0A%0AStore%20or%20office%3A%0AWho%20approves%20it%20%28name%20and%20title%29%3A%0AHow%20many%20salespeople%20or%20agents%3A%0AMy%20email%3A%0A%0AThanks">email support@loop31.com</a>.</p></noscript>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
+      <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/">Dealerships</a></li>
+          <li><a href="/teams/brokerages/">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/" aria-current="page">Start a free pilot</a></li>
+          <li><a href="/security/">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -3,277 +3,403 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Loop31</title>
-  <meta name="description" content="Loop31 for iPhone gets a few friendly posts ready each week for real estate agents and car salespeople to share from their own Facebook and Instagram, so the people they know keep seeing their name.">
-  <link rel="preload" href="fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <script src="site.js" defer></script>
+  <title>Loop31 for sales teams</title>
+  <meta name="description" content="Loop31 gives each salesperson or agent a few ready, checked posts a week for their own Facebook and Instagram, with your store's or brokerage's name on every one, and shows you who posted. $10 a seat a month, month to month, with a free 30-day pilot.">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="/site.js" defer></script>
 </head>
-<body class="home">
+<body>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
+  <div class="wrap header-row">
+    <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
     <nav class="site-nav" aria-label="Site">
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <a href="/teams/dealerships/">Dealerships</a>
+      <a href="/teams/brokerages/">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
     </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- Hero: the pitch on the left, the real app on the right (under it on a phone). -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <h1 class="hero-title"><span class="w" style="--i:1">Be</span> <span class="w" style="--i:2">the</span> <span class="w" style="--i:3">one</span> <span class="w" style="--i:4">they</span> <span class="w" style="--i:5">think</span> <span class="w" style="--i:6">of.</span></h1>
-        <p class="lede rise" style="--i:7">Each week, Loop31 gets a few friendly posts ready for your own Facebook and Instagram. It’s made for real estate agents and car salespeople, so the people you know keep seeing your name.</p>
-        <div class="cta-row rise" style="--i:8">
-          <a class="button" href="mailto:support@loop31.com?subject=Tell%20me%20when%20Loop31%20is%20out">Get launch news</a>
-          <span class="coming-note">Coming to iPhone.</span>
-        </div>
-        <p class="hero-teams rise" style="--i:9"><a href="#teams">Buying for a whole brokerage or dealership? <span aria-hidden="true">→</span></a></p>
-      </div>
-
-      <div class="hero-art">
-        <img class="screen hero-screen" src="img/screen-calendar.webp" width="840" height="1825" fetchpriority="high"
-          alt="Loop31’s Calendar tab, the week of October 12: a client review posted Monday, “3 things to fix before you list” and “Saturday showing marathon” on Thursday, and an open house on Saturday, each with the time you post it. A card says next week is ready for a quick look.">
-        <img class="post-card hero-post" src="img/post-re-tips.webp" width="640" height="800"
-          alt="An example Home Tips post, as the app draws it: water spraying from a brass pipe, the words “A pipe just burst. Where’s your shutoff?”, and “Jess Rivera · Northline Realty · (317) 555-0142” along the bottom.">
-      </div>
-    </div>
-  </section>
-
-  <!-- Ready-made Loops: the posts first (real ones the app drew, drifting by; still without JavaScript or with
-       Reduce Motion), then the heading beside its words. -->
-  <section class="loops" id="loops" aria-labelledby="loops-title">
-    <div class="marquee" data-marquee>
-      <div class="marquee-track">
-        <ul class="marquee-list" role="list">
-          <li><figure><img src="img/post-re-tips.webp" width="640" height="800" loading="lazy" alt="Home Tips post: “A pipe just burst. Where’s your shutoff?” over water spraying from a brass pipe."><figcaption>Home Tips <span>Real estate</span></figcaption></figure></li>
-          <li><figure><img src="img/post-auto-tips.webp" width="640" height="800" loading="lazy" alt="Car Care Tips post: “Are your tires done? Grab a penny.” over a close-up of tire tread."><figcaption>Car Care Tips <span>Car sales</span></figcaption></figure></li>
-          <li><figure><img src="img/post-re-hood.webp" width="640" height="800" loading="lazy" alt="Around Town post: “My Fishers coffee stop. Change my mind.” over four lattes on a table."><figcaption>Around Town <span>Real estate</span></figcaption></figure></li>
-          <li><figure><img src="img/post-auto-hood.webp" width="640" height="800" loading="lazy" alt="Around Town post: “The drive I’d take this weekend” over a road through orange fall trees."><figcaption>Around Town <span>Car sales</span></figcaption></figure></li>
-          <li><figure><img src="img/post-re-reviews.webp" width="640" height="800" loading="lazy" alt="Client Reviews post: “Keys in hand. Their words, not mine.” over a hand holding house keys."><figcaption>Client Reviews <span>Real estate</span></figcaption></figure></li>
-          <li><figure><img src="img/post-auto-bts.webp" width="640" height="800" loading="lazy" alt="Behind the Scenes post: “Before it hits the lot: the part you never see” over a car being washed with a sponge."><figcaption>Behind the Scenes <span>Car sales</span></figcaption></figure></li>
-          <li><figure><img src="img/post-re-bts.webp" width="640" height="800" loading="lazy" alt="Behind the Scenes post: “The week before ‘Just Listed’” over paint rollers in four colors."><figcaption>Behind the Scenes <span>Real estate</span></figcaption></figure></li>
-          <li><figure><img src="img/post-auto-reviews.webp" width="640" height="800" loading="lazy" alt="Customer Reviews post: “Delivery day. Their words, not mine.” over one hand passing a car key to another."><figcaption>Customer Reviews <span>Car sales</span></figcaption></figure></li>
-          <li><figure><img src="img/post-re-motivation.webp" width="640" height="800" loading="lazy" alt="Motivation post: “Not ten goals this week. Just one.” over a notebook that says To do."><figcaption>Motivation <span>Real estate</span></figcaption></figure></li>
-          <li><figure><img src="img/post-auto-motivation.webp" width="640" height="800" loading="lazy" alt="Motivation post: “What I wish I knew on day one” over sunset through a car windshield."><figcaption>Motivation <span>Car sales</span></figcaption></figure></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="wrap marquee-foot">
-      <button class="pause" type="button" data-marquee-pause hidden>
-        <svg class="i-pause" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
-        <svg class="i-play" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 2.6v10.8c0 .8.9 1.3 1.6.8l8.2-5.4c.6-.4.6-1.2 0-1.6L5.6 1.8C4.9 1.3 4 1.8 4 2.6z"/></svg>
-        <span class="label">Pause</span>
-      </button>
-      <p class="small muted">Drawn by the app from its starter ideas, for the made-up agent Jess Rivera and salesperson Jordan Ellis.</p>
-    </div>
-    <div class="wrap loops-head">
-      <h2 id="loops-title">Posts people are glad to see.</h2>
-      <div class="loops-copy">
-        <p>Each one is useful or friendly, like where to find your water shutoff or your favorite coffee stop in town, and none of them is selling anything.</p>
-        <p class="small">Loop31 starts you with 30 post ideas for real estate or car sales, grouped into six Loops such as tips and client reviews. You fill in the blanks once, and each post comes back around on its own, at least eight weeks apart. You can make your own Loops too.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- A year in their feed: the pitch as a short story. The feed scrolls with the page where the browser
-       supports scroll-driven animation and Reduce Motion is off; otherwise it is a still list. The switch is
-       two radio buttons, so it works without JavaScript. -->
-  <section class="story" id="story" aria-labelledby="story-title">
-    <input class="ind-input" type="radio" name="industry" id="ind-re" value="re" aria-label="Show the story for real estate" checked>
-    <input class="ind-input" type="radio" name="industry" id="ind-auto" value="auto" aria-label="Show the story for car sales">
-
-    <div class="wrap story-stage">
-      <div class="story-copy">
-        <h2 id="story-title"><span class="re-only">Nobody needs a house every week.</span><span class="auto-only">Nobody needs a car every week.</span></h2>
-        <p>When they do, you want to be the first person they think of. Here’s a friend’s feed over a year, with you in it.</p>
-        <div class="switch" aria-hidden="true">
-          <label for="ind-re">Real estate</label>
-          <label for="ind-auto">Car sales</label>
-        </div>
-        <p class="stat re-only"><strong>43%</strong> of home buyers found their agent through a friend, neighbor, or relative.<span class="source">National Association of Realtors, 2025 Profile of Home Buyers and Sellers, as summarized by <a href="https://nowbam.com/how-home-buyers-and-sellers-find-their-agents-in-2025/">BAM</a></span></p>
-      </div>
-
-      <div class="story-run">
-        <div class="story-phone">
-          <div class="story-bar" aria-hidden="true">
-            <div class="switch switch-sm">
-              <label for="ind-re">Real estate</label>
-              <label for="ind-auto">Car sales</label>
-            </div>
-            <div class="year">
-              <span class="week-count"></span>
-              <span class="year-line"><span></span></span>
-            </div>
-          </div>
-
-          <div class="feed-window">
-            <div class="feed">
-              <article class="fp fp-friend">
-                <header><span class="av" aria-hidden="true" style="--c:#c9831f">EM</span><b>Erin M.</b></header>
-                <p>First frost tonight. Bringing the tomatoes in.</p>
-              </article>
-
-              <article class="fp fp-you">
-                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 1</span></header>
-                <img class="re-only" src="img/post-re-tips.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “A pipe just burst. Where’s your shutoff?”">
-                <img class="auto-only" src="img/post-auto-tips.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “Are your tires done? Grab a penny.”">
-              </article>
-
-              <article class="fp fp-friend">
-                <header><span class="av" aria-hidden="true" style="--c:#3f84c9">MT</span><b>Marcus T.</b></header>
-                <p>Happy 40th to my favorite person. Here’s to the next forty.</p>
-              </article>
-
-              <article class="fp fp-you">
-                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 9</span></header>
-                <img class="re-only" src="img/post-re-hood.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “My Fishers coffee stop. Change my mind.”">
-                <img class="auto-only" src="img/post-auto-hood.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “The drive I’d take this weekend”">
-              </article>
-
-              <article class="fp fp-friend">
-                <header><span class="av" aria-hidden="true" style="--c:#2f9a6e">LK</span><b>Lena K.</b></header>
-                <p>The dog has claimed the new couch. We just live here now.</p>
-              </article>
-
-              <article class="fp fp-you">
-                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 26</span></header>
-                <img class="re-only" src="img/post-re-bts.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “The week before ‘Just Listed’”">
-                <img class="auto-only" src="img/post-auto-bts.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “Before it hits the lot: the part you never see”">
-              </article>
-
-              <article class="fp fp-friend">
-                <header><span class="av" aria-hidden="true" style="--c:#c4577a">CO</span><b>Chris O.</b></header>
-                <p>Who has a good pizza place near the lake? Asking for the whole team.</p>
-              </article>
-
-              <article class="fp fp-you">
-                <header><span class="av av-you" aria-hidden="true"><span class="re-only">JR</span><span class="auto-only">JE</span></span><b><span class="re-only">Jess Rivera</span><span class="auto-only">Jordan Ellis</span></b><span class="wk">Week 40</span></header>
-                <img class="re-only" src="img/post-re-reviews.webp" width="640" height="800" loading="lazy" alt="Jess Rivera’s post: “Keys in hand. Their words, not mine.”">
-                <img class="auto-only" src="img/post-auto-reviews.webp" width="640" height="800" loading="lazy" alt="Jordan Ellis’s post: “Delivery day. Their words, not mine.”">
-              </article>
-
-              <div class="convo">
-                <p class="convo-head"><span class="wk wk-plain">Week 52</span><span class="convo-label">A text from a friend</span></p>
-                <p class="bubble bubble-in"><b>Priya</b><span class="re-only">We’re thinking about selling in the spring. Do you know a good agent?</span><span class="auto-only">Our car won’t make it through another winter. Know anyone at a dealership?</span></p>
-                <p class="bubble bubble-out"><span class="re-only">Jess Rivera! The one with the home tips. I’ll send you the number.</span><span class="auto-only">Jordan Ellis at Fall Creek Auto. The one with the car tips. I’ll send you the number.</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works: one sentence, and the two screens a person sees each week, with what each takes. -->
-  <section class="how" id="how" aria-labelledby="how-title">
-    <div class="wrap how-grid">
-      <div class="how-copy">
-        <h2 id="how-title">Loop31 writes each post and makes its picture. You look it over and share it.</h2>
-        <p>Facebook and Instagram don’t let an app post to your personal account, so Loop31 gets each post ready and you tap Share.</p>
-      </div>
-      <div class="how-shots">
-        <figure class="shot">
-          <img class="screen" src="img/screen-lookover.webp" width="840" height="1825" loading="lazy"
-            alt="The look-over, post 1 of 4: a Client Reviews post for Monday at 8:00 AM, shown the way it will look, with Skip, Edit and Looks Good buttons.">
-          <figcaption>Looking over next week’s posts takes about a minute. Tap Looks Good, Skip, or Edit on each one.</figcaption>
-        </figure>
-        <figure class="shot">
-          <img class="screen" src="img/screen-handoff.webp" width="840" height="1825" loading="lazy"
-            alt="Post It Yourself for “3 things to fix before you list”: Caption copied and Your brokerage info is added are both checked, with a button to share to the Jess Rivera Homes Facebook Page.">
-          <figcaption>When it’s time, your iPhone reminds you. The caption is already copied, so sharing takes about 20 seconds.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- One post, with its real parts pointed out: thin lines on a computer, a short list under it on a phone. -->
-  <section class="anatomy" aria-labelledby="anatomy-title">
+  <!-- 1. The promise, the two buttons, and the real manager view beside them. -->
+  <section class="m-hero">
     <div class="wrap">
-      <h2 id="anatomy-title">What goes out under your name.</h2>
-      <div class="ana">
-        <figure class="ana-post">
-          <img src="img/post-re-tips.webp" width="640" height="800" loading="lazy"
-            alt="Jess Rivera’s Home Tips post: water spraying from a brass pipe, the words “A pipe just burst. Where’s your shutoff?”, and “Jess Rivera · Northline Realty · (317) 555-0142” along the bottom.">
-          <figcaption>
-            <p>A pipe just burst. Do you know where to turn off the water? Lots of people find out while standing in an inch of it. Mine is in the basement, behind the water heater. Go find yours this weekend and hang a bright tag on it, so anyone at home can shut it off fast.</p>
-            <p class="ana-footer">Jess Rivera · Northline Realty · (317) 555-0142</p>
-          </figcaption>
-        </figure>
-
-        <ul class="ana-notes" role="list">
-          <li class="note note-l" style="--y:44px; --x:18px">The headline goes big on the picture, and the caption picks it up in its first line.</li>
-          <li class="note note-l" style="--y:422px; --x:9px">Your name and number are on the picture and under the caption, on every post.</li>
-          <li class="note note-l" style="--y:520px; --x:10px">Before you see the caption, it’s checked against the advertising rules for your line of work. Anything worth a second look is marked in orange, and you decide.</li>
-          <li class="note note-r note-reminder" style="--y:110px; --x:340px">
-            <span>Your iPhone reminds you when it’s time to post.</span>
-            <span class="notice">
-              <img src="logo.png" alt="" width="34" height="34" loading="lazy">
-              <span class="notice-text"><span class="notice-top"><b>Loop31</b><span>now</span></span><b class="notice-title">Time to post: Find your water shutoff</b>Tap Post now to copy the caption.</span>
-            </span>
-          </li>
-          <li class="note note-r" style="--y:600px; --x:350px">Change the words before it goes out: the caption and the words on the picture.</li>
+      <div class="m-hero-copy">
+        <h1>When your customers are ready to buy again, they should think of your people.</h1>
+        <p class="lede">Staying remembered takes posting week after week. Loop31 writes the posts for each salesperson, with your name on every one, and shows you who posted.</p>
+        <div class="cta-row">
+          <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+          <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
+        </div>
+        <ul class="facts" role="list">
+          <li><strong>$10</strong> a seat a month</li>
+          <li>Month to month</li>
+          <li><a href="#math">One extra sale a year could cover it</a></li>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- For managers: the one dark band, with a door for each industry. -->
-  <section class="teams" id="teams" aria-labelledby="teams-title">
-    <div class="wrap teams-grid">
-      <div class="teams-copy">
-        <h2 id="teams-title">Run an office or a sales floor?</h2>
-        <p>Give each agent or salesperson a seat for $10 a month. Everyone posts from their own accounts. You see who’s posting, and you never see drafts, photos, or anything that wasn’t posted.</p>
-        <ul class="doors" role="list">
-          <li><a href="/teams/brokerages/">For brokerages <span aria-hidden="true">→</span></a></li>
-          <li><a href="/teams/dealerships/">For dealerships <span aria-hidden="true">→</span></a></li>
-        </ul>
-        <p class="teams-more"><a href="/teams/">How team seats work</a> · <a href="/team/">Manager sign-in</a></p>
-      </div>
-      <figure class="portal-shot">
-        <span class="sample-tag">Sample office</span>
-        <picture>
-          <source media="(max-width: 700px)" srcset="img/portal-team-phone.webp" width="640" height="1067">
-          <img src="img/portal-team.webp" width="1200" height="750" loading="lazy"
-            alt="Sample office. The Loop31 Team page for a made-up brokerage, Northline Realty: counts of people on the team, seats, recent posts and open invites, and a list of each person with their seat and last post.">
-        </picture>
+      <figure class="board m-hero-board">
+        <div class="board-art">
+          <span class="sample-tag">Sample store</span>
+          <picture>
+            <source media="(max-width: 700px)" srcset="/img/portal-board-dealer-phone.webp" width="680" height="635">
+            <img src="/img/portal-board-dealer.webp" width="1200" height="1094" fetchpriority="high"
+              alt="Sample store. The Loop31 team portal for a made-up dealership, Fall Creek Auto, this week: 23 of 24 seats used, 16 of 23 people shared, 22 posts shared, 19 people on a streak, 86 posts this month, and 6 cars from the website offered. Below it, the salespeople who haven’t shared yet, each with this week and this month as posted of planned, such as 0 of 2 and 1 of 3, their streak, their last post, and either a Remind button or the time a reminder was sent.">
+          </picture>
+        </div>
+        <figcaption>The team portal for a made-up store: who posted this week and this month, and a reminder for anyone with a post due today.</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- Close -->
-  <section class="launch" id="launch" aria-labelledby="launch-title">
+  <!-- 2. The story: Joe Girard, and your best people. -->
+  <section class="t-section" id="story" aria-labelledby="story-title">
+    <div class="wrap t-split">
+      <h2 id="story-title">Joe Girard sent every customer a card, every month.</h2>
+      <div class="t-body">
+        <p class="story-num"><span class="big-num">13,001</span><span class="big-num-label">new cars and trucks Girard sold at one Chevrolet store in Eastpointe, Michigan, from 1963 to 1977.<sup><a href="#src-1" aria-label="Source 1">1</a></sup></span></p>
+        <p class="lead">Every customer, more than 13,000 of them, got a piece of mail from him once a month, with a different picture each time and the words “I like you.”<sup><a href="#src-2" aria-label="Source 2">2</a>,<a href="#src-3" aria-label="Source 3">3</a></sup> When they needed a car again, his was the name they knew.</p>
+        <p>Your best people already stay in touch like that. Most don’t, because coming up with something to post every week, for years, is the hard part. Loop31 does that part for every salesperson, with your store’s name on every post.</p>
+        <p class="fine">The card was one part of how Girard sold. He also paid people for referrals and worked them hard.<sup><a href="#src-2" aria-label="Source 2">2</a></sup></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. The leak: buyers who'd go back, and how few do. -->
+  <section class="t-section t-soft" id="leak" aria-labelledby="leak-title">
+    <div class="wrap t-split">
+      <h2 id="leak-title">Most customers mean to come back. Few do.</h2>
+      <div class="t-body">
+        <ul class="figures" role="list">
+          <li><b>91%</b><span>of home buyers would use their agent again or recommend them, in the National Association of Realtors’ 2025 survey of buyers and sellers.<sup><a href="#src-4" aria-label="Source 4">4</a></sup></span></li>
+          <li><b>18%</b><span>of the repeat buyers in that survey went back to the agent they had used before.<sup><a href="#src-5" aria-label="Source 5">5</a></sup></span></li>
+          <li><b>1 in 5</b><span>car buyers never heard from the dealership after the sale, in a 2013 Maritz study of more than 4,200 buyers, and 62% of them wanted to.<sup><a href="#src-6" aria-label="Source 6">6</a></sup></span></li>
+        </ul>
+        <p class="fine">Not all of that gap is forgetting: people move, and salespeople change jobs. But when people choose from memory, the name they recall is the one they pick.<sup><a href="#src-7" aria-label="Source 7">7</a></sup></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. The hard part, and how Loop31 does it, in three steps with real screens. -->
+  <section class="t-section" id="how" aria-labelledby="how-title">
     <div class="wrap">
-      <h2 id="launch-title">Stay top of mind with everyone you know.</h2>
-      <p>Loop31 is coming to iPhone, starting with real estate agents in Indiana and car salespeople. It isn’t in the App Store yet.</p>
-      <a class="button" href="mailto:support@loop31.com?subject=Tell%20me%20when%20Loop31%20is%20out">Get launch news</a>
+      <div class="t-split">
+        <h2 id="how-title">Loop31 does the hard part.</h2>
+        <div class="t-body">
+          <p>Facebook and Instagram don’t let an app post to a personal account, so Loop31 gets each post ready and the salesperson shares it from their own. That’s where their friends see it: Facebook has said since 2018 that it puts posts from friends and family ahead of posts from businesses.<sup><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+        </div>
+      </div>
+      <ol class="steps3" role="list">
+        <li>
+          <div class="step-pic">
+            <div class="fan">
+              <figure><img src="/img/post-auto-tips.webp" width="640" height="800" loading="lazy" alt="Sample Car Care Tips post: “Are your tires done? Grab a penny.” over tire tread, with “Jordan Ellis · Fall Creek Auto” along the bottom."><span class="loop-tag" data-loop="blue">Car Care Tips</span></figure>
+              <figure><img src="/img/post-auto-reviews.webp" width="640" height="800" loading="lazy" alt="Sample Customer Reviews post: “Delivery day. Their words, not mine.” over one hand passing a car key to another."><span class="loop-tag" data-loop="green">Customer Reviews</span></figure>
+              <figure><img src="/img/post-auto-hood.webp" width="640" height="800" loading="lazy" alt="Sample Around Town post: “The drive I’d take this weekend” over a road through orange fall trees."><span class="loop-tag" data-loop="orange">Around Town</span></figure>
+            </div>
+          </div>
+          <span class="step-n" aria-hidden="true">1</span>
+          <h3>Loop31 writes the week’s posts.</h3>
+          <p>Each person gets 4 ready posts a week, or up to one a day: tips, customer reviews, their part of town. Every one carries your store’s name.</p>
+        </li>
+        <li>
+          <div class="step-pic">
+            <img class="screen" src="/img/screen-lookover.webp" width="840" height="1825" loading="lazy"
+              alt="The app’s look-over, post 1 of 4: a Client Reviews post for Monday at 8:00 AM, shown as it will look, with Skip, Edit and Looks Good buttons.">
+          </div>
+          <span class="step-n" aria-hidden="true">2</span>
+          <h3>They look them over.</h3>
+          <p>Looks Good, Skip or Edit on each post, designed to take about a minute a week. Nothing goes out that they haven’t seen.</p>
+        </li>
+        <li>
+          <div class="step-pic">
+            <img class="screen" src="/img/screen-handoff.webp" width="840" height="1825" loading="lazy"
+              alt="The app’s share screen for “3 things to fix before you list”: Caption copied and Your brokerage info is added, both checked, and a button to share to Facebook.">
+          </div>
+          <span class="step-n" aria-hidden="true">3</span>
+          <h3>They share from their own accounts.</h3>
+          <p>Their iPhone reminds them when it’s time. The caption is already copied, so sharing takes about 20 seconds.</p>
+        </li>
+      </ol>
+      <p class="sample-note">Real screens from the app, with made-up people. The posts are samples the app drew for a made-up salesperson at a made-up store.</p>
+    </div>
+  </section>
+
+  <!-- 5. What managers see, and never see. -->
+  <section class="t-section t-soft" id="see" aria-labelledby="see-title">
+    <div class="wrap">
+      <div class="t-split">
+        <h2 id="see-title">You see who posted. You never see their drafts.</h2>
+        <div class="t-body">
+          <p>The team portal counts each person’s posts from the day they join, the way you already track calls and appointments.</p>
+        </div>
+      </div>
+      <div class="see-grid">
+        <div>
+          <h3>You see</h3>
+          <ul class="ticks" role="list">
+            <li>who posted this week and this month, as posted of planned, like “2 of 3”, and the 3 months before</li>
+            <li>each person’s last post, and how many weeks in a row they’ve posted</li>
+            <li>each post that went out, with its date and caption (captions for 30 days), and what the checks flagged</li>
+            <li>which Loops each person has on (you can’t change them)</li>
+            <li>a Remind button when someone has a post due today that isn’t posted<small>One a day and three a week per person, between 9 AM and 7 PM their time. It shows at the top of their Home screen in the app.</small></li>
+            <li>a Monday email with last week’s numbers, never captions or photos</li>
+          </ul>
+        </div>
+        <div>
+          <h3>You never see</h3>
+          <ul class="ticks never" role="list">
+            <li>drafts, or posts they skipped</li>
+            <li>their photos</li>
+            <li>listings or vehicles they’ve added</li>
+            <li>their phone number or setup answers</li>
+            <li>anyone who pays for Loop31 on their own</li>
+            <li>their Facebook or Instagram: Loop31 can’t see them, and never asks for a password</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="board wide-shot">
+        <div class="board-art">
+          <span class="sample-tag">Sample store</span>
+          <picture>
+            <source media="(max-width: 700px)" srcset="/img/portal-person-numbers-phone.webp" width="680" height="218">
+            <img src="/img/portal-person-numbers.webp" width="1200" height="414" loading="lazy"
+              alt="Sample store. One salesperson’s page in the portal, for a made-up Mike Alvarez at Fall Creek Auto: this week 2 of 3, marked posted of planned; this month 6 of 10, with the three months before; a 17-week streak; last post October 21; and “Nothing due today”.">
+          </picture>
+        </div>
+        <figcaption>One person’s page: this week and this month, the months before, weeks in a row, and the last post.</figcaption>
+      </figure>
+      <blockquote class="promise">
+        <p>“Fall Creek Auto will see your name, that your seat is paid, which Loops are on, and the posts that go out from today on, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, listings, vehicles, or anything you haven’t posted.”</p>
+        <cite>What the app shows each person before they join, word for word, with your store’s name in place of the sample’s.</cite>
+      </blockquote>
+      <p class="fine">Posts count when people mark them posted in Loop31; it can’t see personal Facebook or Instagram. More on what’s kept and who sees it on the <a href="/security/">security and data page</a>.</p>
+    </div>
+  </section>
+
+  <!-- 6. The rule checks and the check record. -->
+  <section class="t-section" id="checks" aria-labelledby="checks-title">
+    <div class="wrap">
+      <div class="t-split">
+        <h2 id="checks-title">Every post is checked before it’s shared, and you keep the record.</h2>
+        <div class="t-body">
+          <ul class="rules" role="list">
+            <li>
+              <strong>Your name on every post</strong>
+              <span>Your store’s or brokerage’s name goes on the picture and under the caption of every post, and it can’t be turned off. As the owner you can add one office logo and one office line, such as “Each Office Independently Owned and Operated”.</span>
+            </li>
+            <li>
+              <strong>No prices or payments from us</strong>
+              <span>The posts Loop31 writes never quote a price or a payment. If a salesperson adds a monthly payment or a down payment to a car post, Loop31 stops it until the full credit terms are there or the payment comes out.</span>
+            </li>
+            <li>
+              <strong>Fair housing wording</strong>
+              <span>When a real estate caption says who a home is for, like “perfect for a young family”, the words are marked in orange with a suggested change. The agent decides.</span>
+            </li>
+            <li>
+              <strong>The check record</strong>
+              <span>For each post that goes out, the portal keeps which checks ran and what they flagged, never the words. Export it for any dates as a spreadsheet.</span>
+            </li>
+          </ul>
+          <ul class="check-words" role="list">
+            <li><span class="loop-tag" data-loop="green">Nothing flagged</span> the checks found nothing</li>
+            <li><span class="loop-tag" data-loop="orange">A warning</span> wording worth a second look</li>
+            <li><span class="loop-tag" data-loop="red">A rule</span> something the post needed and didn’t have</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="board wide-shot">
+        <div class="board-art">
+          <span class="sample-tag">Sample store</span>
+          <picture>
+            <source media="(max-width: 700px)" srcset="/img/portal-check-record-phone.webp" width="680" height="457">
+            <img src="/img/portal-check-record.webp" width="1200" height="747" loading="lazy"
+              alt="Sample store. Posts that went out for one made-up salesperson, newest first: “Detail day on the lot”, “Friday night at Fall Creek High” and “First car for Jordan”, each with its date, Loop, places and caption, and under each “Checked when shared: business name, payment terms. Nothing flagged.”">
+          </picture>
+        </div>
+        <figcaption>The posts that went out, each with what the checks said when it was shared.</figcaption>
+      </figure>
+      <p class="fine">These checks catch common problems. They aren’t legal advice, and the record never says a post “passed”. The rules behind them are on the <a href="/teams/dealerships/#rules">dealership</a> and <a href="/teams/brokerages/#rules">brokerage</a> pages.</p>
+    </div>
+  </section>
+
+  <!-- 7. The math box, then "one extra sale a year could cover it", with the calculator. -->
+  <section class="t-section t-soft" id="math" aria-labelledby="math-title">
+    <div class="wrap">
+      <h2 id="math-title" class="h-wide">The math for a <span class="nowrap">25-person</span> sales floor</h2>
+      <div class="math-grid">
+        <div class="mathbox">
+          <h3>Posts with your name on them</h3>
+          <p class="big-stat"><span class="big-num">5,200</span><span class="big-num-label">posts a year, if 25 people each share the default 4 a week. At one a day, 9,100.</span></p>
+          <table>
+            <tr><th>A reach estimate, Facebook only</th><th>People</th></tr>
+            <tr><td>Facebook friends per person<small>Pew’s average, from its 2011 survey<sup><a href="#src-9" aria-label="Source 9">9</a></sup></small></td><td>229</td></tr>
+            <tr><td>Friends across 25 people</td><td>5,725</td></tr>
+            <tr><td>Different people, allowing 25% overlap<small>Our assumption: coworkers share friends</small></td><td>about 4,300</td></tr>
+            <tr class="total"><td>Who see at least one post a month<small>30% to 61% of them. 61% is from Facebook’s own logs (2012 data);<sup><a href="#src-10" aria-label="Source 10">10</a></sup> 30% is our lower case, because recommended posts now fill 36.6% of US feed views.<sup><a href="#src-11" aria-label="Source 11">11</a></sup></small></td><td>about 1,300 to 2,600</td></tr>
+          </table>
+          <p class="fine">An estimate with every input shown, not a promise. Loop31 can’t see who sees a post on a personal profile. It leaves out Instagram, people outside the friend list, and any sales.</p>
+        </div>
+        <div class="calc-box">
+          <h3>One extra sale a year could cover it</h3>
+          <p class="muted">Depending on how many seats you have and what your store makes on a sale. It could also take more.</p>
+          <div class="calc" role="group" aria-label="What could cover the cost of Loop31" data-calc data-seat-cents="1000" data-min-seats="3" data-unit="sale" hidden>
+            <label>Seats
+              <input name="seats" type="number" inputmode="numeric" min="1" max="1000" step="1" value="20">
+            </label>
+            <label>What one sale makes<span class="calc-hint">Gross to the store, after commission</span>
+              <span class="money"><input name="gross" type="number" inputmode="numeric" min="1" step="1" value="2784"></span>
+            </label>
+            <p class="calc-out" aria-live="polite"><b data-calc-big></b><span data-calc-detail></span></p>
+          </div>
+          <table class="examples">
+            <tr><th>Worked examples, at $10 a seat</th><th>Sales a year</th></tr>
+            <tr><td>Dealership, 20 seats ($2,400 a year). A used car’s front and F&amp;I gross, after a 25% commission: $2,784<sup><a href="#src-12" aria-label="Source 12">12</a>,<a href="#src-13" aria-label="Source 13">13</a></sup></td><td>0.9</td></tr>
+            <tr><td>Dealership, 25 seats ($3,000). Front gross only, after commission: $1,057</td><td>2.8</td></tr>
+            <tr><td>Brokerage, 20 agents ($2,400). Company dollar on a $415,000 sale at 2.5% a side and an 80/20 split: $2,075<sup><a href="#src-14" aria-label="Source 14">14</a></sup></td><td>1.2</td></tr>
+          </table>
+          <p class="fine">Break-even numbers, not a forecast: Loop31 can’t promise any sales. The 25% commission is our assumption; put in your own numbers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Price and the pilot: who approves it, and what happens on day 31. -->
+  <section class="t-section" id="price" aria-labelledby="price-title">
+    <div class="wrap t-split">
+      <h2 id="price-title">$10 a seat a month, after a free <span class="nowrap">30-day</span> pilot.</h2>
+      <div class="t-body">
+        <p class="price"><b>$10</b><span>a seat, per month</span></p>
+        <p>At least 3 seats, billed to the store each month. Month to month: no annual contract, and you can cancel anytime. Twelve seats are $120 a month; 25 are $250.</p>
+        <dl class="timeline">
+          <div><dt>Before day 1</dt><dd>The <strong>general manager, dealer principal or broker-owner</strong> approves the pilot by name. We set up your team with you, and you pick 3 to 10 people.</dd></div>
+          <div><dt>Days 1 to 30</dt><dd>Free. Those days never appear on an invoice.</dd></div>
+          <div><dt>Day 30</dt><dd>A one-page summary in the portal: who posted, how often, and what the checks flagged. Print it for your sales meeting.</dd></div>
+          <div><dt>Day 31</dt><dd><strong>Your team carries on at $10 a seat a month</strong>, billed monthly from that day; nothing changes for your people. If you’d rather not go on, tell us before then and we end the seats. Each person keeps their own Loop31 account.</dd></div>
+        </dl>
+        <div class="cta-row">
+          <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+          <a class="button button-quiet" href="/teams/">How seats work</a>
+        </div>
+        <p class="cta-note">Either of us can end the pilot sooner, any day, by email. The full terms are on the <a href="/pilot/">pilot page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Who you're dealing with. -->
+  <section class="t-section t-soft" id="who" aria-labelledby="who-title">
+    <div class="wrap who">
+      <h2 id="who-title">Who you’re dealing with</h2>
+      <div class="who-card t-body">
+        <!-- Trevor's photo goes here: a real, recent one (square, about 480 × 480, plain background), with alt text
+             "Trevor Powers". No placeholder image until we have it. -->
+        <p class="who-name">Trevor Powers</p>
+        <p>Trevor makes Loop31 at Compound Coder LLC, a small software company at 16102 Wicker Ave, Lowell, Indiana. Write to <a href="mailto:support@loop31.com">support@loop31.com</a> and it goes to him; during the beta he answers within a business day.</p>
+        <p class="fine">Loop31 is new and in beta. It’s iPhone only for now, with posts for real estate and car sales, and checks written for Indiana’s real estate rules first. There are no customer stories here yet; real pilot numbers go here, with each store’s OK, once the first pilots finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Questions managers ask, then the two buttons again. -->
+  <section class="t-section" id="questions" aria-labelledby="questions-title">
+    <div class="wrap t-split">
+      <h2 id="questions-title">Questions managers ask</h2>
+      <dl class="qa t-body">
+        <dt>Will my people actually post?</dt>
+        <dd>The posts are ready, the look-over is designed to take about a minute a week, and their phone reminds them when it’s time. You see who posted, and you can send a reminder to someone whose post is due today. Seat only the people who want it, and try it free for 30 days with your own team.</dd>
+        <dt>Do you need their Facebook or Instagram passwords?</dt>
+        <dd>No, never. Each person shares from their own phone, and Loop31 never posts for anyone.</dd>
+        <dt>Do you get our customer list?</dt>
+        <dd>No. Loop31 never asks for, imports or reads your customers’ names, numbers or deals, and it doesn’t connect to your CRM or DMS. For a dealership that connects its website, it reads only the cars the store publishes. More on the <a href="/security/">security and data page</a>.</dd>
+        <dt>What happens when someone leaves?</dt>
+        <dd>Take their seat back in the portal and give it to the next hire. Their Facebook and Instagram friends stay theirs, as they would anyway; while they hold your seat, every post carries your name.</dd>
+        <dt>Won’t everyone’s posts look the same?</dt>
+        <dd>Each person starts the post ideas at a different place. When two people on your team are about to share nearly the same post, the app says so and offers a fresh version.</dd>
+        <dt>Is there a contract?</dt>
+        <dd>No annual contract. Seats are month to month, and you can cancel anytime.</dd>
+        <dt>Is there an Android version?</dt>
+        <dd>Not yet. Loop31 is iPhone only for now.</dd>
+        <dt>We have more than one store or office.</dt>
+        <dd>For now each store or office is its own team. If you run a group, write to us.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="m-close t-soft" aria-labelledby="close-title">
+    <div class="wrap">
+      <h2 id="close-title">Try it with your own people for 30 days.</h2>
+      <p>Then $10 a seat a month, month to month. iPhone only for now.</p>
+      <div class="cta-row">
+        <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+        <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="t-section t-sources" aria-labelledby="sources-title">
+    <div class="wrap">
+      <h2 id="sources-title">Sources</h2>
+      <ol>
+        <li id="src-1">F&amp;I and Showroom magazine, on Joe Girard’s death, March 13, 2019. <a href="https://www.fi-magazine.com/356228/car-sales-legend-joe-girard-dead-at-90">fi-magazine.com</a></li>
+        <li id="src-2">Selling Power, interview with Joe Girard, February 2, 2010. <a href="https://www.sellingpower.com/2010/02/02/8598/joe-girard/">sellingpower.com</a></li>
+        <li id="src-3">Patch, a post quoting Joe Girard on his monthly cards, June 5, 2014. <a href="https://patch.com/illinois/libertyville/love-your-customers">patch.com</a></li>
+        <li id="src-4">National Association of Realtors, 2025 Profile of Home Buyers and Sellers, news release, November 4, 2025. <a href="https://www.nar.realtor/press-releases/first-time-home-buyer-share-falls-to-historic-low-of-21-median-age-rises-to-40">nar.realtor</a></li>
+        <li id="src-5">BAM, on how buyers and sellers found their agents in NAR’s 2025 profile, November 17, 2025. <a href="https://nowbam.com/how-home-buyers-and-sellers-find-their-agents-in-2025/">nowbam.com</a></li>
+        <li id="src-6">Auto Remarketing, on Maritz Research’s study of car buyers after the sale, November 25, 2013. <a href="https://www.autoremarketing.com/ar/retail/study-shows-majority-customer-journeys-end-when-buyers-drive-dealership-lot">autoremarketing.com</a></li>
+        <li id="src-7">Prakash Nedungadi, “Recall and Consumer Consideration Sets,” Journal of Consumer Research 17(3), 1990. <a href="https://ideas.repec.org/a/oup/jconrs/v17y1990i3p263-76.html">ideas.repec.org</a></li>
+        <li id="src-8">Meta, “News Feed FYI: Bringing People Closer Together,” January 11, 2018. <a href="https://about.fb.com/news/2018/01/news-feed-fyi-bringing-people-closer-together/">about.fb.com</a></li>
+        <li id="src-9">Pew Research Center, “Social networking sites and our lives,” June 16, 2011. <a href="https://www.pewresearch.org/internet/2011/06/16/social-networking-sites-and-our-lives/">pewresearch.org</a></li>
+        <li id="src-10">Bernstein, Bakshy, Burke and Karrer, “Quantifying the Invisible Audience in Social Networks,” CHI 2013. <a href="https://research.facebook.com/publications/quantifying-the-invisible-audience-in-social-networks/">research.facebook.com</a></li>
+        <li id="src-11">Meta, Widely Viewed Content Report, second quarter of 2026. <a href="https://transparency.meta.com/data/widely-viewed-content-report/">transparency.meta.com</a></li>
+        <li id="src-12">Digital Dealer, on Presidio-NCM’s second-quarter 2026 benchmarks (used-vehicle front gross, $1,409 a unit), August 4, 2026. <a href="https://digitaldealer.com/news/average-dealership-profit-is-down-but-the-floor-may-be-in-sight/172689/">digitaldealer.com</a></li>
+        <li id="src-13">WardsAuto, on Presidio-NCM’s first-quarter 2026 benchmarks (F&amp;I, $1,727 a unit), April 27, 2026. <a href="https://wardsauto.com/news/fixed-ops-fi-carry-the-load-for-dealerships-in-q1/818466/">wardsauto.com</a></li>
+        <li id="src-14">RISMedia, 2025 Contract &amp; Commission Study (the median split moved to 80/20), September 29, 2025. <a href="https://www.rismedia.com/reports/back-to-business-rismedias-2025-contract-commission-study/ripples-and-aftershocks/">rismedia.com</a></li>
+      </ol>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
     <div>
       <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
       <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
     </div>
-    <nav aria-label="Footer">
-      <a href="/teams/">For teams</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/">Dealerships</a></li>
+          <li><a href="/teams/brokerages/">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/">Start a free pilot</a></li>
+          <li><a href="/security/">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </footer>

@@ -4,24 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loop31 for brokerages</title>
-  <meta name="description" content="Loop31 gives each agent a few ready, checked posts a week for their own Facebook and Instagram, with your brokerage name on every one. You see who's posting. $10 an agent a month; book a 15-minute demo or start a free 30-day pilot.">
+  <meta name="description" content="Loop31 gives each agent a few ready, checked posts a week for their own Facebook and Instagram, with your brokerage's name on every one, and shows you who posted. $10 an agent a month, about 14% of the average agent tech fee, with a free 30-day pilot.">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="/site.js" defer></script>
 </head>
-<body class="teams-page">
+<body>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap header-row">
     <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
     <nav class="site-nav" aria-label="Site">
-      <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      <a href="/teams/dealerships/">Dealerships</a>
+      <a href="/teams/brokerages/" aria-current="page">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
     </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
   </div>
 </header>
 
@@ -30,152 +38,191 @@
   <section class="t-hero">
     <div class="wrap t-hero-grid">
       <div>
-        <h1>Keep every agent top of mind, with your brokerage name on every post.</h1>
-        <p class="lede">For managing brokers, broker-owners and team leaders. Loop31 gives each agent a few ready posts a week for their own Facebook and Instagram, checked before they share. It’s designed to take them about a minute a week, and you see who’s posting.</p>
+        <h1>When someone they know is ready to move, they should think of your agent.</h1>
+        <p class="lede">The 33 Touch and the monthly mailer you already teach, done for every agent, every week. Each agent gets ready posts for their own Facebook and Instagram, with your brokerage’s name on every one, and you see who posted.</p>
         <div class="cta-row">
-          <a class="button" href="mailto:support@loop31.com?subject=A%2015-minute%20Loop31%20demo%20for%20my%20office&amp;body=Hi%20Loop31%2C%0A%0AI%27d%20like%20a%2015-minute%20demo.%0A%0AMy%20name%3A%0ABrokerage%20and%20office%3A%0AMy%20role%3A%0AA%20good%20time%20to%20talk%3A%0A%0AThanks">Book a 15-minute demo</a>
-          <a class="button button-quiet" href="mailto:support@loop31.com?subject=Free%2030-day%20pilot%20for%20my%20office&amp;body=Hi%20Loop31%2C%0A%0AWe%27d%20like%20to%20try%20Loop31%20free%20for%2030%20days.%0A%0AMy%20name%3A%0ABrokerage%20and%20office%3A%0AHow%20many%20agents%20would%20use%20it%3A%0AA%20good%20phone%20number%3A%0A%0AThanks">Or start a free 30-day pilot</a>
+          <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+          <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
         </div>
-        <p class="cta-note">iPhone only for now. <a href="#sample">See the manager view (sample)</a> · <a href="/team/">Manager sign-in</a></p>
+        <p class="cta-note">For broker-owners, managing brokers and team leaders. $10 an agent a month. iPhone only for now.</p>
       </div>
       <figure class="t-post">
         <img src="/img/post-re-reviews.webp" width="640" height="800" fetchpriority="high"
-          alt="A Client Reviews post from the app: a hand holding house keys, the words “Keys in hand. Their words, not mine.”, and “Jess Rivera · Northline Realty · (317) 555-0142” along the bottom.">
-        <figcaption>A real post from the app, for a made-up agent at a made-up brokerage. Northline Realty is on the picture and under the caption.</figcaption>
+          alt="A sample Client Reviews post from the app: a hand holding house keys, the words “Keys in hand. Their words, not mine.”, and “Jess Rivera · Northline Realty · (317) 555-0142” along the bottom.">
+        <figcaption>A sample post the app drew for a made-up agent at a made-up brokerage. Northline Realty is on the picture and under the caption.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="t-section">
+  <section class="t-section" id="sphere" aria-labelledby="sphere-title">
     <div class="wrap t-split">
-      <h2>Their next deal usually starts with someone they know.</h2>
+      <h2 id="sphere-title">Their next deal usually starts with someone they know.</h2>
       <div class="t-body">
         <ul class="figures" role="list">
-          <li><b>66%</b><span>of sellers found their agent through a referral or used an agent they had worked with in the past, in NAR’s 2025 Profile of Home Buyers and Sellers.<sup><a href="#src-1" aria-label="Source 1">1</a></sup></span></li>
-          <li><b>46%</b><span>of real estate firms’ sales volume comes from repeat business, and 44% from past client referrals, NAR reported in November 2025.<sup><a href="#src-2" aria-label="Source 2">2</a></sup></span></li>
+          <li><b>46%</b><span>of real estate firms’ sales volume comes from repeat business, and 44% from past client referrals, NAR reported in November 2025.<sup><a href="#src-1" aria-label="Source 1">1</a></sup></span></li>
+          <li><b>18%</b><span>of repeat home buyers went back to the agent they had used before, in NAR’s 2025 survey of buyers and sellers,<sup><a href="#src-2" aria-label="Source 2">2</a></sup> though 91% of buyers said they would use their agent again or recommend them.<sup><a href="#src-3" aria-label="Source 3">3</a></sup></span></li>
         </ul>
-        <p class="fine">Facebook has said it puts posts from friends and family ahead of public posts from businesses.<sup><a href="#src-3" aria-label="Source 3">3</a></sup> An agent’s own profile is where their past clients see them.</p>
+        <p class="fine">Facebook has said it puts posts from friends and family ahead of public posts from businesses.<sup><a href="#src-4" aria-label="Source 4">4</a></sup> An agent’s own profile is where their past clients see them.</p>
       </div>
     </div>
   </section>
 
-  <section class="t-section t-soft">
+  <section class="t-section t-soft" id="how" aria-labelledby="how-title">
     <div class="wrap t-split">
-      <h2>Your brokerage name on every post.</h2>
+      <h2 id="how-title">Every agent in front of their sphere, every week.</h2>
+      <div class="t-body">
+        <ul class="rules" role="list">
+          <li>
+            <strong>Ready posts</strong>
+            <span>Each agent gets 4 ready posts a week by default, up to one a day: home tips, client reviews, their part of town. Every coach says to stay in touch; this is the part agents fall off on.</span>
+          </li>
+          <li>
+            <strong>About a minute a week</strong>
+            <span>Agents look the week’s posts over in the app and share each one from their own Facebook and Instagram in about 20 seconds. Their iPhone reminds them when it’s time.</span>
+          </li>
+          <li>
+            <strong>Your office line and logo</strong>
+            <span>As the owner, you set one office logo and one office line, such as “Each Office Independently Owned and Operated”. Every seated agent’s posts carry the line. The logo goes on the posts of agents without a logo of their own, or on everyone’s if you require it.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="t-section" id="see" aria-labelledby="see-title">
+    <div class="wrap">
+      <div class="t-split">
+        <h2 id="see-title">Who posted, this week and this month.</h2>
+        <div class="t-body">
+          <p>The team portal counts each agent’s posts from the day they join. When an agent has a post due today that isn’t posted, send a reminder: one a day and three a week per agent, between 9 AM and 7 PM their time. It shows at the top of their Home screen in the app.</p>
+          <p>You never see their drafts, their photos, their listings, or anything they haven’t posted. <a href="/#see">The full list</a>.</p>
+        </div>
+      </div>
+      <figure class="board wide-shot">
+        <div class="board-art">
+          <span class="sample-tag">Sample office</span>
+          <picture>
+            <source media="(max-width: 700px)" srcset="/img/portal-board-realty-phone.webp" width="680" height="468">
+            <img src="/img/portal-board-realty.webp" width="1200" height="964" loading="lazy"
+              alt="Sample office. The Loop31 team portal for a made-up brokerage, Northline Realty, this week: 10 of 12 seats used, 6 of 10 agents shared, 9 posts shared, 7 people on a streak, 35 posts this month. Below it, the agents who haven’t shared yet, each with this week and this month as posted of planned, their streak, their last post, and either a Remind button or the time a reminder was sent.">
+          </picture>
+        </div>
+        <figcaption>The Team page for a made-up brokerage and made-up agents. Counts are what agents mark as posted; Loop31 can’t see personal Facebook or Instagram.</figcaption>
+      </figure>
+      <blockquote class="promise">
+        <p>“Northline Realty will see your name, that your seat is paid, which Loops are on, and the posts that go out from today on, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, listings, vehicles, or anything you haven’t posted.”</p>
+        <cite>What the app shows each agent before they join, word for word, with your brokerage’s name in place of the sample’s.</cite>
+      </blockquote>
+      <p class="fine">Agents who work as independent contractors keep control of their own accounts, which is worth saying when you recruit.</p>
+    </div>
+  </section>
+
+  <section class="t-section t-soft" id="rules" aria-labelledby="rules-title">
+    <div class="wrap t-split">
+      <h2 id="rules-title">Your brokerage name on every post, and a record of the checks.</h2>
       <div class="t-body">
         <ul class="rules" role="list">
           <li>
             <strong>The brokerage’s name</strong>
-            <span>In Indiana, an internet ad that carries a licensee’s name must also carry the broker company’s name (876 IAC 8-1-8).<sup><a href="#src-4" aria-label="Source 4">4</a></sup> NAR’s Standard of Practice 12-5 asks for the firm name too, and a team name alone isn’t enough.<sup><a href="#src-5" aria-label="Source 5">5</a></sup> Loop31 puts your brokerage’s name on the picture and under the caption of every post, and it can’t be turned off. You can add your office’s logo and one office line too.</span>
+            <span>In Indiana, an internet ad that carries a licensee’s name must also carry the broker company’s name (876 IAC 8-1-8).<sup><a href="#src-5" aria-label="Source 5">5</a></sup> NAR’s Standard of Practice 12-5 asks for the firm name too, and a team name alone isn’t enough.<sup><a href="#src-6" aria-label="Source 6">6</a></sup> Loop31 puts your brokerage’s name on the picture and under the caption of every post, and it can’t be turned off.</span>
           </li>
           <li>
             <strong>Wording about who a home is for</strong>
-            <span>Indiana’s Civil Rights Commission counts social media posts as housing ads.<sup><a href="#src-6" aria-label="Source 6">6</a></sup> When a caption says who a home is for, like “perfect for a young family”, the app marks those words in orange and suggests a change, with the Fair Housing Act’s advertising rule (42 U.S.C. 3604(c)) in mind.<sup><a href="#src-7" aria-label="Source 7">7</a></sup> The agent decides.</span>
+            <span>Indiana’s Civil Rights Commission counts social media posts as housing ads.<sup><a href="#src-7" aria-label="Source 7">7</a></sup> When a caption says who a home is for, like “perfect for a young family”, the app marks those words in orange and suggests a change, with the Fair Housing Act’s advertising rule (42 U.S.C. 3604(c)) in mind.<sup><a href="#src-8" aria-label="Source 8">8</a></sup> The agent decides.</span>
           </li>
           <li>
             <strong>Equal Housing Opportunity</strong>
             <span>The logo goes on listing posts by default, and an agent can choose to put it on every post.</span>
           </li>
+          <li>
+            <strong>The check record</strong>
+            <span>For each post that goes out, the portal keeps which checks ran and what they flagged: “nothing flagged”, “a warning” or “a rule”, never the words. Export it for any dates as a spreadsheet. It helps you document supervision.</span>
+          </li>
         </ul>
-        <p class="fine">These checks catch common problems. They aren’t legal advice.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="t-section">
-    <div class="wrap t-split">
-      <h2>What you see as their broker.</h2>
-      <div class="t-body">
-        <div class="see">
-          <div>
-            <h3>You see</h3>
-            <ul>
-              <li>each agent’s name, and that their seat is paid</li>
-              <li>when they joined, and the date of their last post</li>
-              <li>which Loops they have on (you can’t change them)</li>
-              <li>the posts that went out from the day they joined, with dates and captions (captions for 30 days)</li>
-              <li>a record of what the checks flagged on each shared post</li>
-              <li>a Monday email with last week’s numbers, never captions or photos</li>
-            </ul>
+        <figure class="board wide-shot">
+          <div class="board-art">
+            <span class="sample-tag">Sample office</span>
+            <picture>
+              <source media="(max-width: 700px)" srcset="/img/portal-check-record-realty-phone.webp" width="680" height="471">
+              <img src="/img/portal-check-record-realty.webp" width="1200" height="498" loading="lazy"
+                alt="Sample office. Two posts that went out for a made-up agent, each with its date, Loop, places and caption, and under each “Checked when shared: business name, fair housing wording, payment terms. Nothing flagged.”">
+            </picture>
           </div>
-          <div>
-            <h3>You never see</h3>
-            <ul>
-              <li>drafts, or posts they skipped</li>
-              <li>their photos or their listings</li>
-              <li>their phone number or setup answers</li>
-              <li>agents who pay for Loop31 on their own</li>
-            </ul>
-          </div>
-        </div>
-        <blockquote class="promise">
-          <p>“Northline Realty will see your name, that your seat is paid, which Loops are on, and the posts that go out from today on, with their dates and captions. They never see your drafts, photos, listings, vehicles, or anything you haven’t posted.”</p>
-          <cite>What the app shows each agent before they join, word for word, with your brokerage’s name in place of the sample’s.</cite>
-        </blockquote>
-        <p class="fine">Everyone posts from their own accounts, and managers never see drafts, photos, or anything that wasn’t posted. Agents who work as independent contractors keep control of their own accounts, which is worth saying when you recruit.</p>
+        </figure>
+        <p class="fine">These checks catch common problems. They aren’t legal advice, and they’re written for Indiana’s rules first.</p>
       </div>
     </div>
   </section>
 
-  <section class="t-section t-soft" id="sample">
-    <div class="wrap">
-      <h2>The manager view</h2>
-      <p class="muted">The team portal in its sample mode: a made-up brokerage with made-up agents.</p>
-      <div class="t-shots">
-        <figure class="t-shot">
-          <span class="sample-tag">Sample office</span>
-          <picture>
-            <source media="(max-width: 700px)" srcset="/img/portal-team-phone.webp" width="640" height="1067">
-            <img src="/img/portal-team.webp" width="1200" height="750" loading="lazy"
-              alt="Sample office. The Team page for a made-up brokerage, Northline Realty: counts of people on the team, seats, agents who posted in the last week and open invites, then each agent with their seat and the date of their last post.">
-          </picture>
-          <figcaption>The Team page: who holds a seat, how many posted in the last week, and each agent’s last post.</figcaption>
-        </figure>
-        <figure class="t-shot">
-          <span class="sample-tag">Sample office</span>
-          <picture>
-            <source media="(max-width: 700px)" srcset="/img/portal-person-phone.webp" width="640" height="1067">
-            <img src="/img/portal-person.webp" width="1200" height="750" loading="lazy"
-              alt="Sample office. One agent’s page: posts in the last 8 weeks, the Loops they have on, shown read only, and the posts that went out, newest first.">
-          </picture>
-          <figcaption>An agent’s page: the Loops they have on and every post that went out since they joined.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="t-section">
+  <section class="t-section" id="tech-fee" aria-labelledby="tech-fee-title">
     <div class="wrap t-split">
-      <h2>A seat agents would otherwise pay for.</h2>
+      <h2 id="tech-fee-title">Fold it into your agents’ tech fee.</h2>
       <div class="t-body">
-        <p>In NAR’s 2025 technology survey, social media tools were the tech agents most often paid for themselves: 52% did.<sup><a href="#src-8" aria-label="Source 8">8</a></sup> A Loop31 seat from the brokerage takes that cost off them.</p>
+        <ul class="figures" role="list">
+          <li><b>14%</b><span>is what a Loop31 seat ($120 a year) comes to of the $866 a year that brokerages charged agents in tech fees on average, in RISMedia’s 2025 study.<sup><a href="#src-9" aria-label="Source 9">9</a></sup></span></li>
+          <li><b>52%</b><span>of agents paid for their own social media tools in NAR’s 2025 technology survey: the tech agents most often buy for themselves.<sup><a href="#src-10" aria-label="Source 10">10</a></sup></span></li>
+        </ul>
+        <p class="fine">Either way, the office buys the seats. Whether you cover them or recover them in a fee is up to you.</p>
       </div>
     </div>
   </section>
 
-  <section class="t-section t-soft">
+  <section class="t-section t-soft" id="price" aria-labelledby="price-title">
     <div class="wrap t-split">
-      <h2>Price</h2>
+      <h2 id="price-title">$10 an agent. About one extra side a year could cover it.</h2>
       <div class="t-body">
         <p class="price"><b>$10</b><span>an agent, per month</span></p>
-        <p>At least 3 seats, billed to the office each month. Month to month, and you can cancel anytime. Seat only the agents who want one.</p>
-        <p class="muted">A 20-agent office is $200 a month.</p>
+        <p>At least 3 seats, billed to the office each month. Month to month, and you can cancel anytime. Seat only the agents who want one. A 20-agent office is $200 a month.</p>
+        <div class="calc-box">
+          <p class="muted">Depending on your agents and your company dollar. It could also take more.</p>
+          <div class="calc" role="group" aria-label="What could cover the cost of Loop31" data-calc data-seat-cents="1000" data-min-seats="3" data-unit="side" hidden>
+            <label>Agents
+              <input name="seats" type="number" inputmode="numeric" min="1" max="1000" step="1" value="20">
+            </label>
+            <label>Company dollar on one side<span class="calc-hint">What the office keeps after the split</span>
+              <span class="money"><input name="gross" type="number" inputmode="numeric" min="1" step="1" value="2075"></span>
+            </label>
+            <p class="calc-out" aria-live="polite"><b data-calc-big></b><span data-calc-detail></span></p>
+          </div>
+          <p class="fine">The $2,075 is one side of a $415,000 sale at 2.5% ($10,375), at the 80/20 split RISMedia found was the median in 2025.<sup><a href="#src-9" aria-label="Source 9">9</a></sup> The price and the commission are our example. Break-even numbers, not a forecast.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="t-section">
+  <section class="t-section" id="pilot" aria-labelledby="pilot-title">
     <div class="wrap t-split">
-      <h2>Questions brokers ask</h2>
+      <h2 id="pilot-title">The free <span class="nowrap">30-day</span> pilot</h2>
+      <div class="t-body">
+        <dl class="timeline">
+          <div><dt>Before day 1</dt><dd>The <strong>broker-owner</strong> approves it by name. We set up your office’s team with you, and you pick 3 to 10 agents.</dd></div>
+          <div><dt>Days 1 to 30</dt><dd>Free. Those days never appear on an invoice.</dd></div>
+          <div><dt>Day 30</dt><dd>A one-page summary in the portal: who posted, how often, and what the checks flagged.</dd></div>
+          <div><dt>Day 31</dt><dd><strong>Your team carries on at $10 a seat a month</strong>, billed monthly from that day. If you’d rather not go on, tell us before then and we end the seats.</dd></div>
+        </dl>
+        <div class="cta-row">
+          <a class="button" href="/pilot/">Start a free 30-day pilot</a>
+          <a class="button button-quiet" href="mailto:support@loop31.com?subject=15%20minutes%20with%20Trevor%20about%20Loop31&amp;body=Hi%20Trevor%2C%0A%0AI%20would%20like%2015%20minutes%20to%20talk%20about%20Loop31%20for%20my%20store%20or%20office.%0A%0AMy%20name%3A%0AStore%20or%20office%3A%0AMy%20role%3A%0ATwo%20times%20that%20work%2C%20with%20my%20time%20zone%3A%0A%0AThanks">Book 15 minutes with Trevor</a>
+        </div>
+        <p class="cta-note">iPhone only for now. You’ll be working with the person who builds Loop31.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="t-section t-soft" id="questions" aria-labelledby="questions-title">
+    <div class="wrap t-split">
+      <h2 id="questions-title">Questions brokers ask</h2>
       <dl class="qa t-body">
         <dt>Will my agents actually use it?</dt>
-        <dd>It’s designed to take about a minute a week, and their phone reminds them when it’s time to post. You can see who posted. Seat only the agents who want it, and try it free for 30 days with your own office.</dd>
+        <dd>It’s designed to take about a minute a week, and their phone reminds them when it’s time to post. You see who posted, and you can send a reminder to an agent whose post is due today. Seat only the agents who want it, and try it free for 30 days with your own office.</dd>
         <dt>We already have a CRM and a marketing center.</dt>
         <dd>Loop31 isn’t a CRM or a design tool. It hands each agent a week of ready, checked posts for their own profile, which is the part agents usually pay for themselves. It sits next to the tools you already have.</dd>
         <dt>Our franchise has rules for agents’ posts.</dt>
-        <dd>The posts go on the agent’s own profile, not your office’s page, and your brokerage’s name is on every one. As the owner, you set one office logo and one office line, such as “Each Office Independently Owned and Operated”, and every seated agent’s posts carry the line. The logo goes on the posts of agents without a logo of their own, or on everyone’s if you require it.</dd>
+        <dd>The posts go on the agent’s own profile, not your office’s page, and your brokerage’s name is on every one. Your office line, such as “Each Office Independently Owned and Operated”, goes on every seated agent’s posts.</dd>
         <dt>Will agents mind me seeing their posts?</dt>
         <dd>You see only what they post, from the day they join, and the app tells them exactly that before they join.</dd>
+        <dt>Do you get our clients’ information?</dt>
+        <dd>No. Loop31 doesn’t connect to your CRM and never reads a client list. The only client words in it are reviews an agent types in with the client’s OK. More on the <a href="/security/">security and data page</a>.</dd>
         <dt>Which states do the checks cover?</dt>
         <dd>They’re written for Indiana’s rules first. If your office is in another state, ask us before you start.</dd>
         <dt>Is there an Android version?</dt>
@@ -184,36 +231,20 @@
     </div>
   </section>
 
-  <section class="t-section t-soft">
-    <div class="wrap t-split">
-      <h2>How a pilot works</h2>
-      <div class="t-body">
-        <ol class="steps-plain">
-          <li>We set up your office’s team with you.</li>
-          <li>You pick 3 to 10 agents, and they use Loop31 free for 30 days.</li>
-          <li>At 30 days you get a one-page summary of who posted and how often. Then you decide whose seats to keep.</li>
-        </ol>
-        <div class="cta-row">
-          <a class="button" href="mailto:support@loop31.com?subject=A%2015-minute%20Loop31%20demo%20for%20my%20office&amp;body=Hi%20Loop31%2C%0A%0AI%27d%20like%20a%2015-minute%20demo.%0A%0AMy%20name%3A%0ABrokerage%20and%20office%3A%0AMy%20role%3A%0AA%20good%20time%20to%20talk%3A%0A%0AThanks">Book a 15-minute demo</a>
-          <a class="button button-quiet" href="mailto:support@loop31.com?subject=Free%2030-day%20pilot%20for%20my%20office&amp;body=Hi%20Loop31%2C%0A%0AWe%27d%20like%20to%20try%20Loop31%20free%20for%2030%20days.%0A%0AMy%20name%3A%0ABrokerage%20and%20office%3A%0AHow%20many%20agents%20would%20use%20it%3A%0AA%20good%20phone%20number%3A%0A%0AThanks">Or start a free 30-day pilot</a>
-        </div>
-        <p class="cta-note">iPhone only for now. You’ll be working with the people who build Loop31. More than one office? <a href="mailto:support@loop31.com?subject=Loop31%20for%20a%20group&amp;body=Hi%20Loop31%2C%0A%0AWe%20have%20more%20than%20one%20office%20or%20store.%0A%0AMy%20name%3A%0AOur%20company%3A%0AHow%20many%20offices%20or%20stores%3A%0AA%20good%20time%20to%20talk%3A%0A%0AThanks">Write to us</a>.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="t-section t-sources" aria-labelledby="sources-title">
     <div class="wrap">
       <h2 id="sources-title">Sources</h2>
       <ol>
-        <li id="src-1">Virginia REALTORS, key takeaways from NAR’s 2025 Profile of Home Buyers and Sellers, December 8, 2025. <a href="https://virginiarealtors.org/2025/12/08/key-takeaways-from-nars-2025-profile-of-home-buyers-and-sellers">virginiarealtors.org</a></li>
-        <li id="src-2">National Association of REALTORS®, news release on its survey of real estate firms, November 19, 2025. <a href="https://www.nar.realtor/newsroom/real-estate-firms-cite-housing-affordability-and-rising-costs-as-biggest-challenges">nar.realtor</a></li>
-        <li id="src-3">Meta, “News Feed FYI: Bringing People Closer Together,” January 2018. <a href="https://about.fb.com/news/2018/01/news-feed-fyi-bringing-people-closer-together/">about.fb.com</a></li>
-        <li id="src-4">Indiana Administrative Code, 876 IAC 8-1-8, advertising by licensees. <a href="https://www.law.cornell.edu/regulations/indiana/876-IAC-8-1-8">law.cornell.edu</a></li>
-        <li id="src-5">NAR Magazine, “Advertising: No Team Is an Island” (Standard of Practice 12-5). <a href="https://www.nar.realtor/magazine/real-estate-news/law-and-ethics/advertising-no-team-is-an-island">nar.realtor</a></li>
-        <li id="src-6">Indiana Civil Rights Commission, advertising and housing discrimination. <a href="https://www.in.gov/icrc/enforcement/housing/advertising-and-housing-discrimination">in.gov</a></li>
-        <li id="src-7">Fair Housing Act, 42 U.S.C. 3604(c). <a href="https://www.law.cornell.edu/uscode/text/42/3604">law.cornell.edu</a></li>
-        <li id="src-8">Houston Agent Magazine on NAR’s 2025 Technology Survey, September 19, 2025. <a href="https://houstonagentmagazine.com/2025/09/19/nar-technology-survey/">houstonagentmagazine.com</a></li>
+        <li id="src-1">National Association of REALTORS®, news release on its survey of real estate firms, November 19, 2025. <a href="https://www.nar.realtor/newsroom/real-estate-firms-cite-housing-affordability-and-rising-costs-as-biggest-challenges">nar.realtor</a></li>
+        <li id="src-2">BAM, on how buyers and sellers found their agents in NAR’s 2025 profile, November 17, 2025. <a href="https://nowbam.com/how-home-buyers-and-sellers-find-their-agents-in-2025/">nowbam.com</a></li>
+        <li id="src-3">National Association of REALTORS®, 2025 Profile of Home Buyers and Sellers, news release, November 4, 2025. <a href="https://www.nar.realtor/press-releases/first-time-home-buyer-share-falls-to-historic-low-of-21-median-age-rises-to-40">nar.realtor</a></li>
+        <li id="src-4">Meta, “News Feed FYI: Bringing People Closer Together,” January 2018. <a href="https://about.fb.com/news/2018/01/news-feed-fyi-bringing-people-closer-together/">about.fb.com</a></li>
+        <li id="src-5">Indiana Administrative Code, 876 IAC 8-1-8, advertising by licensees. <a href="https://www.law.cornell.edu/regulations/indiana/876-IAC-8-1-8">law.cornell.edu</a></li>
+        <li id="src-6">NAR Magazine, “Advertising: No Team Is an Island” (Standard of Practice 12-5). <a href="https://www.nar.realtor/magazine/real-estate-news/law-and-ethics/advertising-no-team-is-an-island">nar.realtor</a></li>
+        <li id="src-7">Indiana Civil Rights Commission, advertising and housing discrimination. <a href="https://www.in.gov/icrc/enforcement/housing/advertising-and-housing-discrimination">in.gov</a></li>
+        <li id="src-8">Fair Housing Act, 42 U.S.C. 3604(c). <a href="https://www.law.cornell.edu/uscode/text/42/3604">law.cornell.edu</a></li>
+        <li id="src-9">RISMedia, 2025 Contract &amp; Commission Study (agent tech fees averaged $866 a year; the median split moved to 80/20), September 29, 2025. <a href="https://www.rismedia.com/reports/back-to-business-rismedias-2025-contract-commission-study/ripples-and-aftershocks/">rismedia.com</a></li>
+        <li id="src-10">Houston Agent Magazine on NAR’s 2025 Technology Survey, September 19, 2025. <a href="https://houstonagentmagazine.com/2025/09/19/nar-technology-survey/">houstonagentmagazine.com</a></li>
       </ol>
     </div>
   </section>
@@ -221,16 +252,32 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
     <div>
       <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
       <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
     </div>
-    <nav aria-label="Footer">
-      <a href="/teams/">For teams</a>
-      <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/">Dealerships</a></li>
+          <li><a href="/teams/brokerages/" aria-current="page">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/">Start a free pilot</a></li>
+          <li><a href="/security/">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </footer>

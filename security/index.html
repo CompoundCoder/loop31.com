@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security and data · Loop31</title>
+  <meta name="description" content="What Loop31 keeps, where it is kept, who can see it, what managers never see, and how it is deleted. Loop31 never holds your customer list.">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/teams/dealerships/">Dealerships</a>
+      <a href="/teams/brokerages/">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/" aria-current="page">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
+    </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="wrap narrow page">
+
+  <h1>Security and data</h1>
+
+  <p class="lede">What Loop31 keeps, where, who can see it, and how it goes away. Plain facts only; where we haven’t done something, this page says so. The full detail is in the <a href="/privacy.html">privacy policy</a>.</p>
+
+  <h2>The short version</h2>
+
+  <ul>
+    <li><strong>We never hold your customer list.</strong> Loop31 doesn’t ask for, import or read your customers’ names, numbers or deals, and it doesn’t connect to a CRM or DMS.</li>
+    <li><strong>One place, in the United States.</strong> Everything is kept in one Supabase project, on Amazon Web Services in Northern Virginia.</li>
+    <li><strong>Managers see what each person was told they’d see,</strong> word for word, before they joined. Nothing else.</li>
+    <li><strong>No passwords.</strong> People sign in with a code sent to their email, and Loop31 never asks for a Facebook or Instagram password.</li>
+    <li><strong>Deleting is real.</strong> Delete an account in the app and everything we hold for it goes.</li>
+  </ul>
+
+  <h2 id="customers">Your customers’ information</h2>
+
+  <p>Loop31 posts to each salesperson’s own friends and followers, so it has no reason to know your customers, and it doesn’t.</p>
+  <ul>
+    <li>No customer list, CRM, DMS or deal data comes into Loop31, and there is no way to upload one.</li>
+    <li>The only words from a customer are a review a salesperson types in themselves, with the customer’s OK to share: the words, the name the customer wants shown, and the date. The salesperson can delete it any time.</li>
+    <li>For a dealership that connects its website, Loop31’s server reads the cars the store publishes each night: the VIN, year, make, model, trim, mileage, condition, the price shown, the page’s address and up to three photos. It honors the site’s robots.txt, never keeps a page’s text, and never reads anything about a customer.</li>
+    <li>Loop31 reads only a website the person giving it confirms is theirs to give, and never social networks, marketplaces or listing sites. If your website was given to us without your OK, write to <a href="mailto:support@loop31.com">support@loop31.com</a> and we’ll stop reading it and delete what we got from it (<a href="/terms.html#websites">terms</a>).</li>
+  </ul>
+
+  <h2 id="where">What we keep, and where</h2>
+
+  <p>Everything lives in one project on <strong>Supabase</strong>, in the United States (Amazon Web Services, Northern Virginia): the database, the sign-in service, private storage for photos, the small server programs the app talks to, and the logs. Supabase works for us under its data processing terms and doesn’t use the data for anything of its own.</p>
+
+  <table>
+    <tr><th>What</th><th>Kept until</th></tr>
+    <tr><td>Each person’s email, for signing in</td><td>They delete their account</td></tr>
+    <tr><td>Name and business details (work phone, brokerage or dealership, license state, social handles)</td><td>They delete their account</td></tr>
+    <tr><td>Posts, captions, the schedule, and what they approved</td><td>They delete the post or their account</td></tr>
+    <tr><td>Photos and videos, in private storage, with location data taken out before upload</td><td>They delete the post or their account</td></tr>
+    <tr><td>The check record: which checks ran on each shared post and what they flagged, as names and levels, never words</td><td>With the post</td></tr>
+    <tr><td>A manager’s reminders: who sent it, about which post, and when</td><td>35 days</td></tr>
+    <tr><td>A dealership’s website address, and the cars read from it</td><td>A year after a car leaves the website, or the team ends</td></tr>
+    <tr><td>Server logs (never caption text or anything typed)</td><td>30 days</td></tr>
+    <tr><td>Backups, if turned on</td><td>30 days</td></tr>
+  </table>
+
+  <p>We never sell data, show ads, or track anyone across other apps and sites.</p>
+
+  <h2 id="who">Who can see what</h2>
+
+  <table>
+    <tr><th>Who</th><th>What they can see</th></tr>
+    <tr><td>Each person</td><td>Everything of their own.</td></tr>
+    <tr><td>Their team’s owner and admins</td><td>From the day the person joined with a seat: their name and that their seat is paid; which Loops are on; each post that went out, with its date and caption (captions for 30 days) and what the checks flagged; how many posts they marked posted this week and this month, of those planned, and the 3 months before; their last post and weeks in a row. An owner or admin can send one reminder a day, three a week at most, when a post is due today.</td></tr>
+    <tr><td>Loop31 staff</td><td>For support, billing or a deletion request, a few staff can look up an account by its exact email: counts, dates, the plan, the team, and the writing-help answer. Never the person’s name, captions or photos. Every lookup is recorded.</td></tr>
+    <tr><td>Other teams, other people</td><td>Nothing.</td></tr>
+  </table>
+
+  <p><strong>Where the fences are.</strong> These limits are set in the database itself, on every table (Postgres row-level security), not only in the app. Automated tests check each “no” before every release: for example, that a manager can’t read a person’s drafts, a person without a seat, or another team’s people.</p>
+
+  <h2 id="managers">What managers never see</h2>
+
+  <ul>
+    <li>drafts, or posts a person skipped</li>
+    <li>their photos</li>
+    <li>listings or vehicles they’ve added (a dealership’s managers see counts of the cars offered and claimed)</li>
+    <li>their phone number or setup answers</li>
+    <li>anyone who pays for Loop31 on their own, or a person whose seat was taken back (their rows leave the manager’s view at once)</li>
+    <li>their Facebook or Instagram: Loop31 can’t see them</li>
+  </ul>
+
+  <p>Before anyone joins a team, the app shows them this, word for word, with the team’s name:</p>
+  <blockquote class="promise">
+    <p>“Fall Creek Auto will see your name, that your seat is paid, which Loops are on, and the posts that go out from today on, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, listings, vehicles, or anything you haven’t posted.”</p>
+  </blockquote>
+
+  <h2 id="accounts">Passwords and social accounts</h2>
+
+  <ul>
+    <li><strong>No passwords.</strong> The app and the team portal sign in with a 6-digit code sent to the person’s email. A code works for 10 minutes.</li>
+    <li><strong>No social logins.</strong> Loop31 never asks for a Facebook, Instagram or TikTok password and never posts to a personal profile. When someone taps Share, the app hands the post to that app on their own phone.</li>
+  </ul>
+
+  <h2 id="companies">The outside companies</h2>
+
+  <table>
+    <tr><th>Who</th><th>What they get</th></tr>
+    <tr><td>Supabase</td><td>Hosts everything above.</td></tr>
+    <tr><td>Resend</td><td>Sends the sign-in codes and the Monday email to managers (names and counts, never captions or photos).</td></tr>
+    <tr><td>OpenAI and Anthropic</td><td>Caption text, and only if the person said yes to writing help in the app (for the “Other” line of work, also the words of their own business website, if they give it). Never a name, phone, email, photo, customer review or account ID. Neither trains its models on it.</td></tr>
+    <tr><td>Pixabay</td><td>The words of a photo search, sent through our server. The photos then load onto the phone from Pixabay, so Pixabay sees the phone’s IP address.</td></tr>
+    <tr><td>NHTSA</td><td>The VINs of cars read from a dealership’s website, to confirm the year, make and model.</td></tr>
+    <tr><td>Apple</td><td>Delivers the app and sends us crash reports.</td></tr>
+  </table>
+
+  <p>Exactly what goes to each one, and when, is in the privacy policy, under <a href="/privacy.html#share">“Who we share it with”</a>.</p>
+
+  <h2 id="delete">Deleting</h2>
+
+  <ul>
+    <li><strong>A person</strong> deletes their account in the app (Profile, then Delete Account). Everything we hold for them goes, their sign-in last. Backups roll off within 30 days.</li>
+    <li><strong>A manager</strong> takes a seat back in the portal. That person’s posts and counts leave the manager’s view at once; their own account stays theirs.</li>
+    <li><strong>Anyone who can’t open the app,</strong> or a customer whose review was shared, can write to <a href="mailto:support@loop31.com">support@loop31.com</a> and we remove the data.</li>
+  </ul>
+
+  <h2 id="limits">What we don’t have</h2>
+
+  <ul>
+    <li>No security certification, such as SOC 2 or ISO 27001. Loop31 is a small company in beta, and this page says what it does instead.</li>
+    <li>No single sign-on with your company’s accounts, and no Android app yet.</li>
+  </ul>
+
+  <p>If your group reviews vendors, send your questions to <a href="mailto:support@loop31.com?subject=Vendor%20review%20questions%20for%20Loop31">support@loop31.com</a>.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
+      <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/">Dealerships</a></li>
+          <li><a href="/teams/brokerages/">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/">Start a free pilot</a></li>
+          <li><a href="/security/" aria-current="page">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
