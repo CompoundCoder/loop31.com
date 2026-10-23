@@ -5,29 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy · Loop31</title>
   <meta name="description" content="What Loop31 collects, why, where it is kept, who it is shared with, and how to delete it. Written in plain words.">
-  <link rel="preload" href="fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
+  <div class="wrap header-row">
+    <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
     <nav class="site-nav" aria-label="Site">
-      <a href="support.html">Support</a>
-      <a href="privacy.html" aria-current="page">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <a href="/teams/dealerships/">Dealerships</a>
+      <a href="/teams/brokerages/">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
     </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
   </div>
 </header>
 
-<main class="wrap narrow page">
+<main id="main" class="wrap narrow page">
 
   <h1>Privacy policy</h1>
 
-  <p class="muted">Last updated October 22, 2026</p>
+  <p class="muted">Last updated October 23, 2026</p>
 
   <p class="lede">This page says what the Loop31 app collects, why, where it is kept, who sees it, and how to delete it. It is written for the people who use the app, not for lawyers. If anything is unclear, write to <a href="mailto:support@loop31.com">support@loop31.com</a>.</p>
 
@@ -104,9 +113,13 @@
   <h3>Cars from a dealership's website</h3>
   <p>When a dealership's manager connects the dealership's website to its Loop31 team, they confirm that the dealership owns the site and the photos on it and that its salespeople may use them. Each night Loop31's server reads that site's robots.txt, its sitemap and its vehicle pages, as the robot <code>Loop31Bot</code>, honouring robots.txt, one page at a time. From each vehicle page it keeps only the car's published details (VIN, year, make, model, trim, mileage, condition, the price shown, the page's address and up to three photos) and never the page's text. It sends new VINs to NHTSA's free VIN decoder to confirm the year, make and model. It keeps copies of the car photos, with their metadata removed, for the dealership and for the salesperson a car goes to. <strong>No customer's information is ever read or kept:</strong> only the cars the dealership itself publishes. A manager can remove the website at any time in the team's Settings, and nothing more is read.</p>
 
+  <p><strong>Whose website it is.</strong> We rely on the word of whoever gives us a website that it's theirs to give, since we can't check who owns a site, and we never read social networks, marketplaces or listing sites (Facebook, Instagram, Etsy, Amazon, Zillow, Realtor.com, Cars.com, Autotrader and the like). If your website was given to us without your OK, write to <a href="mailto:support@loop31.com">support@loop31.com</a> and we'll stop reading it and delete what we got from it. The <a href="terms.html#websites">terms</a> say more.</p>
+
   <h3>If you're on a team</h3>
-  <p>If a brokerage or dealership gives you a seat, its managers see what the app showed you before you joined: your name, that your seat is paid, which Loops are on, and the posts that go out from the day you joined, with their dates and captions. They never see your drafts, photos, listings, vehicles, or anything you haven't posted.</p>
+  <p>If a brokerage or dealership gives you a seat, its managers see what the app showed you before you joined: your name, that your seat is paid, which Loops are on, and the posts that go out from the day you joined, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, listings, vehicles, or anything you haven't posted.</p>
   <ul>
+    <li><strong>Your posting numbers:</strong> managers see how many posts you marked posted this week and this month, out of those planned so far, and in each of the 3 months before, with your last post and your weeks in a row. They are counted from your schedule; nothing new is kept for them.</li>
+    <li><strong>A manager's reminder:</strong> when you have a post due today that's ready and not yet marked posted, the team's owner or an admin can send you a reminder, at most one a day and three a week, and only between 9 AM and 7 PM your time. It shows at the top of Home that day with the sender's first name, never the post's words or picture. We keep each reminder (who sent it, which post, your day, the time, and, once Lock Screen reminders arrive, how many of your phones it reached) for 35 days, so the limits work. A line in the sender's own account history records that they sent one. Today the reminder shows in the app only.</li>
     <li><strong>The check record:</strong> for each post you share, managers see which checks ran and what they flagged, as the check's name and level, never the words.</li>
     <li><strong>The Monday email:</strong> a team's owner and admins get an email each Monday with last week's numbers, unless they turn it off. It has the team's name and the names of the people on it with their counts, never captions or photos. See Resend under "Who we share it with".</li>
   </ul>
@@ -203,6 +216,7 @@
     <tr><td>The ready-to-share files for a post, on your phone and on our server</td><td>30 days after the post went out or was skipped</td></tr>
     <tr><td>Client reviews</td><td>Stop showing in posts after two years (you can change this); stored until you delete them or your account</td></tr>
     <tr><td>Server logs and error reports</td><td>30 days</td></tr>
+    <tr><td>The reminders a manager sent you</td><td>35 days, or you delete your account</td></tr>
     <tr><td>Your website's address and the ideas you kept from it</td><td>You remove your website (the ideas you kept stay as your own until you delete them), or you delete your account</td></tr>
     <tr><td>A dealership’s website address and its manager’s OK</td><td>The manager removes the website, or the team ends</td></tr>
     <tr><td>The details of each car read from a dealership’s website</td><td>A year after the car leaves the website, or the team ends. Removing the website stops the reading; the cars already read stay with the team</td></tr>
@@ -214,7 +228,7 @@
 
   <h2 id="delete">Deleting your account</h2>
 
-  <p>In the app, open <strong>Profile</strong> and tap <strong>Delete Account</strong>. The app lists what will be removed. When you confirm, everything goes: your profile and business details, your Loops and posts, every photo and video in our storage, your schedule, approvals and history, the check results, your writing-help record, your website's address and the ideas from it, and your sign-in itself. Any connected account's tokens are removed and, where Meta allows it, revoked. The last thing deleted is your sign-in, so a step that fails can be tried again while you are still signed in.</p>
+  <p>In the app, open <strong>Profile</strong> and tap <strong>Delete Account</strong>. The app lists what will be removed. When you confirm, everything goes: your profile and business details, your Loops and posts, every photo and video in our storage, your schedule, approvals and history, the check results, the reminders your manager sent you, your writing-help record, your website's address and the ideas from it, and your sign-in itself. Any connected account's tokens are removed and, where Meta allows it, revoked. The last thing deleted is your sign-in, so a step that fails can be tried again while you are still signed in.</p>
 
   <p>What stays: the pictures the app saved to your Photos (the app can add to Photos but cannot delete from it; remove them yourself if you like), and any post already published to your own accounts. Backups roll off within 30 days. The companies in "Who we share it with" follow their own retention; for OpenAI that is up to 30 days of safety logs.</p>
 
@@ -228,6 +242,7 @@
     <li><strong>Posted for you</strong>, described above, which adds Meta and the connected-account tokens.</li>
     <li><strong>Paid plans</strong> through the App Store. Apple handles billing and we never see card details; a subscription service would hold your user ID and purchase receipts.</li>
     <li><strong>Lock Screen updates</strong> for the look-over, which use an Apple push token.</li>
+    <li><strong>Your manager's reminder on your Lock Screen</strong>, delivered through Expo's push service (Expo makes the tools the app is built with), which needs a push token from your phone. No phone sends one yet, and no reminder is pushed.</li>
     <li><strong>Listing and vehicle lookups</strong>: an address sent to a property-data service to check a listing is yours, and a VIN sent to the US government's free vehicle decoder.</li>
   </ul>
 
@@ -246,16 +261,32 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
     <div>
       <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
       <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
     </div>
-    <nav aria-label="Footer">
-      <a href="/teams/">For teams</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/">Dealerships</a></li>
+          <li><a href="/teams/brokerages/">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/">Start a free pilot</a></li>
+          <li><a href="/security/">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html" aria-current="page">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </footer>

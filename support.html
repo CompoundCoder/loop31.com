@@ -5,25 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support · Loop31</title>
   <meta name="description" content="How to get help with Loop31, and answers to common questions.">
-  <link rel="preload" href="fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="/fonts/inter-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
+  <div class="wrap header-row">
+    <a class="brand" href="/"><img src="/logo.png" alt="" width="28" height="28"><span>Loop<b>31</b></span></a>
     <nav class="site-nav" aria-label="Site">
-      <a href="support.html" aria-current="page">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <a href="/teams/dealerships/">Dealerships</a>
+      <a href="/teams/brokerages/">Brokerages</a>
+      <a href="/teams/">Pricing</a>
+      <a class="nav-wide" href="/security/">Security</a>
+      <a class="nav-quiet" href="/for-salespeople/">For salespeople</a>
     </nav>
+    <div class="header-actions">
+      <a class="signin" href="/team/"><span class="lg-only">Manager sign-in</span><span class="sm-only">Sign in</span></a>
+      <a class="button button-sm" href="/pilot/">Start a pilot</a>
+    </div>
   </div>
 </header>
 
-<main class="wrap narrow page">
+<main id="main" class="wrap narrow page">
 
   <h1>Support</h1>
 
@@ -71,7 +80,7 @@
     <dd>In the app, open Profile and tap Delete Account. The screen lists what will be removed. Everything we hold for you goes: your profile, Loops, posts, photos, schedule, and history. Pictures the app saved to your Photos stay, because the app can only add to Photos, not delete from it; remove them yourself if you like. If you can't open the app, email <a href="mailto:support@loop31.com">support@loop31.com</a> from the address you signed in with and we will delete the account for you.</dd>
 
     <dt>Can my whole office or dealership use it?</dt>
-    <dd>Yes, with Teams. A managing broker or sales manager invites each person with a 6-digit code and chooses whose seats the office pays for. To join, open Profile, tap Plan, then Join a Team, and enter the code. The manager sees which Loops you have on and the posts you share from the day you join, never your drafts, photos, or anything you haven't posted. To set up a team, write to <a href="mailto:support@loop31.com">support@loop31.com</a>.</dd>
+    <dd>Yes, with Teams. A managing broker or sales manager invites each person with a 6-digit code and chooses whose seats the office pays for. To join, open Profile, tap Plan, then Join a Team, and enter the code. The manager sees which Loops you have on and the posts you share from the day you join, and can send you one reminder a day when a post is due; never your drafts, photos, or anything you haven't posted. To set up a team, see <a href="/teams/">pricing and seats</a> or start a <a href="/pilot/">free 30-day pilot</a>.</dd>
 
     <dt>Can I turn off the reminders?</dt>
     <dd>Yes. Reminders are ordinary iPhone notifications, so you can turn them off in Settings → Notifications → Loop31, or in the app. The app still works; you will just need to open it yourself.</dd>
@@ -81,16 +90,32 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
     <div>
       <p>Loop31 is made by Compound Coder LLC, a small software company in Lowell, Indiana.</p>
       <p>16102 Wicker Ave, Lowell, IN 46356 · <a href="mailto:support@loop31.com">support@loop31.com</a></p>
     </div>
-    <nav aria-label="Footer">
-      <a href="/teams/">For teams</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <p class="footer-head">For managers</p>
+        <ul role="list">
+          <li><a href="/teams/dealerships/">Dealerships</a></li>
+          <li><a href="/teams/brokerages/">Brokerages</a></li>
+          <li><a href="/teams/">Pricing and seats</a></li>
+          <li><a href="/pilot/">Start a free pilot</a></li>
+          <li><a href="/security/">Security and data</a></li>
+          <li><a href="/team/">Manager sign-in</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Loop31</p>
+        <ul role="list">
+          <li><a href="/for-salespeople/">For salespeople</a></li>
+          <li><a href="/support.html" aria-current="page">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </footer>
