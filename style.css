@@ -1686,13 +1686,13 @@ h3 {
 
 /* ---------- Waves where one band meets the next ----------
    No flat rules between sections. Each band rises into the one above it as a long, low wave:
-   two soft layers behind (the two bands' colors mixed, a hint of Loop31 blue), the band's own
+   two soft layers behind (mostly its own color, a little of the band above, a hint of Loop31 blue), the band's own
    color in front. The shapes live here once; a band only says its color (--band). */
 
 :root {
-  --wave-h: clamp(22px, 4.2vw, 56px);
-  --wave-front: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 75C13 76 53 80 80 81C107 82 133 82 160 80C187 79 213 75 240 72C267 69 293 64 320 60C347 57 373 53 400 51C427 49 453 48 480 48C507 49 533 51 560 53C587 55 613 59 640 62C667 64 693 68 720 69C747 71 773 71 800 71C827 70 853 68 880 66C907 64 933 60 960 58C987 55 1013 52 1040 51C1067 50 1093 50 1120 51C1147 52 1173 55 1200 58C1227 61 1253 65 1280 69C1307 72 1333 76 1360 79C1387 81 1427 82 1440 82V100H0Z'/%3E%3C/svg%3E");
-  --wave-layers: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill-opacity='.5' d='M0 43C13 42 53 39 80 36C107 33 133 29 160 26C187 23 213 20 240 18C267 16 293 15 320 14C347 14 373 15 400 17C427 18 453 21 480 23C507 26 533 29 560 31C587 33 613 35 640 36C667 37 693 36 720 36C747 35 773 33 800 31C827 29 853 26 880 24C907 22 933 20 960 19C987 18 1013 18 1040 18C1067 19 1093 21 1120 23C1147 26 1173 29 1200 32C1227 35 1253 39 1280 41C1307 44 1333 46 1360 47C1387 48 1427 47 1440 47V100H0Z'/%3E%3Cpath d='M0 61C13 61 53 63 80 62C107 62 133 59 160 56C187 53 213 49 240 46C267 43 293 40 320 39C347 37 373 37 400 38C427 39 453 41 480 43C507 46 533 49 560 52C587 54 613 56 640 57C667 58 693 57 720 56C747 54 773 51 800 48C827 44 853 40 880 36C907 33 933 30 960 28C987 27 1013 26 1040 27C1067 29 1093 32 1120 35C1147 38 1173 44 1200 47C1227 51 1253 56 1280 59C1307 61 1333 63 1360 63C1387 63 1427 60 1440 59V100H0Z'/%3E%3C/svg%3E");
+  --wave-h: clamp(24px, 4.6vw, 64px);
+  --wave-front: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 75C13 77 53 83 80 84C107 85 133 85 160 83C187 81 213 77 240 73C267 68 293 62 320 58C347 54 373 49 400 47C427 44 453 43 480 44C507 44 533 47 560 50C587 53 613 58 640 62C667 65 693 70 720 72C747 74 773 74 800 74C827 73 853 70 880 67C907 64 933 59 960 56C987 52 1013 48 1040 47C1067 45 1093 44 1120 46C1147 47 1173 50 1200 54C1227 58 1253 64 1280 68C1307 73 1333 78 1360 81C1387 84 1427 85 1440 85V100H0Z'/%3E%3C/svg%3E");
+  --wave-layers: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill-opacity='.35' d='M0 42C13 40 53 36 80 33C107 29 133 25 160 21C187 18 213 15 240 13C267 11 293 9 320 9C347 10 373 11 400 13C427 15 453 19 480 21C507 24 533 28 560 30C587 32 613 34 640 35C667 36 693 35 720 34C747 33 773 30 800 27C827 25 853 22 880 19C907 17 933 14 960 13C987 13 1013 12 1040 14C1067 15 1093 17 1120 20C1147 23 1173 27 1200 30C1227 34 1253 38 1280 41C1307 43 1333 46 1360 46C1387 47 1427 45 1440 45V100H0Z'/%3E%3Cpath d='M0 61C13 61 53 63 80 62C107 60 133 57 160 53C187 50 213 45 240 41C267 38 293 34 320 33C347 31 373 31 400 32C427 33 453 37 480 40C507 43 533 48 560 50C587 53 613 56 640 57C667 58 693 57 720 55C747 53 773 49 800 45C827 41 853 36 880 32C907 28 933 24 960 22C987 20 1013 20 1040 22C1067 23 1093 27 1120 31C1147 35 1173 41 1200 46C1227 50 1253 56 1280 58C1307 61 1333 63 1360 63C1387 62 1427 58 1440 57V100H0Z'/%3E%3C/svg%3E");
 }
 
 /* Each band's color, and the color of the band above it. */
@@ -1726,7 +1726,7 @@ main > .anatomy + .teams,
 main > .teams + .launch,
 main:has(> .t-soft:last-child) + .site-footer {
   --wave-to: var(--band, var(--bg));
-  --wave-tint: color-mix(in oklab, color-mix(in oklab, var(--wave-from) 45%, var(--wave-to)), var(--loop-blue-wash) 40%);
+  --wave-tint: color-mix(in oklab, color-mix(in oklab, var(--wave-from) 25%, var(--wave-to)), var(--brand) 7%);
   position: relative;
   border-top: 0;
 
