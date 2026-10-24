@@ -296,6 +296,7 @@ h3 {
   top: 0;
   z-index: 10;
   background: var(--nav-bg);
+  /* trope-ignore: glass only here, on the one bar that stays on screen, like iOS's own bars (D62); all else is solid */
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--line);
@@ -514,8 +515,9 @@ h3 {
 
 .hero::before {
   background:
+    /* trope-ignore: the salespeople page's app wash, kept on purpose (README "The look"); manager pages have none */
     radial-gradient(60% 520px at 6% 12%, rgb(var(--sky) / var(--wash)), transparent 70%),
-    radial-gradient(55% 560px at 96% 22%, rgb(var(--peach) / var(--wash)), transparent 70%),
+    radial-gradient(55% 560px at 96% 22%, rgb(var(--peach) / var(--wash)), transparent 70%), /* trope-ignore: the same wash */
     linear-gradient(180deg, rgb(var(--sky) / calc(var(--wash) * 0.4)) 0, transparent 760px);
 }
 
@@ -834,6 +836,7 @@ h3 {
   }
 
   .js .marquee-track {
+    /* trope-ignore: the one loop on the site; it has a Pause button, stops off screen, and stands still under Reduce Motion */
     animation: marquee 80s linear infinite;
   }
 
@@ -1021,7 +1024,7 @@ h3 {
 }
 
 .av-you {
-  background: linear-gradient(160deg, #3aa5ff, #0071e3);
+  background: var(--accent);
 }
 
 .fp-friend {
@@ -1862,10 +1865,20 @@ sup a {
   font-size: 19px;
 }
 
-.rules span {
+.rules li > span {
   display: block;
   color: var(--muted);
   font-size: 16px;
+}
+
+/* A figure straight above the list: the same divider the list's own items use. */
+.figures + .rules {
+  margin-top: 18px;
+}
+
+.figures + .rules li:first-child {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
 }
 
 .fine {
@@ -1898,6 +1911,7 @@ sup a {
 .promise {
   margin: 32px 0 0;
   padding: 4px 0 4px 20px;
+  /* trope-ignore: a quotation's rule (the app's words, quoted word for word), not an accent bar on a card */
   border-left: 3px solid var(--brand);
 }
 
@@ -2540,6 +2554,12 @@ code {
   font-weight: 600;
 }
 
+/* Who the home page is for, one quiet line under the facts. */
+.hero-for {
+  max-width: 62ch;
+  margin-top: 12px;
+}
+
 /* A real screen of the portal, framed plainly and always labeled as a sample. */
 .board {
   position: relative;
@@ -2739,40 +2759,40 @@ code {
   font-size: 1.2rem;
 }
 
-.ticks {
+/* A plain list: a small dot for each item; "never" lists get a short dash.
+   No check marks: on this site a check means done or passed, and these are lists of what's included. */
+.dots {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.ticks li {
+.dots li {
   position: relative;
-  padding: 0 0 12px 28px;
+  padding: 0 0 12px 22px;
   text-wrap: pretty;
 }
 
-.ticks li::before {
+.dots li::before {
   content: "";
   position: absolute;
-  left: 2px;
-  top: 0.45em;
-  width: 12px;
-  height: 7px;
-  border-left: 2px solid var(--loop-green);
-  border-bottom: 2px solid var(--loop-green);
-  rotate: -45deg;
+  left: 3px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--muted);
 }
 
-.ticks.never li::before {
+.dots.never li::before {
+  left: 1px;
   top: 0.75em;
-  width: 12px;
-  height: 0;
-  border-left: 0;
-  border-bottom: 2px solid var(--muted);
-  rotate: 0deg;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
 }
 
-.ticks li small {
+.dots li small {
   display: block;
   color: var(--muted);
   font-size: 15px;

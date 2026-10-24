@@ -2,8 +2,8 @@
 
 A pretend dealership website, used only to test Loop31's dealer inventory reader (Loop-31-V2 `docs/DATA_MODEL.md`,
 "Dealer inventory from the website") on the live server. None of these cars exist and nothing here is for sale: every
-page says so in a banner, is `noindex, nofollow`, and is linked from nowhere on loop31.com. The only way in for a
-reader is `robots.txt`'s `Sitemap: https://loop31.com/test-lot/vehicles.xml` line.
+page says so in a banner, is `noindex, nofollow`, and is linked from nowhere on loop31.com. A reader finds it only
+through `robots.txt`'s `Sitemap: https://loop31.com/test-lot/vehicles.xml` line.
 
 The VINs are made up: a real model's pattern (positions 1–8 and 10–11), our own serial number, and the check digit
 worked out, so NHTSA vPIC decodes each one cleanly (ErrorCode 0), which Loop31 needs before it offers a car. They
