@@ -1,15 +1,18 @@
-"""Turns the simulator's 1320 x 2868 screenshots into the home page's screen images, img/<role>.webp.
+"""Turns the simulator's screenshots and the portal's sample shots into the site's pictures, img/<role>.webp.
 
     python3 -I tools/make-screens.py <shots-folder> [<portal-shots-folder>]
 
-The roles and the files they come from are in ROLES below. After a reshoot, put the new PNGs in a folder
-under the same names (or change ROLES) and run this again; the page needs no change.
+The app shots are from the iPhone 17 Pro simulator (1206 x 2622), taken with the app's own script and a full
+status bar (see the README, "Making them again"); 1320 x 2868 shots from an iPhone 17 Pro Max work too. The
+portal shots are what tools/shoot-portal.mjs writes. The roles and the files they come from are in ROLES and
+PORTAL below. After a reshoot, put the new PNGs in a folder under the same names (or change ROLES) and run
+this again; the pages need no change unless a picture's size or contents do.
 
 For each app screen it:
   * paints over the Dynamic Island with the background around it (the page shows the screen on its own,
     not a phone), and
-  * draws full signal bars where the simulator shows four "no service" dots (Apple asks for a full status
-    bar). The time, Wi-Fi and battery are left as they were shot.
+  * on a shot with the simulator's four "no service" dots (no status bar override), draws full signal bars
+    there (Apple asks for a full status bar). The time, Wi-Fi and battery are left as they were shot.
 Then it scales the screen to SCREEN_WIDTH and saves it as WebP. Rounded corners and the shadow are CSS.
 """
 
@@ -23,31 +26,39 @@ OUT = SITE / "img"
 
 # role: (file in the shots folder, crop box at full size or None)
 ROLES = {
-    "screen-calendar": ("calendar.png", None),
-    "screen-lookover": ("review.png", None),
-    "screen-handoff": ("more/handoff-w1.png", None),
+    "screen-calendar": ("calendar.png", None),  # the Week tab
+    "screen-lookover": ("review.png", None),  # Check posts, card 1
+    "screen-handoff": ("handoff-w1.png", None),  # Share
 }
-# role: (file in the portal shots folder, crop box or None, width)
+# role: (file in the portal shots folder, crop box in CSS px (the shots are 2x), width)
 PORTAL = {
-    "portal-team": ("team-1440-light.png", (0, 0, 1440, 900), 1200),
-    "portal-team-phone": ("team-390-light.png", (0, 0, 780, 1300), 640),
-    # A person's page: their Loops (read only) and the posts that went out.
-    "portal-person": ("person-1440-light.png", (0, 0, 1440, 900), 1200),
-    "portal-person-phone": ("person-390-light.png", (0, 0, 780, 1300), 640),
-    # The Team page's counts and people, without the office's name (the dealership page uses it: the
-    # sample office is a brokerage).
-    "portal-team-table": ("team-1440-light.png", (350, 160, 1356, 900), 1000),
-    "portal-team-table-phone": ("team-390-light.png", (0, 620, 780, 1688), 640),
+    # Team: the title, the three numbers, the cars line, the people who haven't shared and the first who has.
+    "portal-board-dealer": ("d-week.png", (336, 26, 1360, 1047), 1200),
+    "portal-board-realty": ("p-week.png", (336, 26, 1360, 876), 1200),
+    # Phones: the same people, with this week and this month.
+    "portal-board-dealer-phone": ("d-week.png", (340, 458, 992, 1047), 680),
+    "portal-board-realty-phone": ("p-week.png", (340, 422, 992, 876), 680),
+    # A person's page: the name and the four numbers; the phone file is the first two numbers.
+    "portal-person-numbers": ("d-person.png", (336, 12, 1360, 386), 1200),
+    "portal-person-numbers-phone": ("d-person.png", (338, 212, 850, 384), 680),
+    # Posts That Went Out, with what the checks said; the phone files from the page at 560 px, so each line is whole.
+    "portal-check-record": ("d-person.png", (340, 851, 1356, 1481), 1200),
+    "portal-check-record-phone": ("d-person-560.png", (8, 1254, 552, 1757), 680),
+    "portal-check-record-realty": ("p-person.png", (340, 879, 1356, 1302), 1200),
+    "portal-check-record-realty-phone": ("p-person-560.png", (8, 1282, 552, 1867), 680),
 }
 
 SCREEN_WIDTH = 840
-QUALITY = 80
+QUALITY = 80  # app screens
+PORTAL_QUALITY = 82
 
-# Where things sit on a 1320 px wide screenshot (iPhone 17 Pro Max, 3x).
-ISLAND = (452, 28, 868, 164)  # x0, y0, x1, y1: painted from the rows just above and below
-DOTS = (924, 84, 1014, 128)  # the "no service" dots: painted from the columns either side
-BARS_RIGHT = 1003  # right edge of the signal bars
-BARS_BOTTOM = 116  # their baseline, level with the Wi-Fi glyph's bottom
+# Where things sit, by screenshot size: the island (x0, y0, x1, y1, painted from the rows just above and below)
+# and, on a 1320 px wide Pro Max shot without a status bar override, the "no service" dots (painted from the
+# columns either side) and the right edge and baseline of the signal bars drawn there.
+DEVICES = {
+    (1206, 2622): {"island": (410, 37, 796, 157)},  # iPhone 17 Pro, 3x
+    (1320, 2868): {"island": (452, 28, 868, 164), "dots": (924, 84, 1014, 128), "bars": (1003, 116)},  # 17 Pro Max
+}
 
 
 def fill_vertical(img, box):
@@ -80,7 +91,7 @@ def ink_of(img):
     return (0, 0, 0) if abs(bg - lo) > abs(bg - hi) else (255, 255, 255)
 
 
-def draw_bars(img):
+def draw_bars(img, right, bottom):
     """Four signal bars, drawn 4x large and scaled down so their edges are smooth."""
     s = 4
     widths, gap, heights, radius = 9, 5, (12, 18, 25, 32), 2.5
@@ -92,26 +103,29 @@ def draw_bars(img):
         x = i * (widths + gap) * s
         d.rounded_rectangle((x, (max(heights) - h) * s, x + widths * s - 1, max(heights) * s - 1), radius=radius * s, fill=ink)
     patch = patch.resize((total, max(heights)), Image.LANCZOS)
-    img.alpha_composite(patch, (BARS_RIGHT - total, BARS_BOTTOM - max(heights)))
+    img.alpha_composite(patch, (right - total, bottom - max(heights)))
 
 
 def screen(src, crop):
     img = Image.open(src).convert("RGBA")
-    if img.size != (1320, 2868):
-        raise SystemExit(f"{src}: expected 1320 x 2868, got {img.size[0]} x {img.size[1]}")
+    device = DEVICES.get(img.size)
+    if device is None:
+        raise SystemExit(f"{src}: {img.size[0]} x {img.size[1]} is not a size in DEVICES")
+    full_width = img.width
     if crop is None:
-        fill_vertical(img, ISLAND)
-        fill_horizontal(img, DOTS)
-        draw_bars(img)
+        fill_vertical(img, device["island"])
+        if "dots" in device:
+            fill_horizontal(img, device["dots"])
+            draw_bars(img, *device["bars"])
     else:
         img = img.crop(crop)
-    width = SCREEN_WIDTH if crop is None else round(img.width * SCREEN_WIDTH / 1320)
+    width = SCREEN_WIDTH if crop is None else round(img.width * SCREEN_WIDTH / full_width)
     return img.resize((width, round(img.height * width / img.width)), Image.LANCZOS)
 
 
-def save(img, role):
+def save(img, role, quality=QUALITY):
     path = OUT / f"{role}.webp"
-    img.convert("RGB").save(path, "WEBP", quality=QUALITY, method=6)
+    img.convert("RGB").save(path, "WEBP", quality=quality, method=6)
     print(f"img/{role}.webp  {img.width} x {img.height}  {path.stat().st_size // 1024} KB")
 
 
@@ -125,10 +139,8 @@ def main():
     if len(sys.argv) > 2:
         portal = Path(sys.argv[2])
         for role, (name, crop, width) in PORTAL.items():
-            img = Image.open(portal / name).convert("RGB")
-            if crop:
-                img = img.crop(crop)
-            save(img.resize((width, round(img.height * width / img.width)), Image.LANCZOS), role)
+            img = Image.open(portal / name).convert("RGB").crop(tuple(2 * v for v in crop))
+            save(img.resize((width, round(img.height * width / img.width)), Image.LANCZOS), role, PORTAL_QUALITY)
 
 
 if __name__ == "__main__":

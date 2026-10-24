@@ -23,7 +23,7 @@ Since 2026-10-23 the site is written for the people who buy seats (general manag
 | `fonts/inter-latin-*.woff2`, `fonts/Inter-OFL.txt` | Inter, for reading and for every number, with its license |
 | `fonts/nunito-latin-var.woff2`, `fonts/OFL.txt` | Nunito, for headlines and the wordmark, with its license |
 | `img/` | The app screens, portal screens and example posts, named by what they show (see Images) |
-| `tools/` | Two scripts that make the images in `img/`. Not linked from any page |
+| `tools/` | The scripts that make the images in `img/`. Not linked from any page |
 | `favicon.png`, `apple-touch-icon.png`, `logo.png` | The app icon, resized from `docs/brand/generated/icon-1024.png` in the app repo |
 | `CNAME` | `loop31.com`, which tells GitHub Pages the custom domain |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
@@ -71,24 +71,25 @@ Every image is in `img/`, named by what it shows, so a new picture is a new file
 
 | File | What it is | Where it came from |
 |---|---|---|
-| `portal-board-dealer.webp`, `-phone.webp` | Home hero and the dealership page: the portal's Team page for the sample dealership (Fall Creek Auto), this week and this month per salesperson, Remind and "Sent" | The portal's sample mode, `?sample=this-week&office=dealer`, 1440 × 1100 at 2×, from `apps/admin` at `integration/2026-10-23-b2b` (D60), 2026-10-23; the phone file is the people table's name, this week and this month columns |
+| `portal-board-dealer.webp`, `-phone.webp` | Home hero and the dealership page: the portal's Team page for the sample dealership (Fall Creek Auto): its three numbers (posted this week, posts this month, shared of planned), the cars line, then this week and this month per salesperson, Remind and "Sent" | The portal's sample mode, `?sample=this-week&office=dealer`, 1440 × 1100 at 2×, from `apps/admin` at `integration/2026-10-23-b2b` (the D63 look), 2026-10-23; the phone file is the people table's name, this week and this month columns |
 | `portal-board-realty.webp`, `-phone.webp` | The brokerage page and the salespeople's band: the same for the sample brokerage (Northline Realty) | `?sample=this-week`, the same way |
 | `portal-person-numbers.webp`, `-phone.webp` | Home: one person's page, this week, this month, streak, last post | `?sample=person&office=dealer`, 1440 × 1900 at 2× |
-| `portal-check-record.webp`, `-phone.webp` | Home and the dealership page: posts that went out with "Checked when shared … Nothing flagged." | Same shot, lower down |
+| `portal-check-record.webp`, `-phone.webp` | Home and the dealership page: posts that went out with "Checked when shared … Nothing flagged." | Same shot, lower down; the phone file from the same page 560 px wide, so each line is whole |
 | `portal-check-record-realty.webp`, `-phone.webp` | The brokerage page: the same for a sample agent (fair housing wording checked) | `?sample=person` |
-| `screen-calendar.webp` | Salespeople's page hero: the Calendar tab | iPhone 17 Pro Max simulator, sample account, 2026-10-22 (`site-shots/calendar.png`) |
-| `screen-lookover.webp` | How it works, step 2: the look-over | Same (`site-shots/review.png`) |
-| `screen-handoff.webp` | How it works, step 3: Post It Yourself | Same (`site-shots/more/handoff-w1.png`) |
-| `portal-team.webp`, `portal-person.webp`, `portal-team-table.webp` and their `-phone` files | The old portal screens (2026-10-22), before the D60 numbers; no page uses them now | Kept for the pitch kit until it is redone |
+| `screen-calendar.webp` | Salespeople's page hero: the Week tab | iPhone 17 Pro simulator, the app's sample account, `integration/2026-10-23-b2b` (the picture-first look), 2026-10-23 (`calendar.png`) |
+| `screen-lookover.webp` | How it works, step 2: Check posts, with Skip and Looks good | Same (`review.png`) |
+| `screen-handoff.webp` | How it works, step 3: Share | Same (`handoff-w1.png`) |
+| `portal-team.webp`, `portal-person.webp`, `portal-team-table.webp` and their `-phone` files | The old portal screens (2026-10-22), before the D60 numbers; no page uses them now | Kept for the pitch kit until it is redone; the tools no longer make them |
 | `post-re-*.webp`, `post-auto-*.webp` | The ten example posts. `post-auto-tips`, `-reviews` and `-hood` are How it works, step 1 | Drawn by the app's own graphics code from each starter Loop's first idea, over its bundled example photo |
 
 **Making them again.** With Homebrew's Node 24 and Google Chrome:
 
 - `node tools/render-posts.mjs [~/code/loop31]` draws the ten posts exactly as setup step 5 does and writes `img/post-*.webp`. It only reads the app repo. Market Updates is left out on purpose: its hook is a real county number.
-- `python3 -I tools/make-screens.py <shots-folder> [<portal-shots-folder>]` turns 1320 × 2868 simulator screenshots into the `screen-*.webp` files.
-- The portal pictures: run the portal's dev server (`apps/admin`, sample mode is development only), take a headless Chrome screenshot of each `?sample=` page above at 2×, crop to the main column, and save as WebP at quality 82, 1200 px wide (680 for the phone files). The sample names and stores are made up; every picture carries a visible "Sample" tag on the page.
+- The app screens: boot the iPhone 17 Pro simulator, give it a full status bar (`xcrun simctl status_bar booted override --time 9:41 --dataNetwork wifi --wifiBars 3 --cellularMode active --cellularBars 4 --batteryState discharging --batteryLevel 100`, and `xcrun simctl status_bar booted clear` after), then from `apps/mobile` in the app repo run `SHOT_PORT=8098 NO_SETUP=1 npm run shots -- <shots-folder> /calendar /review /handoff/w1` (the app's sample account; light mode).
+- The portal shots: run the portal's dev server (`apps/admin`; sample mode is development only, see `tools/shoot-portal.mjs` for the command), then `node tools/shoot-portal.mjs <portal-shots-folder>` shoots each `?sample=` page above at 2×, light mode, with the page's clock at 1:45 PM today (so the sample's reminder reads as sent in the morning; real ones go out 9 AM to 7 PM).
+- `python3 -I tools/make-screens.py <shots-folder> [<portal-shots-folder>]` turns the simulator screenshots into the `screen-*.webp` files (840 px wide) and crops the portal shots into the `portal-*.webp` files (quality 82, 1200 px wide, 680 for the phone files). The crop boxes are in the script; check them after the portal's layout changes. The sample names and stores are made up; every picture carries a visible "Sample" tag on the page.
 
-**Still to replace.** The app screens are from the 2026-10-22 sample account and the old look (Looks Good, Post It Yourself); reshoot them after the app's new look ships (plain labels: Check posts, Share). There is no Lock Screen shot of the manager's reminder; the pages say "a reminder" and that it shows at the top of Home, and never promise a phone notification until push is on. There is no picture of the pilot summary (its sample page doesn't render in headless Chrome).
+**Still to replace.** There is no Lock Screen shot of the manager's reminder; the pages say "a reminder" and that it shows at the top of Home, and never promise a phone notification until push is on. There is no picture of the pilot summary (its sample page doesn't render in headless Chrome).
 
 ## Credits
 
