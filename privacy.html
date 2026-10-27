@@ -36,7 +36,7 @@
 
   <h1>Privacy policy</h1>
 
-  <p class="muted">Last updated October 24, 2026</p>
+  <p class="muted">Last updated October 27, 2026</p>
 
   <p class="lede">This page says what the Loop31 app collects, why, where it is kept, who sees it, and how to delete it. It is written for the people who use the app, not for lawyers. If anything is unclear, write to <a href="mailto:support@loop31.com">support@loop31.com</a>.</p>
 
@@ -47,7 +47,7 @@
   <ul>
     <li>We keep what the app needs to do its job: your email, the business details that go under your posts, your posts and photos, your schedule, and the record of what you approved.</li>
     <li>Everything is kept on our server in the United States, run for us by Supabase.</li>
-    <li>Caption text goes to an outside AI company only if you say yes in the app, and only caption text. Your name, phone, email, photos, and client reviews never go.</li>
+    <li>Caption text, and the words of your website if you ask for ideas from it, go to an outside AI company only if you say yes in the app. Your name, phone, email, photos, and client reviews never go.</li>
     <li>We never sell your data, show ads, or track you across other apps and sites.</li>
     <li>You can delete your account in the app at any time, and everything we hold for you goes with it.</li>
   </ul>
@@ -56,7 +56,7 @@
 
   <h3>Your account</h3>
   <ul>
-    <li><strong>Email address.</strong> You sign in with a 6-digit code sent to it; there is no password. We also use it for support. It is kept by our sign-in service (Supabase Auth) and not copied into our own tables.</li>
+    <li><strong>Email address.</strong> You sign in with a 6-digit code sent to it; there is no password. We also use it for support. It is kept by our sign-in service (Supabase Auth). If you are on a team, we also keep the address your invite went to (a team's owner, their sign-in email) with your place on the team, while you are on it, and the team's owner and admins see it in the manager portal. An invite keeps the address it was sent to until the team ends.</li>
     <li><strong>A sign-in ID</strong>, which ties your data to you, plus the sign-in code while it works (10 minutes). Supabase Auth keeps a log of sign-ins, including the IP address and a description of the device, to keep accounts safe.</li>
     <li><strong>Your name</strong>, typed at setup, for the line the app adds under every post.</li>
   </ul>
@@ -102,13 +102,20 @@
   <p>If you sell something other than homes or cars, setup asks what you sell. We keep your answer with your account, to show which line of work should get ready-made posts next.</p>
 
   <h3>Your website, if you give it to us</h3>
-  <p>With "Other", you can give us your business's website (or type a few sentences about your business instead) so the app can suggest post ideas. First you confirm that it is your business's site and that you have the right to use what it says. Then:</p>
+  <p>In Real Estate, Auto Sales and Other, you can give us your business's website (or type a few sentences about your business instead) so the app can suggest post ideas. This needs your yes to writing help. First you confirm that it is your business's site, or your brokerage's or dealership's with its OK, and that you may use what it says. Then:</p>
   <ul>
     <li><strong>We keep:</strong> the address, when you agreed and to which wording, whether the monthly re-read is on, and the ideas, facts and Loops the app suggested and you kept or fixed. What you typed about your business is kept so it can be used again.</li>
     <li><strong>We never keep the pages.</strong> Our server reads up to 10 pages of that one site, sends their words to OpenAI to write the suggestions (see "Who we share it with"), and keeps only a fingerprint of each page so it can tell next month whether it changed.</li>
-    <li><strong>About once a month</strong> the server reads the site again, and the app asks you about anything new or changed. Turn this off, or remove your website, in Me.</li>
+    <li><strong>About once a month</strong> the server reads the site again, if you have used the app in the last 60 days, and the app asks you about anything new or changed. Turn this off, or remove your website, in Me.</li>
     <li>It reads only the site you gave, never other sites, and skips any page the site asks bots to stay out of.</li>
   </ul>
+
+  <h3>Listings from your website or your brokerage's</h3>
+  <p>If you sell real estate and give us your website (your own, or your brokerage's with its OK), our server also reads it each night, at about 2 AM your time, to find your listings. You can give it for this alone, with writing help off: then it is never read for post ideas and nothing from it goes to an AI service. The server reads the page you gave and the listing pages it links to, as the robot <code>Loop31Bot</code>, honouring robots.txt, one page at a time, and never runs a page's scripts. From each listing that is for sale and names you as its listing agent, it keeps only the published details: the address, the price shown, beds, baths, square feet, the MLS number, the listing agent and office the page credits, the page's address and the addresses of up to three photos. It never keeps the page's text or another agent's listing. When the agent's name is close to yours but not the same, the app asks "Is this you?" and keeps your answer. Your name is compared on our server and never sent anywhere. The nightly read stops if you haven't used the app in 60 days.</p>
+
+  <p>When a brokerage's owner or admin connects the brokerage's listings page to its Loop31 team, they confirm that the brokerage owns the listings and photos and that its listing agreements let its agents advertise them. Each night our server reads that page and its listings the same way and keeps the same details, only for listings whose listing office is the brokerage, never another brokerage's. The owner or an admin switches each agent on or off (off to start), and an agent can turn it off for themselves. An agent who is on may post any of these listings, and each post names the listing agent and the brokerage.</p>
+
+  <p>When you add a listing, you confirm that its sellers gave written OK to advertise it (for one of your own), and our server downloads copies of its photos, with their metadata removed, into your account. When the listing leaves the website, its posts that haven't gone out are paused, so its photos don't go out again. <strong>No AI reads a listing, and no buyer's or seller's information is read or kept.</strong> You can remove your website in Me at any time, and a manager can remove the listings page in the team's Settings. Nothing more is read after that.</p>
 
   <h3>Cars from a dealership's website</h3>
   <p>When a dealership's manager connects the dealership's website to its Loop31 team, they confirm that the dealership owns the site and the photos on it and that its salespeople may use them. Each night Loop31's server reads that site's robots.txt, its sitemap and its vehicle pages, as the robot <code>Loop31Bot</code>, honouring robots.txt, one page at a time. From each vehicle page it keeps only the car's published details (VIN, year, make, model, trim, mileage, condition, the price shown, the page's address and up to three photos) and never the page's text. It sends new VINs to NHTSA's free VIN decoder to confirm the year, make and model. It keeps copies of the car photos, with their metadata removed, for the dealership and for the salesperson a car goes to. <strong>No customer's information is ever read or kept:</strong> only the cars the dealership itself publishes. A manager can remove the website at any time in the team's Settings, and nothing more is read.</p>
@@ -116,7 +123,7 @@
   <p><strong>Whose website it is.</strong> We rely on the word of whoever gives us a website that it's theirs to give, since we can't check who owns a site, and we never read social networks, marketplaces or listing sites (Facebook, Instagram, Etsy, Amazon, Zillow, Realtor.com, Cars.com, Autotrader and the like). If your website was given to us without your OK, write to <a href="mailto:support@loop31.com">support@loop31.com</a> and we'll stop reading it and delete what we got from it. The <a href="terms.html#websites">terms</a> say more.</p>
 
   <h3>If you're on a team</h3>
-  <p>If a brokerage or dealership gives you a seat, its managers see what the app showed you before you joined: your name, that your seat is paid, which Loops are on, and the posts that go out from the day you joined, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, your own listings, vehicles, or anything you haven't posted. On a brokerage team, if you add listings from the brokerage's website, its managers see how many, never which ones.</p>
+  <p>If a brokerage or dealership gives you a seat, its managers see what the app showed you before you joined: your name, that your seat is paid, which Loops are on, and the posts that go out from the day you joined, with their dates and captions. They can send you one reminder a day when a post is due. They never see your drafts, photos, your own listings, vehicles, or anything you haven't posted. They also see the email address they invited you at. On a brokerage team, if you add listings from the brokerage's website, its managers see how many, never which ones.</p>
   <ul>
     <li><strong>Your posting numbers:</strong> managers see how many posts you marked posted this week and this month, out of those planned so far, and in each of the 3 months before, with your last post and your weeks in a row. They are counted from your schedule; nothing new is kept for them.</li>
     <li><strong>A manager's reminder:</strong> when you have a post due today that's ready and not yet marked posted, the team's owner or an admin can send you a reminder, at most one a day and three a week, and only between 9 AM and 7 PM your time. It shows at the top of Home that day with the sender's first name, never the post's words or picture. We keep each reminder (who sent it, which post, your day, the time, and, once Lock Screen reminders arrive, how many of your phones it reached) for 35 days, so the limits work. A line in the sender's own account history records that they sent one. Today the reminder shows in the app only.</li>
@@ -145,7 +152,7 @@
     </tr>
     <tr>
       <td>OpenAI</td>
-      <td>Writes fresh versions of a caption, <strong>only if you said yes to writing help in the app</strong>, and only when the app gets fresh words for you: Mix It Up, when a teammate posted something very similar, or New version on a caption you typed yourself in the Other line of work. It receives the caption, the words in it that must stay exact, your line of work, and the tone you picked. It never receives your name, email, phone, the line under your posts, a photo, a client review, the area you serve, or any account ID. If you give us your website ("Other"), it also receives the words of the pages we read, or what you typed about your business, and the facts you confirmed, to suggest ideas; never your name, email, phone or account ID. We send each request with storage turned off, so OpenAI keeps no copy of the result; its safety logs may hold the text for up to 30 days. OpenAI does not train its models on it. Privacy policy: <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a></td>
+      <td>Writes fresh versions of a caption, <strong>only if you said yes to writing help in the app</strong>, and only when the app gets fresh words for you: Mix It Up, when a teammate posted something very similar, or New version on a caption you typed yourself in the Other line of work. It receives the caption, the words in it that must stay exact, your line of work, and the tone you picked. It never receives your name, email, phone, the line under your posts, a photo, a client review, the area you serve, or any account ID. If you ask for ideas from your website (Real Estate, Auto Sales or Other), it also receives the words of the pages we read, or what you typed about your business, with what you sell and your line of work, to suggest ideas; on the monthly re-read, also the facts you confirmed and the titles of the ideas you kept and their Loops; never your name, email, phone or account ID. It never receives a listing or a car read from a website. We send each request with storage turned off, so OpenAI keeps no copy of the result; its safety logs may hold the text for up to 30 days. OpenAI does not train its models on it. Privacy policy: <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a></td>
     </tr>
     <tr>
       <td>Anthropic</td>
@@ -153,7 +160,7 @@
     </tr>
     <tr>
       <td>Pixabay</td>
-      <td>Free photos for the "Other" line of work, only when you search for one. The words you search and the page number go to Pixabay through our server, never anything about you; we keep each search's results for 24 hours without saying whose search it was, as Pixabay asks. The pictures in the results, and the photo you use, load from Pixabay onto your phone, so Pixabay sees your phone's IP address. A photo you use becomes your own copy in our storage. Privacy policy: <a href="https://pixabay.com/service/privacy/">pixabay.com/service/privacy</a></td>
+      <td>Free photos for Real Estate, Auto Sales and Other. Pixabay is asked when you search in Find a photo, and when the app picks a photo for a post itself: when few of Loop31's own photos for that kind of post are free to use, or when Mix It Up looks for a photo no teammate is using. Only the words searched and the page number go to Pixabay, through our server, never anything about you. The words are the ones you type, or a few the app takes from the post's idea, its caption, or what you said you sell, never your name, your business or how to reach you. We keep each search's results for 24 hours without saying whose search it was, as Pixabay asks. The pictures in the results, and the photo you use, load from Pixabay onto your phone, so Pixabay sees your phone's IP address. A photo you use becomes your own copy in our storage. Privacy policy: <a href="https://pixabay.com/service/privacy/">pixabay.com/service/privacy</a></td>
     </tr>
     <tr>
       <td>Resend</td>
@@ -192,7 +199,7 @@
     <li>No tracking: no advertising ID, no ad software, no data brokers, no following you across other companies' apps or sites. The app never asks the iPhone's tracking permission because it has nothing to track.</li>
     <li>No selling, renting, or sharing your data for advertising. No ads.</li>
     <li>No posting to personal Facebook, Instagram, or TikTok profiles, and no logins or passwords for them.</li>
-    <li>No photos, name, phone, email, contacts, or client reviews to any AI company, ever. Only caption text, only with your yes.</li>
+    <li>No photos, name, phone, email, contacts, or client reviews to any AI company, ever. Only caption text, and your website's words (or what you typed about your business) if you ask for ideas, only with your yes.</li>
     <li>No reading your photo library. The app can only add to it.</li>
     <li>No reading your clipboard. The app writes the caption to it and nothing else.</li>
     <li>No biometric data. Approving from the Lock Screen uses your phone's own unlock, which the app never sees.</li>
@@ -218,17 +225,19 @@
     <tr><td>Server logs and error reports</td><td>30 days</td></tr>
     <tr><td>The reminders a manager sent you</td><td>35 days, or you delete your account</td></tr>
     <tr><td>Your website's address and the ideas you kept from it</td><td>You remove your website (the ideas you kept stay as your own until you delete them), or you delete your account</td></tr>
+    <tr><td>The details of each listing read from your website or your brokerage's, and your answer to "Is this you?"</td><td>The listing leaves the website (the next read drops it), you remove or change your website, the manager removes the listings page, or the account or team ends</td></tr>
+    <tr><td>A listing you added: its post and your copies of its photos</td><td>You delete the post, or you delete your account</td></tr>
     <tr><td>A dealership’s website address and its manager’s OK</td><td>The manager removes the website, or the team ends</td></tr>
     <tr><td>The details of each car read from a dealership’s website</td><td>A year after the car leaves the website, or the team ends. Removing the website stops the reading; the cars already read stay with the team</td></tr>
     <tr><td>A salesperson’s copies of a car’s photos</td><td>The car is passed on, its offer runs out with nothing shared, or the salesperson leaves the team or deletes their account</td></tr>
     <tr><td>The dealership’s own copies of its car photos</td><td>Their car is no longer kept (a year after it left the website), or the photos on the website change; they are deleted within the hour. They also go when the team owner deletes their account</td></tr>
-    <tr><td>Photo searches</td><td>24 hours, with no record of who searched; the count of your searches for the day, until the day ends</td></tr>
+    <tr><td>Photo searches</td><td>The words and results: 24 hours, then deleted within the hour, with no record of who searched. Your count: one record of the day (UTC) of your last search and how many searches you made that day, with no words, kept until you delete your account</td></tr>
     <tr><td>Backups, if turned on</td><td>30 days</td></tr>
   </table>
 
   <h2 id="delete">Deleting your account</h2>
 
-  <p>In the app, open <strong>Me</strong> and tap <strong>Delete account</strong>. The app lists what will be removed. When you confirm, everything goes: your profile and business details, your Loops and posts, every photo and video in our storage, your schedule, approvals and history, the check results, the reminders your manager sent you, your writing-help record, your website's address and the ideas from it, and your sign-in itself. Any connected account's tokens are removed and, where Meta allows it, revoked. The last thing deleted is your sign-in, so a step that fails can be tried again while you are still signed in.</p>
+  <p>In the app, open <strong>Me</strong> and tap <strong>Delete account</strong>. The app lists what will be removed. When you confirm, everything goes: your profile and business details, your Loops and posts, every photo and video in our storage, your schedule, approvals and history, the check results, the reminders your manager sent you, your writing-help record, your website's address with the ideas and listings read from it, and your sign-in itself. Any connected account's tokens are removed and, where Meta allows it, revoked. The last thing deleted is your sign-in, so a step that fails can be tried again while you are still signed in.</p>
 
   <p>What stays: the pictures the app saved to your Photos (the app can add to Photos but cannot delete from it; remove them yourself if you like), and any post already published to your own accounts. Backups roll off within 30 days. The companies in "Who we share it with" follow their own retention; for OpenAI that is up to 30 days of safety logs.</p>
 
